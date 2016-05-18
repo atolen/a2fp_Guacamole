@@ -1,2 +1,2 @@
 # guacamole
-APCS2 final project brought to you by OG, BSS, & AT
+APCS2_FP brought to you by OG, BSS, & AT
