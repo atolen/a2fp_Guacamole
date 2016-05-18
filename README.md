@@ -1,2 +1,2 @@
 # guacamole
-Team Guacamole's APCS2 final project~~~ 
+APCS2 final project brought to you by OG, BSS, & AT
