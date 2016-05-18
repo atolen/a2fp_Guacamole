@@ -1,1 +1,8 @@
-FIn
+---------
+CHEMICAL REACTIONS
+---------
+-simulate fusion, fission, etc. w processing
+-utilizes user input
+-how do data structures/algos?
+
+
