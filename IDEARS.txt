@@ -6,3 +6,16 @@ CHEMICAL REACTIONS
 -how do data structures/algos?
 
 
+File with Elements and their Attributes
+Attributes:
+	Mass
+	Heat of fusion/Vaporization
+	Reacts with ?
+	Forms compounds with?
+	Electronegativity
+	Ionization Numbers
+
+Reaction Classes:
+	Transmutation (Fusion/Fission)
+	Precipitation (utilizes Ksp/Temperature)
+	
