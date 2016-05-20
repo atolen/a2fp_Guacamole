@@ -1,0 +1,6 @@
+Project proposal: Team Guacamole: AT, BSS, OG
+
+Chemistry experiments: combining elements, fission, fusion, titration
+User will be able to change the: temperature, number of molecules
+User will choose elements to combine
+For extra fun: user can also choose veggies to mix and chop in order to make BOSS guac
