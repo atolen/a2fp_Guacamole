@@ -1,6 +1,17 @@
 Project proposal: Team Guacamole: AT, BSS, OG
 
 Chemistry experiments: combining elements, fission, fusion, titration
-User will be able to change the: temperature, number of molecules
-User will choose elements to combine
+User will be able to change the: temperature, number of molecules (Concentrations)
+User will choose compounds to combine
 For extra fun: user can also choose veggies to mix and chop in order to make BOSS guac
+
+We will utilize an Element/Compound class, and each element/compound will be instantiated 
+as an object. There will be a couple of reaction classes, split based on the type of reaction.
+For example, there will be a combustion reaction class, and transmutation class, a titration class, 
+and a precipitation class. Within each of those classes, there will be react methods that take two or more 
+elements, concentrations, and temperatures
+
+Based on real calculations (!! APCHEM like a boss) a reaction will either occur or not occur.
+
+Based on the data returned by the reaction class, a graphic window will depict what happens. For example, if titrating
+a weak acid with a strong base, the graphic window will show an erlenmeyer flask turn from clear to pink.
