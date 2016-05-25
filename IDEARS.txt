@@ -21,3 +21,5 @@ Reaction Classes:
 	Precipitation (utilizes Ksp/Temperature)
 	
 	properties: elements being reacted
+
+use inheritance/interfaces for classes^^
