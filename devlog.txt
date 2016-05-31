@@ -1,0 +1,14 @@
+==========
+  DEVLOG
+==========
+
+2016-05-31
+14:30
+
+Planned! Figured out class structure & interaction. UML-y stuff.
+CSV file created. Concepts solidified.
+-ABO
+
+===============================================================================
+
+
