@@ -20,6 +20,14 @@ void setup() {
   x = createFont("Ayuthaya", 35, true);
   browse = false;
   react = false;
+  data = int(split(stuff[0],','));
+}
+
+
+void makeData() {
+  // Load text file as a string
+  String[] data = loadStrings("data.txt");
+  // Convert string into an array of integers using ',' as a delimiter
 }
 
 void draw() {
