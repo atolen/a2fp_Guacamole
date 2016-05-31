@@ -12,3 +12,4 @@
 ==========
 
 1. do we know how linking w/ windows work??? like can we do tests to confirm stuff
+2. we need to solidify chem stuff lmao @OG

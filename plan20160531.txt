@@ -9,5 +9,5 @@ two options from driver:
 CLASSES:
     1. driver file, contains buttons to the react file and the browse the elements file, driver will also contain a matrix of the elements -- turns csv w element info into matrix
     2. element page -- displays element info, has a constructor that will make a cute little page based on the element info
-    3. reaction classes -- one per type , each has a react method that will vary based on rxn type
+    3. reaction classes -- one per type , each has a react method that will vary based on rxn type -- reactions use INTERITANCE -- transmutation for fusion & fission, precipitation for some others idk 
     4. periodic table -- constructs based on element that shows info on element when you click on it on the periodic table
