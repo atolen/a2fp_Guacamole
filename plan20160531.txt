@@ -11,9 +11,3 @@ CLASSES:
     2. element page -- displays element info, has a constructor that will make a cute little page based on the element info
     3. reaction classes -- one per type , each has a react method that will vary based on rxn type
     4. periodic table -- constructs based on element that shows info on element when you click on it on the periodic table
-    
-    
-
-
-
-
