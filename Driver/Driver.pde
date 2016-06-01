@@ -1,4 +1,4 @@
-Element[] elements;
+String[][] elements;
 PFont f;
 PFont x;
 boolean react;
@@ -20,17 +20,38 @@ void setup() {
   x = createFont("Ayuthaya", 35, true);
   browse = false;
   react = false;
-  data = int(split(stuff[0],','));
-}
+ }
 
 
 void makeData() {
+  elements = new String[118][4];
+  Table table = loadTable("el_csv.csv");
+  for (int i = 0; i < elements.length; i++){
+    for (int j =0; j < elements[0].length;j++){
+      elements[i][j] = table.getString(i,j);
+    }
+  }
   // Load text file as a string
-  String[] data = loadStrings("data.txt");
-  // Convert string into an array of integers using ',' as a delimiter
-}
-
-void draw() {
+ /* String[] data = loadStrings("el_csv.txt");
+  String[] dataM = split(data[0],'\n');
+  String[][] finalMat = new String[118][4];
+  for (int i = 0; i < dataM.length; i++){
+    finalMat[i] = split(dataM[i],'\t');
+  }
+  elements = finalMat;*/
+  
+  f = createFont("Ayuthaya",10,true);
+  textFont(f, 10);
+  fill(215,53,227);
+  for (int i = 1; i < elements.length; i++){
+    for (int j =0; j < elements[0].length;j++){
+      text(elements[i][j],width/2 - i,150);
+      //text("\t",width/2 - i+elements[i][j].length(),150);
+    }
+  }
+      
+}  
+void draw() {  
   textFont(x, 35);
   fill(107,22,245);
   textAlign(CENTER);
@@ -44,7 +65,7 @@ void draw() {
   noFill();
   rect(150,450,400,100);//React
   rect(100,300,500,100);//Browse  
- 
+ makeData();
   
   
   if (browse) {

@@ -1,5 +1,5 @@
 //Graphic periodic table
-
+/*
 void setup() {
   
 }
@@ -7,4 +7,4 @@ void setup() {
 
 void draw() {
   
-}
+}*/
