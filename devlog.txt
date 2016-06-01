@@ -11,4 +11,10 @@ CSV file created. Concepts solidified.
 
 ===============================================================================
 
+2016-05-31
+22:30
+
+Trying to convert csv into matrix
+-BSS
+
 
