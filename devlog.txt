@@ -16,5 +16,12 @@ CSV file created. Concepts solidified.
 
 Trying to convert csv into matrix
 -BSS
+===============================================================================
+
+2016-06-01
+22:30
+
+Successfully converted csv into matrix
+-BSS
 
 
