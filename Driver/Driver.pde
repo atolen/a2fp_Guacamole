@@ -40,12 +40,12 @@ void makeData() {
   }
   elements = finalMat;*/
   
-  f = createFont("Ayuthaya",10,true);
+  f = createFont("Ayuthaya",12,true);
   textFont(f, 10);
   fill(215,53,227);
   for (int i = 1; i < elements.length; i++){
-    for (int j =0; j < elements[0].length;j++){
-      text(elements[i][j],width/2 - i,150);
+    for (int j = 0; j < elements[0].length;j++){
+        text(elements[i][j],width/2 + (j*100),250 + (i*100));        
       //text("\t",width/2 - i+elements[i][j].length(),150);
     }
   }
@@ -69,10 +69,11 @@ void draw() {
   
   
   if (browse) {
+    //open brows page
   }
  
   if (react) {
-   
+     //open react page  
   }
   
 }
@@ -80,7 +81,7 @@ void draw() {
 
   void mouseClicked() {
     if (mouseX >= 150 && mouseX <= 550 && mouseY >= 450 && mouseY <= 550 ) {
-       react = true; 
+       react = true;        
     }
     else if ( mouseX >= 100 && mouseX <= 600 && mouseY >= 300 && mouseY <= 400) {
        browse = true; 
