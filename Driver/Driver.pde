@@ -31,18 +31,10 @@ void makeData() {
       elements[i][j] = table.getString(i,j);
     }
   }
-  // Load text file as a string
- /* String[] data = loadStrings("el_csv.txt");
-  String[] dataM = split(data[0],'\n');
-  String[][] finalMat = new String[118][4];
-  for (int i = 0; i < dataM.length; i++){
-    finalMat[i] = split(dataM[i],'\t');
-  }
-  elements = finalMat;*/
-  
+ 
   f = createFont("Ayuthaya",10,true);
   textFont(f, 10);
-  /*
+ 
   rect(width/2-175,height/2-75,250, 450);
     fill(215,53,227);
   for (int i = 1; i < elements.length; i++){
@@ -50,8 +42,6 @@ void makeData() {
       text(elements[i][j],width/2 - (j*50),250+(i*50));
     }
   }
-  */
-      
       
 }  
 void draw() {  
@@ -72,10 +62,11 @@ void draw() {
   
   
   if (browse) {
+    Browse lala = new Browse();
   }
  
   if (react) {
-   
+   Reactions poe = new Reactions();
   }
   
 }
