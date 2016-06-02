@@ -1,0 +1,81 @@
+---------
+CHEMICAL REACTIONS
+---------
+-simulate fusion, fission, etc. w processing
+-utilizes user input
+-how do data structures/algos?
+
+
+File with Elements and their Attributes -- Element class
+Attributes:
+	Mass
+	Heat of fusion/Vaporization
+	Reacts with ? --> can select random element upon creation
+	Forms compounds with? --> ^
+	Electronegativity
+	Ionization Numbers
+
+
+Reaction Classes:
+	Transmutation (Fusion/Fission)
+	Precipitation (utilizes Ksp/Temperature)
+	
+	properties: elements being reacted
+
+use inheritance/interfaces for classes^^
+
+Home Page:
+	Options (all of these will be buttons, will take you to a new window):
+	1. Browse the Elements
+	2. React
+	3. Play Guac
+	
+	
+1. Browse the Elements
+	a) Will display a prettyful periodic table where you can click on each box and a new window appears
+		i) in each new window there will be a picture (?) of the element in its natural form, its basic information, and what it reacts with
+2. React
+	a) will take the user to another window, where they select the type of reaction they want to do
+		Bombs Away
+			Fission
+				- Pick an Element (a set will be given)
+				- Press a button to send a high power neutron into the nucleus
+				- calculate random sizes for the resulting nuclei
+				- calculate energy released and store number in a var
+				- if one or more of the nuclei are large enough, user can fission them again
+		Star Formation	
+			Fusion
+				- pick two elements, they go together
+				- form a new element, show user what it is
+		Bern Down for What
+			Combustion
+				- Give a set of Hydrocarbons
+				- "Light" button
+				- somehow illustrate orange and yellow balls being fire
+				- display about of water and CO2 created
+		Basic Hoe or Na?
+			Titration
+				- Choose acids and Bases
+				- SA/SB
+					- Neutral Salt created, water
+				- SA/WB
+					- Acidic salt with conjugate base of acid and conjugate acid of the weak base
+				- WA/SB
+					- Basic salt with cation from base + conjugate base of Weak Acid
+				Display the resulting solution
+		Battery after 10th
+			Redox
+				- Have a static list of standard reduction potentials
+				- Choose two metals, the one with the lower reduction potential is the oxidizing one
+				- Display a voltaic cell with a salt bridge and everything
+				- Use the Nernst equation to see if anything actually happens
+				- If the reaction isn't spontaneous, then display a "sorry na" window
+		Salty
+			Precipitation
+				- Pick 2 ionic compounds + concentrations
+				- if the two precipitate usually, but the concentrations aren't high enough,then it will tell the user the concentrations arent high enough
+				- If the two don't precipitate, no precipitation will form
+
+
+
+
