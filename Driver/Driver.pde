@@ -42,13 +42,16 @@ void makeData() {
   
   f = createFont("Ayuthaya",10,true);
   textFont(f, 10);
-  fill(215,53,227);
+  /*
+  rect(width/2-175,height/2-75,250, 450);
+    fill(215,53,227);
   for (int i = 1; i < elements.length; i++){
     for (int j =0; j < elements[0].length;j++){
-      text(elements[i][j],width/2 - i,150);
-      //text("\t",width/2 - i+elements[i][j].length(),150);
+      text(elements[i][j],width/2 - (j*50),250+(i*50));
     }
   }
+  */
+      
       
 }  
 void draw() {  
