@@ -9,10 +9,26 @@ two options from driver:
 CLASSES:
     1. driver file, contains buttons to the react file and the browse the elements file, driver will also contain a matrix of the elements -- turns csv w element info into matrix
     2. element page -- displays element info, has a constructor that will make a cute little page based on the element info if user clicks
-    3. reaction classes -- one per type , each has a react method that will vary based on rxn type -- reactions use INTERITANCE -- transmutation for fusion & fission, precipitation for some others idk 
+    3. reaction classes -- one per type , each has a react method that will vary based on rxn type -- reactions use INHERITANCE -- transmutation for fusion & fission, precipitation for some others idk 
     4. periodic table -- constructs based on element that shows info on element when you click on it on the periodic table
     
-Level of importance:
+Core fxnality:
     1. constuct periodic table that you can click to get to the elements
     2. be able to navigate from react to what is reacting
-    3. graphics for reactions
+    3. be able to choose reaction
+    4. graphics for reactions
+    5. library of demo reactions for users to see
+
+Extras:
+    1. fancy guac graphics
+    2. allow users to choose their own elements for a given reaction
+    3. guac !
+
+
+Prereqs:
+    1. need element table for selection of elements for reactions
+    2. need reaction graphics fully fxnl
+
+Ind/Collab:
+    1. reaction classes can be written individually (interfaces)
+    
