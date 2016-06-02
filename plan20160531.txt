@@ -1,13 +1,18 @@
 DRIVER FILE: driver.pde
 
-driver contains -- 2d array a[n] is an array of one element's info -- matrix is static, final
+driver contains -- 2d array a[n] is an array of one element's info -- matrix is static, final. Each row is: symbol, name, atomic number, mass. All taken from csv file.
 two options from driver:
-    1. browse -- shows periodic table, allows you to click on each element for element info -- has button that links to react, button for going back to driver
-    2. react -- has buttons for each reaction (fusion, fission, combustion, redox, titration, precipitation)
+    1. browse -- shows periodic table, allows you to click on each element for element info -- the properties of that element. Has button that links to react, and button for going back to driver
+    2. react -- has buttons for each reaction (fusion, fission, combustion, redox, titration, precipitation) -> buttons lead to options for combinations (which elements, what concentration, bombard a nucleus?)
 
 
 CLASSES:
     1. driver file, contains buttons to the react file and the browse the elements file, driver will also contain a matrix of the elements -- turns csv w element info into matrix
-    2. element page -- displays element info, has a constructor that will make a cute little page based on the element info
+    2. element page -- displays element info, has a constructor that will make a cute little page based on the element info if user clicks
     3. reaction classes -- one per type , each has a react method that will vary based on rxn type -- reactions use INTERITANCE -- transmutation for fusion & fission, precipitation for some others idk 
     4. periodic table -- constructs based on element that shows info on element when you click on it on the periodic table
+    
+Level of importance:
+    1. constuct periodic table that you can click to get to the elements
+    2. be able to navigate from react to what is reacting
+    3. graphics for reactions
