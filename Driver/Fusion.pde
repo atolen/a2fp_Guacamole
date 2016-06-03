@@ -1,12 +1,13 @@
 
-Element x;
+Element r;
 Element y;
 
-class Fusion() {
+class Fusion {
   
   
  Fusion() {
     setup(); 
+    draw();
  }
 void setup() {
   size(700,700);

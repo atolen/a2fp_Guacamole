@@ -14,10 +14,13 @@ class Reactions {
   Reactions() {
     setup(); 
     draw();
-  }
+    }
+    //mouseClicked();
+  
 
   void setup() {
     size(700, 700);
+    background(0);
   }
 
   void draw() {
@@ -69,8 +72,11 @@ class Reactions {
     textFont(x, 30);
     textAlign(CENTER);
     text("Salty af (Precipitation)", width/2, 600);
-
-
+  
+    //delay(1000);
+    //mouseClicked();
+    
+    
     if (fission) {
      Fission og = new Fission();
     }
@@ -94,9 +100,8 @@ class Reactions {
     if (sol) {
       Precipitation byteMe = new Precipitation();
     }
+     
   }
-
-
 
 
   void mouseClicked() {

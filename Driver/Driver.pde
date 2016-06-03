@@ -4,6 +4,7 @@ PFont f;
 PFont x;
 boolean react;
 boolean browse;
+boolean home;
 
 
 void settings() {
@@ -13,14 +14,9 @@ void settings() {
 
 void setup() {
   background(53, 227, 170);
+  home = true;
   f = createFont("Ayuthaya", 50, true);
-  textFont(f, 50);
-  fill(215, 53, 227);
-  textAlign(CENTER);
-  text("Let's Get Chemical!", width/2, 150);
-  x = createFont("Ayuthaya", 35, true);
-  browse = false;
-  react = false;
+    textFont(f, 50);
 }
 
 
@@ -46,10 +42,17 @@ void makeData() {
   } //prnt csv -- pd table
 }  
 void draw() {  
-  textFont(x, 35);
-  fill(107, 22, 245);
-  textAlign(CENTER);
-  text("Browse The Elements", width/2, 350);
+  if (home) { 
+    fill(215, 53, 227);
+    textAlign(CENTER);
+    text("Let's Get Chemical!", width/2, 150);
+    x = createFont("Ayuthaya", 35, true);
+    browse = false;
+    react = false;
+    textFont(x, 35);
+    fill(107, 22, 245);
+    textAlign(CENTER);
+    text("Browse The Elements", width/2, 350);
 
   textFont(x, 35);
   fill(107, 22, 245);
@@ -60,14 +63,63 @@ void draw() {
   rect(150, 450, 400, 100);//React
   rect(100, 300, 500, 100);//Browse  
   makeData();
-
+  }
 
   if (browse) {
     Browse pTable = new Browse();
   }
 
   if (react) {
-   Reactions react = new Reactions();
+   size(700, 700);
+   background(0);
+   textFont(x, 40);
+   textAlign(CENTER);
+   text("Please Select A Reaction Type", width/2, 150);
+
+   noFill();
+   stroke(255, 52, 52);
+   rect(20, 190, 660, 55);
+   textFont(x, 30);
+   textAlign(CENTER);
+   text("Bombs Away (Fission)", width/2, 225);
+
+   noFill();
+   stroke(255, 52, 52);
+   rect(20, 260, 660, 55);
+   textFont(x, 30);
+   textAlign(CENTER);
+   text("Star Formation (Fusion)", width/2, 300);
+
+   noFill();
+   stroke(255, 52, 52);
+   rect(20, 340, 660, 55);
+   textFont(x, 30);
+   textAlign(CENTER);
+   text("Burn Down For What (Combustion)", width/2, 375);
+
+   noFill();
+   stroke(255, 52, 52);
+   rect(20, 410, 660, 55);
+   textFont(x, 30);
+   textAlign(CENTER);
+   text("Basic Hoes (Titration)", width/2, 450);
+
+   noFill();
+   stroke(255, 52, 52);
+   rect(20, 490, 660, 55);
+   textFont(x, 30);
+   textAlign(CENTER);
+   text("Battery After 10th (Redox Reactions)", width/2, 525);
+
+   noFill();
+   stroke(255, 52, 52);
+   rect(20, 570, 660, 55);
+   textFont(x, 30);
+   textAlign(CENTER);
+   text("Salty af (Precipitation)", width/2, 600);
+   
+   
+    
   }
   
   if (mousePressed) {

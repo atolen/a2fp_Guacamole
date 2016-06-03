@@ -6,7 +6,7 @@ int molesCO2Released;
 class Combustion {
 
   
-  Combustion()n {
+  Combustion() {
      setup();
      draw();
   }
