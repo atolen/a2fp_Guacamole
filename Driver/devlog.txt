@@ -27,3 +27,8 @@ Successfully converted csv into matrix
 
 ===============================================================================
 
+2016-06-02
+22:30
+
+Successfully linked to elements.
+-B
