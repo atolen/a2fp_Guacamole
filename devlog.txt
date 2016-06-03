@@ -15,13 +15,15 @@ CSV file created. Concepts solidified.
 22:30
 
 Trying to convert csv into matrix
--BSS
+-B
 ===============================================================================
 
 2016-06-01
 22:30
 
 Successfully converted csv into matrix
--BSS
+-B
 
+
+===============================================================================
 

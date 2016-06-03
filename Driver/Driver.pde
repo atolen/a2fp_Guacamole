@@ -40,7 +40,7 @@ void makeData() {
   }
   elements = finalMat;*/
   
-  f = createFont("Ayuthaya",12,true);
+  /*f = createFont("Ayuthaya",12,true);
   textFont(f, 10);
   fill(215,53,227);
   for (int i = 1; i < elements.length; i++){
@@ -48,7 +48,7 @@ void makeData() {
         text(elements[i][j],width/2 + (j*100),250 + (i*100));        
       //text("\t",width/2 - i+elements[i][j].length(),150);
     }
-  }
+  }*/
       
 }  
 void draw() {  
