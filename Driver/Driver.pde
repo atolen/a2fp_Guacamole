@@ -62,20 +62,42 @@ void draw() {
 
 
   if (browse) {
+<<<<<<< HEAD
+    //open brows page
+  }
+ 
+  if (react) {
+     //open react page  
+=======
     Browse lala = new Browse();
   }
 
   if (react) {
+<<<<<<< HEAD
+   Reactions poe = new Reactions();
+>>>>>>> bed523c2f01e0fedd4ceae927af3af0d8ad98ef5
+=======
     //Reactions poe = new Reactions();
   }
   if (mousePressed) {
     if (mouseX > width/2-25 && mouseX < width/2+25 & mouseY > 325 & mouseY < 375) {
       period = new Element();
     }
+>>>>>>> 62d865aa65b6eea2e9d784f055640beddaff431c
   }
 }
 
 
+<<<<<<< HEAD
+  void mouseClicked() {
+    if (mouseX >= 150 && mouseX <= 550 && mouseY >= 450 && mouseY <= 550 ) {
+       react = true;        
+    }
+    else if ( mouseX >= 100 && mouseX <= 600 && mouseY >= 300 && mouseY <= 400) {
+       browse = true; 
+    }
+}
+=======
 void mouseClicked() {
   if (mouseX >= 150 && mouseX <= 550 && mouseY >= 450 && mouseY <= 550 ) {
     react = true;
@@ -83,3 +105,4 @@ void mouseClicked() {
     browse = true;
   }
 }
+>>>>>>> 62d865aa65b6eea2e9d784f055640beddaff431c
