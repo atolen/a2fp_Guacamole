@@ -1,4 +1,5 @@
 String[][] elements;
+Element period;
 PFont f;
 PFont x;
 boolean react;
@@ -69,7 +70,7 @@ void draw() {
   }
   if (mousePressed) {
     if (mouseX > width/2-25 && mouseX < width/2+25 & mouseY > 325 & mouseY < 375) {
-      Element period = new Element();
+      period = new Element();
     }
   }
 }
