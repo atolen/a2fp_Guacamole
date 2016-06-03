@@ -3,16 +3,23 @@ int molesOxy;
 int moleswaterReleased;
 int molesCO2Released;
 
+class Combustion {
 
-/*
-void setup() {
   
+  Combustion()n {
+     setup();
+     draw();
+  }
+void setup() {
+  size(700,700);
 }
 
 void draw() {
+  background(0);
 }
 
-void react() {
+//void react() {
   
+//}
+ 
 }
-*/

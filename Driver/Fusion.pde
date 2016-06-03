@@ -1,17 +1,21 @@
-/*
+
 Element x;
 Element y;
 
-void setup() {
+class Fusion() {
   
+  
+ Fusion() {
+    setup(); 
+ }
+void setup() {
+  size(700,700);
 }
-
 
 void draw() {
-  
+ background(0); 
 }
-
-void fuse() {
-  
+//void fuse() {
+//}
+ 
 }
-*/

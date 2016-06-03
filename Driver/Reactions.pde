@@ -72,25 +72,27 @@ class Reactions {
 
 
     if (fission) {
-     // Fission og = new Fission();
+     Fission og = new Fission();
     }
 
     if (fusion) {
-      //Fusion bss = new Fusion();
+      Fusion bss = new Fusion();
     }
 
     if (combustion) {
-    //  Combustion at = new Combustion();
+      Combustion at = new Combustion();
     }
 
     if (titration) {
-      // Titrastion
+      Titration tbm = new Titration();
     }
 
     if (redox) {
+      Redox css = new Redox();
     }
 
     if (sol) {
+      Precipitation byteMe = new Precipitation();
     }
   }
 

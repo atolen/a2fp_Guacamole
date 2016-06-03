@@ -2,14 +2,19 @@ int energyReleased;
 int neutronXSpeed;
 int neutronYSpeed;
 
-
-/*
-void setup() {
+class Fission {
   
+  Fission() {
+     setup();
+     //draw();
+  }
+
+void setup() {
+  size(700,700);
 }
 
 void draw() {
-  
-  
+ background(0); 
 }
-*/
+
+}

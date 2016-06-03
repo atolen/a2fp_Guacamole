@@ -39,11 +39,11 @@ void makeData() {
 
   rect(width/2-175, height/2-75, 250, 450);
   fill(215, 53, 227);
-  /*  for (int i = 1; i < elements.length; i++) {
+    for (int i = 1; i < elements.length; i++) {
     for (int j =0; j < elements[0].length; j++) {
       text(elements[i][j], width/2 - (j*50), 250+(i*50));
     }
-  }/* //prnt csv -- pd table
+  } //prnt csv -- pd table
 }  
 void draw() {  
   textFont(x, 35);
@@ -86,4 +86,3 @@ void mouseClicked() {
     browse = true;
   }
 }
-
