@@ -1,5 +1,5 @@
 //Should just be a window where you click to pick which reaction you wanna do - word - OG
-boolean fission;
+/*boolean fission;
 boolean fusion;
 boolean combustion;
 boolean titration;
@@ -125,3 +125,4 @@ class Reactions {
     }
   }
 }
+*/

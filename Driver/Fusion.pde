@@ -16,7 +16,9 @@ void setup() {
 void draw() {
  background(0); 
 }
-//void fuse() {
-//}
+
+void react() {
+  
+}
  
 }
