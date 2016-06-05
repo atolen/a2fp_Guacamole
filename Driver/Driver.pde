@@ -27,8 +27,8 @@ void settings() {
 void setup() {
   home = true;
   browse = false;
-    react = false;
-    combustion = false;
+  react = false;
+  combustion = false;
   fusion = false;
   fission = false;
   precipitation = false;
@@ -39,10 +39,18 @@ void setup() {
   x = createFont("Ayuthaya", 35, true);
   f = createFont("Ayuthaya", 50, true);
   background(53, 227, 170);
+   elements = new String[118][4];
+  Table table = loadTable("el_csv.csv");
+  for (int i = 0; i < elements.length; i++) {
+    for (int j =0; j < elements[0].length; j++) {
+      elements[i][j] = table.getString(i, j);
+    }
+  }
 }
 
 
 void draw() {
+  
   if (home) {
     background(53, 227, 170);
     fill(215, 53, 227);
@@ -118,36 +126,43 @@ void draw() {
     Combustion helloBonjour = new Combustion();
     helloBonjour.react();
   }
+  
   if (titration) {
     Titration bombTheWorld = new Titration();
     bombTheWorld.react();
   }
+  
   if (redox) {
     Redox lemonade = new Redox();
     lemonade.react();
   }
+  
   if (fusion) {
     Fusion girlOnFire = new Fusion();
     girlOnFire.react();
   }
+  
   if (fission) {
     Fission plutonium = new Fission();
     plutonium.react();
   }
+  
   if(precipitation) {
     Precipitation loveInvincible = new Precipitation();
     loveInvincible.react();
   }
+  
   if(browse) {
     background(255);
     makeData();
-    //rect(10,70,165,20);
   }
-  if (printy) {
-    printElement(printEl);
+  
+  else if(printy) {
+     printElement(printEl); 
+    }
+  //delay(100);
+    //rect(175,70,155,20);
   }
-
-}
 
 
 void mouseClicked() {
@@ -155,148 +170,70 @@ void mouseClicked() {
   if (home) {
     if (mouseX >= 150 && mouseX <= 550 && mouseY >= 450 && mouseY <= 550 ) {
         react = true;
+        home = false;
       }
       else if ( mouseX >= 100 && mouseX <= 600 && mouseY >= 300 && mouseY <= 400) {
         browse = true;
+        home = false;
       }
   }
   //===========================
   if (react) {
     if (mouseX >= 20 && mouseX <= 680 && mouseY >= 190 && mouseY <= 245 ) {
           fission = true;
+          react = false;
       } 
       else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 260 && mouseY <= 315) {
           fusion = true;
+          react = false;
       }   
       else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 340 && mouseY <= 395) {
           combustion = true;
+          react = false;
       } 
       else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 410 && mouseY <= 465) {
           titration = true;
+          react = false;
       } 
       else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 490 && mouseY <= 545) {
           redox = true;
+          react = false;
       } 
       else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 570 && mouseY <= 625) {
             precipitation = true;
+            react = false;
       }
   }
   if (browse) {
+    //delay(100);
     
-   //rect(10,70,165,20);
-   if (mouseX>= 10 && mouseX <= 175 && mouseY >= 70 && mouseY <= 90) {
-     printEl = 1;
-     printy = true;
-   }   
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 90 && mouseY <= 110) {
-     printEl = 2;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 110 && mouseY <= 130) {
-     printEl = 3;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 130 && mouseY <= 150) {
-     printEl = 4;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 150 && mouseY <= 170) {
-     printEl = 5;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 170 && mouseY <= 190) {
-     printEl = 6;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 190 && mouseY <= 210) {
-     printEl = 7;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 210 && mouseY <= 230) {
-     printEl = 8;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 230 && mouseY <= 250) {
-     printEl = 9;
-     printy = true;
-   }  
-    else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 250 && mouseY <= 270) {
-     printEl = 10;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 270 && mouseY <= 290) {
-     printEl = 11;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 290 && mouseY <= 310) {
-     printEl = 12;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 310 && mouseY <= 330) {
-     printEl = 13;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 330 && mouseY <= 350) {
-     printEl = 14;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 350 && mouseY <= 370) {
-     printEl = 15;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 370 && mouseY <= 390) {
-     printEl = 16;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 390 && mouseY <= 410) {
-     printEl = 17;
-     printy = true;
-   } 
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 310 && mouseY <= 430) {
-     printEl = 18;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 330 && mouseY <= 450) {
-     printEl = 19;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 350 && mouseY <= 470) {
-     printEl = 20;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 370 && mouseY <= 490) {
-     printEl = 21;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 390 && mouseY <= 510) {
-     printEl = 22;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 310 && mouseY <= 530) {
-     printEl = 23;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 330 && mouseY <= 550) {
-     printEl = 25;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 350 && mouseY <= 570) {
-     printEl = 26;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 370 && mouseY <= 590) {
-     printEl = 27;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 390 && mouseY <= 610) {
-     printEl = 28;
-     printy = true;
-   }  
-   else if (mouseX>= 10 && mouseX <= 175 && mouseY >= 310 && mouseY <= 630) {
-     printEl = 29;
-     printy = true;
-   }  
-   
+    if (mouseX >= 10 && mouseX <=175) {
+       int ycor = mouseY - 70;
+       printEl = 1 + ycor/20;
+       printy = true;
+       browse = false;
+    }
+    
+    else if (mouseX >= 175 && mouseX <=330) {
+       int ycor = mouseY - 70;
+       printEl = 28 + ycor/20;
+       printy = true;
+       browse = false;
+    }
+    
+    else if (mouseX >= 330 && mouseX <= 495) {
+       int ycor = mouseY - 70;
+       printEl = 58 + ycor/20;
+       printy = true;
+       browse = false;
+    }
+    
+    else if (mouseX >= 495 && mouseX <= 660) {
+       int ycor = mouseY - 70;
+       printEl = 88 + ycor/20;
+       printy = true;
+       browse = false;
+    }  
   }
   //==========================
 
@@ -321,13 +258,6 @@ void makeData() {
   textAlign(CENTER);
   text("Click on an Element for More info:", width/2, 30);
   
-  elements = new String[118][4];
-  Table table = loadTable("el_csv.csv");
-  for (int i = 0; i < elements.length; i++) {
-    for (int j =0; j < elements[0].length; j++) {
-      elements[i][j] = table.getString(i, j);
-    }
-  }
   myAss = createFont("Ayuthaya", 10, true);
   textFont(myAss, 10);
 
