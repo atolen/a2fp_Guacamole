@@ -75,7 +75,7 @@ void draw() {
     rect(100, 300, 500, 100);//Browse
   }
   
-  else if (react) {
+ else if (react) {
     background(0);
 
     textFont(x, 40);
@@ -161,6 +161,8 @@ void draw() {
   }
 }
 
+
+
 void printElement() {
    textFont(x, 30);
    for(int i = 0; i < elements[0].length; i++) {
@@ -181,7 +183,7 @@ void mouseClicked() {
     }
   }
   //===========================
-  if (react) {
+  else if (react) {
     if (mouseX >= 20 && mouseX <= 680 && mouseY >= 190 && mouseY <= 245 ) {
       fission = true;
       react = false;
