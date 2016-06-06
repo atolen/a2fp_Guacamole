@@ -74,7 +74,8 @@ void draw() {
     rect(150, 450, 400, 100);//React
     rect(100, 300, 500, 100);//Browse
   }
-  if (react) {
+  
+  else if (react) {
     background(0);
 
     textFont(x, 40);
@@ -123,47 +124,49 @@ void draw() {
     textAlign(CENTER);
     text("Salty af (Precipitation)", width/2, 600);
   }
-  if (combustion) {
+  
+  else if (browse) {
+    background(255);
+    makeData();
+  } 
+   
+  else if (combustion) {
     Combustion helloBonjour = new Combustion();
     helloBonjour.react();
   }
 
-  if (titration) {
-    //  Titration bombTheWorld = new Titration();
-    //  bombTheWorld.react();
+  else if (titration) {
+    Titration bombTheWorld = new Titration();
+    bombTheWorld.react();
   }
 
-  if (redox) {
-    //  Redox lemonade = new Redox();
-    //  lemonade.react();
+  else if (redox) {
+    Redox lemonade = new Redox();
+    lemonade.react();
   }
 
-  if (fusion) {
+  else if (fusion) {
     Fusion girlOnFire = new Fusion();
     girlOnFire.react();
   }
 
-  if (fission) {
+  else if (fission) {
     Fission plutonium = new Fission();
     plutonium.react();
   }
 
-  if (precipitation) {
+  else if (precipitation) {
     Precipitation loveInvincible = new Precipitation();
     loveInvincible.react();
   }
+}
 
-  if (browse) {
-    background(255);
-    makeData();
-  } else if (printy) {
-    printElement();
-    clicker = true;
-    mouseClicked();
-  }
-
-  }
-
+void printElement() {
+   textFont(x, 30);
+   for(int i = 0; i < elements[0].length; i++) {
+      text(elements[printEl][i], 200 + (i*50) , 100); 
+   }
+}
 
 void mouseClicked() {
   //mouseClicked() will change based on which page is displayed
@@ -171,7 +174,8 @@ void mouseClicked() {
     if (mouseX >= 150 && mouseX <= 550 && mouseY >= 450 && mouseY <= 550 ) {
       react = true;
       home = false;
-    } else if ( mouseX >= 100 && mouseX <= 600 && mouseY >= 300 && mouseY <= 400) {
+    } 
+    else if ( mouseX >= 100 && mouseX <= 600 && mouseY >= 300 && mouseY <= 400) {
       browse = true;
       home = false;
     }
@@ -181,104 +185,72 @@ void mouseClicked() {
     if (mouseX >= 20 && mouseX <= 680 && mouseY >= 190 && mouseY <= 245 ) {
       fission = true;
       react = false;
-    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 260 && mouseY <= 315) {
+    } 
+    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 260 && mouseY <= 315) {
       fusion = true;
       react = false;
-    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 340 && mouseY <= 395) {
+    } 
+    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 340 && mouseY <= 395) {
       combustion = true;
       react = false;
-    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 410 && mouseY <= 465) {
+    } 
+    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 410 && mouseY <= 465) {
       titration = true;
       react = false;
-    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 490 && mouseY <= 545) {
+    } 
+    
+    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 490 && mouseY <= 545) {
       redox = true;
       react = false;
-    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 570 && mouseY <= 625) {
+    } 
+    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 570 && mouseY <= 625) {
       precipitation = true;
       react = false;
     }
   }
+  
   if (browse) {
-    //delay(100);
-
+    //rect(550,40,130,13);
+    if (mouseX >= 550 && mouseX <= 680 && mouseY >= 40 && mouseY <=53) {
+       home = true;
+       browse = false;
+    }
+    
     if (mouseX >= 10 && mouseX <=175) {
       int ycor = mouseY - 70;
       printEl = 1 + ycor/20;
       printy = true;
-      browse = false;
-    } else if (mouseX >= 175 && mouseX <=330) {
+      //browse = false;
+    } 
+    else if (mouseX >= 175 && mouseX <=330) {
       int ycor = mouseY - 70;
       printEl = 28 + ycor/20;
       printy = true;
-      browse = false;
-    } else if (mouseX >= 330 && mouseX <= 495) {
+      //browse = false;
+    } 
+    else if (mouseX >= 330 && mouseX <= 495) {
       int ycor = mouseY - 70;
       printEl = 58 + ycor/20;
       printy = true;
-      browse = false;
-    } else if (mouseX >= 495 && mouseX <= 660) {
+    } 
+    else if (mouseX >= 495 && mouseX <= 660) {
       int ycor = mouseY - 70;
       printEl = 88 + ycor/20;
       printy = true;
-      browse = false;
     }
   }
-  //==========================
-  if (clicker){
-    if (mouseX >=450&&mouseY>=150&&mouseY>=250){
-      home = true;
-      printy = false;
-    }
-  }
+  //=========================
 }
-
-
-void printElement() {
-  background(0);
-  fill(255, 200, 200);
-  textAlign(CENTER);
-  textFont(x, 45);
-  text("Periodic table",width-150,50);
-  text("\nof elements",width-150,50);
-  rect(450, 150, 200, 100);
-  fill(107, 22, 245);
-  textAlign(CENTER);
-  textFont(x, 35);
-  text("Back to",width-150,200);
-  text("home",width-150,240);
-  fill(255, 200, 200);
-  textFont(x, 8);
-  for (int i = 0; i < 46; i++) {
-    for (int j =0; j < elements[0].length; j++) {
-      text(elements[i][j], 5+ width/4 - (j*55), 15+(i*15));
-    }
-  }
-  for (int i = 46; i < 92; i++) {
-    for (int j =0; j < elements[0].length; j++) {
-      text(elements[i][j], 50 + width/2 - (j*55), 15+((i-46)*15));
-    }
-  }
-  for (int i = 92; i < elements.length; i++) {
-    for (int j =0; j < elements[0].length; j++) {
-      text(elements[i][j], width - 75 -(j*55), 315 +((i-92)*15));
-    }
-  }
-  }
-
-
   void makeData() {
     textFont(x, 30);
     fill(107, 22, 245);
     textAlign(CENTER);
-    text("Click on an Element for More info:", width/2, 30);
+    text("These be the Elements", width/2, 30);
 
     myAss = createFont("Ayuthaya", 10, true);
     textFont(myAss, 10);
-
     //rect(width/2-175, height/2-75, 250, 450);
     fill(215, 53, 227);
-
-
     int g = 0;  
     for (int b = 1; b < 30; b++) {
       for (int j = 0; j < elements[0].length; j++) {
@@ -328,4 +300,10 @@ void printElement() {
     line(330, 70, 330, 690);
     //line(400,70, 400, 690);
     line(500, 70, 500, 690);
+
+ 
+    text("Back to Home", 600, 50);
+     noFill();
+    rect(550,40,130,13);
+
   } //prnt csv -- pd table

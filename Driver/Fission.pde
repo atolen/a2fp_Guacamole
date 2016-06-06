@@ -1,6 +1,7 @@
 int energyReleased;
 int neutronXSpeed;
 int neutronYSpeed;
+int elementAtomicNum;
 
 class Fission {
   
@@ -18,5 +19,9 @@ void draw() {
 }
 
 void react() {
+}
+
+void mouseClicked() {
+  
 }
 }
