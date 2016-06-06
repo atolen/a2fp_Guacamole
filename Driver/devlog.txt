@@ -32,3 +32,11 @@ Successfully converted csv into matrix
 
 Successfully linked to elements.
 -B
+
+===============================================================================
+2016-06-05
+22:30
+
+- Figured out format of the project
+- linked to elements, successfully printed all the elements on the elements page, made a working "go home" button
+- Next task: writing react methods !!
