@@ -87,6 +87,7 @@ void draw() {
     textAlign(CENTER);
     text("Bombs Away (Fission)", width/2, 225);
 
+    
     noFill();
     stroke(255, 52, 52);
     rect(20, 260, 660, 55);
@@ -146,17 +147,17 @@ void draw() {
   if (fusion) {
     Fusion girlOnFire = new Fusion();
     girlOnFire.react();
-  }
+  } 
 
   if (fission) {
-    background(255);
+    background(139,89,16);
     Fission plutonium = new Fission();
-    plutonium.react();
+    //plutonium.react();
   }
 
   if (precipitation) {
     Precipitation loveInvincible = new Precipitation();
-    loveInvincible.react();
+  loveInvincible.react();
   }
 }
 
@@ -214,7 +215,6 @@ void mouseClicked() {
   }
   
   else if (browse) {
-    //rect(550,40,130,13);
     if (mouseX >= 550 && mouseX <= 680 && mouseY >= 40 && mouseY <=53) {
        home = true;
        browse = false;
