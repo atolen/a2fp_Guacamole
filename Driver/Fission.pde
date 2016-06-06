@@ -18,7 +18,7 @@ void setup() {
 }
 
 void draw() {
- 
+ fill(117,76,97);
  ellipse(width/2, pos, 100,100);
  ellipse(width/2, 400, 200,200);
  pos++;
