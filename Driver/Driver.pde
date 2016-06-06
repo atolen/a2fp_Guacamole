@@ -2,6 +2,7 @@
 boolean home;
 boolean react;
 boolean browse;
+boolean clicker;
 //reaction types
 boolean combustion;
 boolean fusion;
@@ -36,6 +37,7 @@ void setup() {
   titration = false;
   printEl = 0;
   printy = false;
+  clicker = false;
   x = createFont("Ayuthaya", 35, true);
   f = createFont("Ayuthaya", 50, true);
   background(53, 227, 170);
@@ -155,11 +157,12 @@ void draw() {
     background(255);
     makeData();
   } else if (printy) {
-    printElement(printEl);
+    printElement();
+    clicker = true;
+    mouseClicked();
   }
-  //delay(100);
-  //rect(175,70,155,20);
-}
+
+  }
 
 
 void mouseClicked() {
@@ -221,14 +224,29 @@ void mouseClicked() {
     }
   }
   //==========================
+  if (clicker){
+    if (mouseX >=450&&mouseY>=150&&mouseY>=250){
+      home = true;
+      printy = false;
+    }
+  }
 }
 
 
-void printElement(int h) {
+void printElement() {
   background(0);
-  textFont(x, 45);
   fill(255, 200, 200);
   textAlign(CENTER);
+  textFont(x, 45);
+  text("Periodic table",width-150,50);
+  text("\nof elements",width-150,50);
+  rect(450, 150, 200, 100);
+  fill(107, 22, 245);
+  textAlign(CENTER);
+  textFont(x, 35);
+  text("Back to",width-150,200);
+  text("home",width-150,240);
+  fill(255, 200, 200);
   textFont(x, 8);
   for (int i = 0; i < 46; i++) {
     for (int j =0; j < elements[0].length; j++) {
