@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 boolean smoosh;
 
 int neutronXspeed;
@@ -32,6 +33,21 @@ int bigElYspeed;
 
 
 int momentum;
+=======
+int energyReleased;
+int neutronXSpeed;
+int neutronYSpeed;
+int elementAtomicNum;
+int pos; 
+float xx;
+float yy;
+float x1;
+float y1;
+float dx;
+float dy;
+float dx1;
+float dy1;
+>>>>>>> d67eb56ec4242b2edd6db027abfbeff2edf74e2b
 
 class Fission {
 
@@ -44,6 +60,7 @@ class Fission {
   //setup the page 
     size(700, 700);
     background(0);
+<<<<<<< HEAD
 
   //initializations  
     smoosh = false;
@@ -81,6 +98,18 @@ class Fission {
 
     bigElxcor = 500;
     bigElycor = 300;
+=======
+    dx = random(1);
+    dy = random(1);
+    float r = random(256);
+    xx = random((width - r) + r/2);
+    yy = random((height - r) + r/2);
+    dx1 = random(1);
+    dy1 = random(1);
+    float w = random(256);
+    x1 = random((width - w) + w/2);
+    y1 = random((height - w) + w/2);
+>>>>>>> d67eb56ec4242b2edd6db027abfbeff2edf74e2b
   }
 
   void draw() {
