@@ -4,20 +4,18 @@ int molarityBase;
 class Titration {
   
    
-  Titration() {
+ Titration() {
    setup();
    draw();
   }
   
   void setup(){
-    size(700,700);
-    
+    size(700,700);  
   }
   
   void draw() {
     background(0);
   }
-  
-  void react() {
+  void react(){
   }
 }

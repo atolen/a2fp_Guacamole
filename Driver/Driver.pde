@@ -135,8 +135,8 @@ void draw() {
   }
 
   if (titration) {
-    Titration bombTheWorld = new Titration();
-    bombTheWorld.react();
+   Titration bombTheWorld = new Titration();
+   bombTheWorld.react();
   }
 
   if (redox) {
@@ -187,9 +187,7 @@ void mouseClicked() {
     if (mouseX >= 20 && mouseX <= 680 && mouseY >= 190 && mouseY <= 245 ) {
       react = false;
       fission = true;
-      home = false;
-      rect(10,101,10,10);
-      
+      home = false;      
     } 
     else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 260 && mouseY <= 315) {
       fusion = true;
