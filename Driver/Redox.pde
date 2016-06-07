@@ -1,4 +1,4 @@
-int Faraday;
+final static int FARADAY = 96485; //make sure this is right lmao
 int ionConcentration;
 int standardVoltage;
 int reductionPotential;

@@ -2,8 +2,7 @@ int energyReleased;
 int neutronXSpeed;
 int neutronYSpeed;
 int elementAtomicNum;
-int pos; //what is pos?
-boolean smoosh;
+int pos; 
 float xx;
 float yy;
 float x1;
@@ -24,7 +23,6 @@ class Fission {
     size(700, 700);
     pos = 100;
     background(0);
-    smoosh = false;
     dx = random(1);
     dy = random(1);
     float r = random(256);
