@@ -1,6 +1,6 @@
 
-Element r;
-Element y;
+Particle r;
+Particle y;
 
 class Fusion {
   
