@@ -73,7 +73,7 @@ void draw() {
     rect(150, 450, 400, 100);//React
     rect(100, 300, 500, 100);//Browse
   }
- else if (react) {
+  else if (react) {
     background(0);
 
     textFont(x, 40);
@@ -135,8 +135,8 @@ void draw() {
   }
 
   if (titration) {
-   Titration bombTheWorld = new Titration();
-   bombTheWorld.react();
+    Titration bombTheWorld = new Titration();
+    bombTheWorld.react();
   }
 
   if (redox) {
@@ -157,17 +157,17 @@ void draw() {
 
   if (precipitation) {
     Precipitation loveInvincible = new Precipitation();
-  loveInvincible.react();
+    loveInvincible.react();
   }
 }
 
 
 
 void printElement() {
-   textFont(x, 30);
-   for(int i = 0; i < elements[0].length; i++) {
-      text(elements[printEl][i], 200 + (i*50) , 100); 
-   }
+  textFont(x, 30);
+  for(int i = 0; i < elements[0].length; i++) {
+    text(elements[printEl][i], 200 + (i*50) , 100); 
+  }
 }
 
 void mouseClicked() {
@@ -214,9 +214,9 @@ void mouseClicked() {
   
   else if (browse) {
     if (mouseX >= 550 && mouseX <= 680 && mouseY >= 40 && mouseY <=53) {
-       home = true;
-       browse = false;
-       printy = false;
+      home = true;
+      browse = false;
+      printy = false;
     }
     
     if (mouseX >= 10 && mouseX <=175) {
@@ -246,69 +246,69 @@ void mouseClicked() {
   }
   //=========================
 }
-  void makeData() {
-    textFont(x, 30);
-    fill(107, 22, 245);
-    textAlign(CENTER);
-    text("These be the Elements", width/2, 30);
+void makeData() {
+  textFont(x, 30);
+  fill(107, 22, 245);
+  textAlign(CENTER);
+  text("These be the Elements", width/2, 30);
 
-    myAss = createFont("Ayuthaya", 10, true);
-    textFont(myAss, 10);
-    //rect(width/2-175, height/2-75, 250, 450);
-    fill(215, 53, 227);
-    int g = 0;  
-    for (int b = 1; b < 30; b++) {
-      for (int j = 0; j < elements[0].length; j++) {
-        text(elements[b][j], 30 + (j*40), 90+(g*20));
-      }
-      g++;
+  myAss = createFont("Ayuthaya", 10, true);
+  textFont(myAss, 10);
+  //rect(width/2-175, height/2-75, 250, 450);
+  fill(215, 53, 227);
+  int g = 0;  
+  for (int b = 1; b < 30; b++) {
+    for (int j = 0; j < elements[0].length; j++) {
+      text(elements[b][j], 30 + (j*40), 90+(g*20));
     }
+    g++;
+  }
 
-    g = 0;
-    for (int k = 30; k < 59; k++) {
-      for (int l = 0; l < elements[0].length; l++) {
-        text(elements[k][l], 195 + (l*40), 90+(g*20));
-      }
-      g++;
+  g = 0;
+  for (int k = 30; k < 59; k++) {
+    for (int l = 0; l < elements[0].length; l++) {
+      text(elements[k][l], 195 + (l*40), 90+(g*20));
     }
+    g++;
+  }
 
-    g = 0;
-    for (int m = 59; m < 89; m++) {
-      for (int n = 0; n < elements[0].length; n++) {
-        text(elements[m][n], 345 + (n*40), 90+(g*20));
-      }
-      g++;
+  g = 0;
+  for (int m = 59; m < 89; m++) {
+    for (int n = 0; n < elements[0].length; n++) {
+      text(elements[m][n], 345 + (n*40), 90+(g*20));
     }
+    g++;
+  }
 
-    g = 0;
-    for (int o = 89; o < elements.length; o++) {
-      for (int p = 0; p < elements[0].length; p++) {
-        text(elements[o][p], 520 + (p*50), 90+ (g*20));
-      }
-      g++;
+  g = 0;
+  for (int o = 89; o < elements.length; o++) {
+    for (int p = 0; p < elements[0].length; p++) {
+      text(elements[o][p], 520 + (p*50), 90+ (g*20));
     }
+    g++;
+  }
 
-    //lines to make this shit pretty
+  //lines to make this shit pretty
+  stroke(17, 155, 245);
+  line(10, 70, 690, 70);
+  line(10, 70, 10, 690);
+  line(690, 690, 10, 690);
+  line(690, 690, 690, 70);
+
+  for (int og = 70; og < 700; og += 20) {
     stroke(17, 155, 245);
-    line(10, 70, 690, 70);
-    line(10, 70, 10, 690);
-    line(690, 690, 10, 690);
-    line(690, 690, 690, 70);
+    line(10, og, 690, og);
+  }
 
-    for (int og = 70; og < 700; og += 20) {
-      stroke(17, 155, 245);
-      line(10, og, 690, og);
-    }
-
-    stroke(17, 155, 245);
-    line(175, 70, 175, 690);
-    line(330, 70, 330, 690);
-    //line(400,70, 400, 690);
-    line(500, 70, 500, 690);
+  stroke(17, 155, 245);
+  line(175, 70, 175, 690);
+  line(330, 70, 330, 690);
+  //line(400,70, 400, 690);
+  line(500, 70, 500, 690);
 
  
-    text("Back to Home", 600, 50);
-     noFill();
-    rect(550,40,130,13);
+  text("Back to Home", 600, 50);
+  noFill();
+  rect(550,40,130,13);
 
-  } //prnt csv -- pd table
+} //prnt csv -- pd table
