@@ -1,37 +1,7 @@
-    boolean smoosh;
-    
-    int neutronXspeed;
-    int neutronYspeed;
-    int nXcor;
-    int nYcor;
-    int nSize;
-    
-    int l1xcor;
-    int l1ycor;
-    int lil1y;
-    int lil1x;
-    
-    int l2xcor;
-    int l2ycor;
-    int lil2x;
-    int lil2y;
-    
-    int elsize;
-    int lil1size;
-    int lil2size;
-    
-    int little1x;
-    int little2x;
-    int little1y;
-    int little2y;
-    
-    int bigElxcor;
-    int bigElycor;
-    int bigElXspeed;
-    int bigElYspeed;
-    
-    
-    int momentum;
+boolean reacted;
+Neutron[] neutrons;
+Particle toBeExploded;
+int mASSive;
     
     class Fission {
     
@@ -46,42 +16,13 @@
         background(0);
     
       //initializations  
-        smoosh = false;
+        reacted = false;
       //da neutron  
-        neutronXspeed = 15;
-        neutronYspeed = 0;
-        nXcor = 100;
-        nYcor = 300;
-        nSize = 10;
-      //shit to be fissioned
-        bigElXspeed = 0;
-        bigElYspeed = 0;
-        elsize = 50;
-    //resulting particles
-        //neutron momentum
-        momentum = ((int) (.5 * pow(neutronXspeed*neutronXspeed + neutronYspeed*neutronYspeed, .5) * nSize));
-        double root2 = Math.pow(2,.5);
-        //lil particle numero uno
-        lil1size = (int) random(elsize);
-        int lilVect1 = (int) ((lil1size*1.0/elsize) * momentum);//combined speed
-        lil1y = (int) (lilVect1/root2);
-        lil1x = lil1y;
-        //lil particle numero dos  
-        lil2size = elsize - lil1size;
-        int lilVect2 = (int) ((lil2size*1.0/elsize) * momentum);
-        lil2y = -1 * (int) (lilVect2/root2);
-        lil2x = lil2y;
-        
-    //speeds
-    //starting cors for the resulting particles    
-        little1x = 500;
-        little1y = 300;
-        little2x = 500;
-        little2y = 300;
-    
-        bigElxcor = 500;
-        bigElycor = 300;
-    
+        neutrons = new Neutron[10];
+        for (int i = 0; i < 10; i++) {
+           neutrons[i] = new Neutron(); 
+        }
+        tobeExploded = new Particle(mASSive);
       }
     
       void draw() {
@@ -97,7 +38,7 @@
           ellipse(bigElxcor, bigElycor, elsize, elsize);
           //delay(30);
           //clear();
-          //delay(50);
+          delay(50);
           nXcor = nXcor + neutronXspeed;
           nYcor = nYcor + neutronYspeed;
           bigElxcor = bigElxcor + bigElXspeed;
