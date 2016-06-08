@@ -16,18 +16,18 @@ class Neutron {
     float r = random(256);
     float g = random(256);
     float b = random(256);
-    cc = color(r, g, b);
+    cc = color(255);
     rad = 10;
     xxx = random((width - r) + r/2);
     yyy = random((height - r) + r/2);
-    dxx = 10;///why is it still fast?!?!?!?!?!?!?!
-    dyy = 10;
+    dxx = random(10);///why is it still fast?!?!?!?!?!?!?!
+    dyy = random(10);
     state = MOVING;
   }
 
 
   void move() {
-    delay(10);
+    //delay(10);
     xxx = xxx + dxx;
     yyy = yyy + dyy;
     bounce();

@@ -22,20 +22,20 @@ class Particle{
     float b = random(256);
     ccc = color(r, g, b);
 
-    radical = 30;
+    radical = mass;
 
     xUs = random((width - r) + r/2);
     yUs = random((height - r) + r/2);
 
-    duex = random(10) * .0005;
-    duey = random(10) * .0005;
+    duex = random(10);
+    duey = random(10);
 
     stater = moving;
   }
 
 
   void move() {
-    delay(10);
+    //delay(10);
     xUs = xUs + duex;
     yUs = yUs + duey;
     bounce();
@@ -72,4 +72,6 @@ class Particle{
       duey = -1 * abs(duey);
   }
   
+  
+ 
 }
