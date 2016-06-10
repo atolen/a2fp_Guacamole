@@ -7,7 +7,7 @@ class Fission {
 
   Fission() {
     setup();
-    draw();
+    //draw();
   }
 
   void setup() {
@@ -26,6 +26,12 @@ class Fission {
     toBeExploded = new Particle(mASSive);
   }
 
+
+  boolean finished() {
+    return reacted;
+  }
+  
+  
   void draw() {
     background(0);
   //  ellipseMode(RADIUS);
@@ -36,12 +42,8 @@ class Fission {
       }
     toBeExploded.draw();   
     toBeExploded.process();
+    
   }
-}
 
 
-
-
-void reactshun() {
-  
 }

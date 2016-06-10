@@ -20,7 +20,7 @@ class Neutron {
     rad = 10;
     xxx = random((width - r) + r/2);
     yyy = random((height - r) + r/2);
-    dxx = 10;///why is it still fast?!?!?!?!?!?!?!
+    dxx = 10;
     dyy = 10;
     state = MOVING;
   }
