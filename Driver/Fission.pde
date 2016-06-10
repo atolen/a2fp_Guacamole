@@ -27,7 +27,7 @@ class Fission {
   }
 
   void draw() {
-    
+    background(0);
   //  ellipseMode(RADIUS);
    // fill(100, 255, 100);
     for (int i=0; i < neutrons.length; i++ ) {
