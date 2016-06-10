@@ -7,7 +7,7 @@ class Fission {
 
   Fission() {
     setup();
-    //draw();
+    once();
   }
 
   void setup() {
@@ -18,32 +18,33 @@ class Fission {
     //initializations  
     reacted = false;
     //da neutron  
-    neutrons = new Neutron[10];
-    for (int i = 0; i < 10; i++) {
-      neutrons[i] = new Neutron();
+    if (neutrons == null) {
+      neutrons = new Neutron[10];
+      for (int i = 0; i < 10; i++) {
+        neutrons[i] = new Neutron();
+      }
+      mASSive = 9;
+      if (toBeExploded == null) {
+        toBeExploded = new Particle(mASSive);
+      }
     }
-    mASSive = 9;
-    toBeExploded = new Particle(mASSive);
   }
 
 
   boolean finished() {
     return reacted;
   }
-  
-  
-  void draw() {
+
+
+  void once() {
     background(0);
-  //  ellipseMode(RADIUS);
-   // fill(100, 255, 100);
+    //  ellipseMode(RADIUS);
+    // fill(100, 255, 100);
     for (int i=0; i < neutrons.length; i++ ) {
-        neutrons[i].draw(); 
-        neutrons[i].process();  
-      }
-    toBeExploded.draw();   
+      neutrons[i].once(); 
+      neutrons[i].process();
+    }
+    toBeExploded.once();   
     toBeExploded.process();
-    
   }
-
-
 }

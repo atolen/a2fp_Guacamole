@@ -1,41 +1,47 @@
-class Particle{
+class Particle {
 
   final static int moving = 0;
   final static int bump = 1;
   final static int dead = 3;
 
-//cors
-  float xUs;
-  float yUs;
-
+  //cors
   float radical;
-  color ccc;
-  float duex;
-  float duey;
   int stater;
   float mass;
-  
-  Particle(float m) {
-    mass = m;
-    float r = random(256);
-    float g = random(256);
-    float b = random(256);
-    ccc = color(r, g, b);
+  float r;
+  float b;
+  float g;
+  float xUs;
+  float yUs;
+  float duex;
+  float duey;
+  color ccc;
 
+
+
+  Particle(float m) {
+    setup();
+    mass = m;
+   // once();
+  }
+
+  void setup() {
     radical = 30;
+    stater = moving;
+    r = random(256);
+    g = random(256);
+    b = random(256);
+    ccc = color(r, g, b);
 
     xUs = random((width - r) + r/2);
     yUs = random((height - r) + r/2);
 
     duex = random(10) * .0005;
     duey = random(10) * .0005;
-
     stater = moving;
   }
 
-
   void move() {
-    delay(10);
     xUs = xUs + duex;
     yUs = yUs + duey;
     bounce();
@@ -50,8 +56,9 @@ class Particle{
   }
 
 
-  void draw() {
+  void once() {
     if ( stater != dead ) {
+      move();
       ellipseMode(RADIUS);
       fill(ccc);
       stroke(ccc);
@@ -71,5 +78,4 @@ class Particle{
     if ( yUs > height ) 
       duey = -1 * abs(duey);
   }
-  
 }

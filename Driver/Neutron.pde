@@ -13,6 +13,11 @@ class Neutron {
   int state;
 
   Neutron() {
+    setup();
+  //  once();
+  }
+
+  void setup() {
     float r = random(256);
     float g = random(256);
     float b = random(256);
@@ -24,10 +29,7 @@ class Neutron {
     dyy = 10;
     state = MOVING;
   }
-
-
   void move() {
-    delay(10);
     xxx = xxx + dxx;
     yyy = yyy + dyy;
     bounce();
@@ -38,17 +40,16 @@ class Neutron {
     if ( state == BUMP )
       state = DEAD;
     if (state == MOVING) 
-      move();   
+      move();
   }
 
 
-  void draw() {
+  void once() {
     if ( state != DEAD ) {
       ellipseMode(RADIUS);
       fill(cc);
       stroke(cc);
       ellipse(xxx, yyy, rad, rad);
-
     }
   }
 
@@ -64,8 +65,7 @@ class Neutron {
       dyy = -1 * abs(dyy);
   }
 
-
-   boolean isTouching( Particle other ) {
+  boolean isTouching( Particle other ) {
     return (sqrt( (xxx-other.xUs) * (xxx-other.xUs) + (yyy-other.yUs) * (yyy-other.yUs) ) < rad + other.radical);
   }
 }

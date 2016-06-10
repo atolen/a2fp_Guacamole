@@ -153,9 +153,9 @@ void draw() {
     background(139,89,16);
     Fission plutonium = new Fission();
     //plutonium.react();
-    while (!plutonium.finished()) {
+    /*while (!plutonium.finished()) {
        plutonium.draw(); 
-    }
+    }*/
     //fission =false;
   }
 
