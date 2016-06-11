@@ -20,13 +20,13 @@ class Particle {
 
 
   Particle(float m) {
-    setup();
     mass = m;
-   // once();
+     //once();
+    setup(); 
   }
 
   void setup() {
-    radical = 30;
+    radical = mass;
     stater = moving;
     r = random(256);
     g = random(256);
@@ -36,9 +36,8 @@ class Particle {
     xUs = random((width - r) + r/2);
     yUs = random((height - r) + r/2);
 
-    duex = random(10) * .0005;
-    duey = random(10) * .0005;
-    stater = moving;
+    duex = random(10);
+    duey = random(10) ;
   }
 
   void move() {
@@ -53,6 +52,9 @@ class Particle {
       stater = dead;
     if (stater == moving) 
       move();
+    if (stater == dead) {
+      ccc = color(0,0,0);
+    }
   }
 
 
@@ -63,7 +65,7 @@ class Particle {
       fill(ccc);
       stroke(ccc);
       ellipse(xUs, yUs, radical, radical);
-      //bounce();
+      bounce();
     }
   }
 

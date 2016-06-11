@@ -25,10 +25,11 @@ class Neutron {
     rad = 10;
     xxx = random((width - r) + r/2);
     yyy = random((height - r) + r/2);
-    dxx = 10;
-    dyy = 10;
+    dxx = random(10);
+    dyy = random(10);
     state = MOVING;
   }
+  
   void move() {
     xxx = xxx + dxx;
     yyy = yyy + dyy;

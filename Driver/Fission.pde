@@ -1,6 +1,7 @@
+import java.util.ArrayList;
 boolean reacted;
+ArrayList<Particle> toBeExploded;
 Neutron[] neutrons;
-Particle toBeExploded;
 int mASSive;
 
 class Fission {
@@ -11,10 +12,10 @@ class Fission {
   }
 
   void setup() {
+    
     //setup the page 
     size(700, 700);
-    background(0);
-
+    background(0);    
     //initializations  
     reacted = false;
     //da neutron  
@@ -23,12 +24,17 @@ class Fission {
       for (int i = 0; i < 10; i++) {
         neutrons[i] = new Neutron();
       }
-      mASSive = 9;
-      if (toBeExploded == null) {
-        toBeExploded = new Particle(mASSive);
-      }
     }
-  }
+    
+      mASSive = 20;
+      
+    if (toBeExploded == null) {
+       toBeExploded = new ArrayList<Particle>();
+        Particle butt = new Particle(mASSive); 
+        toBeExploded.add(butt);
+       }
+    }
+  
 
 
   boolean finished() {
@@ -44,7 +50,28 @@ class Fission {
       neutrons[i].once(); 
       neutrons[i].process();
     }
-    toBeExploded.once();   
-    toBeExploded.process();
+    
+    for (int j = 0; j < toBeExploded.size(); j++){
+      toBeExploded.get(j).once();   
+      toBeExploded.get(j).process();
+    }
+    
+    for (int i = 0; i < neutrons.length; i++) {
+      for (int j = 0; j < toBeExploded.size(); j++) {
+       if (neutrons[i].isTouching(toBeExploded.get(j))){
+    
+        float xxx = toBeExploded.get(j).mass;
+        float new1 = (float) random(xxx);
+        float new2 = (float) (xxx - new1);
+        Particle haha = new Particle(new1);
+        Particle foofoo = new Particle(new2);
+        toBeExploded.add(haha);
+        toBeExploded.add(foofoo);
+        toBeExploded.remove(j);
+     }
+    }
   }
+}
+
+
 }
