@@ -22,6 +22,8 @@ class Precipitation {
         tbl[i][j] = ksp.getString(i, j);
       }
     }
+    
+    ellipseMode(RADIUS);
     stroke(100, 95, 95);
     fill(255);
     ellipse(300, 300, 150, 90);
