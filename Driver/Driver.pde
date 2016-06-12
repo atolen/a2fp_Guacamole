@@ -151,16 +151,10 @@ void draw() {
   if (fission) {
     background(139,89,16);
     Fission plutonium = new Fission();
-    //plutonium.react();
-    /*while (!plutonium.finished()) {
-       plutonium.draw(); 
-    }*/
-    //fission =false;
   }
 
   if (precipitation) {
     Precipitation loveInvincible = new Precipitation();
-    //loveInvincible.react();
   }
 }
 
@@ -185,7 +179,7 @@ void mouseClicked() {
       home = false;
     }
   }
-  //===========================
+  //=============================================================
   else if (react) {
     if (mouseX >= 20 && mouseX <= 680 && mouseY >= 190 && mouseY <= 245 ) {
       react = false;
@@ -226,7 +220,6 @@ void mouseClicked() {
       int ycor = mouseY - 70;
       printEl = 1 + ycor/20;
       printy = true;
-      //browse = false;
     } 
     else if (mouseX >= 175 && mouseX <=330) {
       int ycor = mouseY - 70;

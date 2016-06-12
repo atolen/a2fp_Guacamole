@@ -22,7 +22,18 @@ class Precipitation {
         tbl[i][j] = ksp.getString(i, j);
       }
     }
-    
+    textFont(x, 30);
+    text("Back to Home", 600, 50);
+    noFill();
+    rect(500, 20, 195, 50);
+    if (mousePressed) {
+      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
+        precipitation = false;
+        home = true;
+        browse = false;
+        printy = false;
+      }
+    }
     ellipseMode(RADIUS);
     stroke(100, 95, 95);
     fill(255);
@@ -44,7 +55,7 @@ class Precipitation {
     if (salty == null) {
       salty = new Ion[50];
       for (int i = 0; i < salty.length; i++) {
-        salty[i] = new Ion((int) random(161, 441), (int) random(400, 540), 2,true);
+        salty[i] = new Ion((int) random(161, 441), (int) random(400, 540), 2, true);
       }
     }
   }

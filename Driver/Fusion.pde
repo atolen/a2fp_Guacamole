@@ -25,6 +25,18 @@ class Fusion {
       fuse[0] = uno;
       fuse[1] = dos;
     }
+        textFont(x, 30);
+    text("Back to Home", 600, 50);
+    noFill();
+    rect(500, 20, 195, 50);
+    if (mousePressed) {
+      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
+        fusion = false;
+        home = true;
+        browse = false;
+        printy = false;
+      }
+    }
   }
 
   void once1() {

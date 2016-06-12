@@ -47,6 +47,18 @@ class Titration {
         drops[i] = new Drop(i*25-10);
       }
     }
+        textFont(x, 30);
+    text("Back to Home", 600, 50);
+    noFill();
+    rect(500, 20, 195, 50);
+    if (mousePressed) {
+      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
+        titration = false;
+        home = true;
+        browse = false;
+        printy = false;
+      }
+    }
   }
 
   void change() {

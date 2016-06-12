@@ -72,6 +72,18 @@ class Redox {
       for (int i = 0; i < vamonos.length; i++) {
         vamonos[i] = new Ion((int) random(150, 200), (int) random(300, 340), 2,false);      }
     }
+        textFont(x, 30);
+    text("Back to Home", 600, 50);
+    noFill();
+    rect(500, 20, 195, 50);
+    if (mousePressed) {
+      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
+        redox = false;
+        home = true;
+        browse = false;
+        printy = false;
+      }
+    }
   }
 
   void getVoltage() {
