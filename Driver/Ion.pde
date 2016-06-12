@@ -65,8 +65,16 @@ class Ion {
       ellipse(xxUs, yyUs, radicalrev, radicalrev);
       bounce();
     }
+    if (!which){
+      goUp();
+    }
   }
-
+void goUp(){
+  if (xxUs<220 && xxUs >250 && yyUs>440 && yyUs<400){
+    duexx = abs(duexx);
+    dueyy = abs(dueyy);
+  }
+}
 
   void bounce() {
     if (which) {
@@ -77,6 +85,15 @@ class Ion {
       if (yyUs < 400 ) 
         dueyy = abs(dueyy);
       if ( yyUs > 540 ) 
+        dueyy = -1 * abs(dueyy);
+    } else {
+      if (xxUs < 150 ) 
+        duexx = abs(duexx);
+      if ( xxUs > 250 ) 
+        duexx = -1 * abs(duexx);
+      if (yyUs < 300 ) 
+        dueyy = abs(dueyy);
+      if ( yyUs > 400 ) 
         dueyy = -1 * abs(dueyy);
     }
   }

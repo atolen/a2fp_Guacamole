@@ -70,7 +70,7 @@ class Redox {
     if (vamonos == null) {
       vamonos = new Ion[50];
       for (int i = 0; i < vamonos.length; i++) {
-        vamonos[i] = new Ion((int) random(150, 200), (int) random(300, 340), 2,true);      }
+        vamonos[i] = new Ion((int) random(150, 200), (int) random(300, 340), 2,false);      }
     }
   }
 
