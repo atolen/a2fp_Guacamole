@@ -25,10 +25,7 @@ class Fusion {
       fuse[0] = uno;
       fuse[1] = dos;
     }
-        textFont(x, 30);
-    text("Back to Home", 600, 50);
-    noFill();
-    rect(500, 20, 195, 50);
+
     if (mousePressed) {
       if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
         fusion = false;
@@ -46,13 +43,12 @@ class Fusion {
       if (!hit) {
         fuse[i].once();
         fuse[i].process();
-
       }
     }
     if (fuse[0].isTouching(fuse[1])) {
       hit = true;
     }
-  
+
     if (hit) {
       float d = fuse[0].radical + fuse[1].radical;
       if (d < 100) {
@@ -64,8 +60,14 @@ class Fusion {
         fuse[1] = f;
       }
     }
+    fill(255);
+    textFont(x, 20);
+    text("Back to Home", 600, 50);
+    noFill();
+    stroke(255);
+    rect(500, 20, 195, 50);
   }
-  
+
   void keyPressed() {
     inp += key;
   }
