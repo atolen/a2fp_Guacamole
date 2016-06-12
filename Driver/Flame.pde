@@ -2,15 +2,15 @@
   int state;
   float xcor;
   float ycor;
-  int xs;
-  int ys;
+  float xs;
+  float ys;
   boolean i = false;
-
-
-class Flame {
-  final static int Growing = 1;
+ final static int Growing = 1;
   final static int shrinking = 2;
   final static int dead = 4;
+
+class Flame {
+ 
   
   
   
@@ -23,29 +23,29 @@ class Flame {
      ycor = yycor;  
      size = 40;
      xs = 1;
-     ys = 1;
+     ys = .2;
     // once();
   }
   
   void move() {
-    xcor -= 1;
-    ycor -= .2;
-    //bounce(); 
+    xcor -= xs;
+    ycor -= ys;
+    bounce(); 
   }
   
   
   void process() {
-    delay(10);
+    delay(15);
     if (state == Growing) {
       size+=1;
       move();
     }
-    else if (size > 50) {
+     if (size > 150) {
       size--;
       state = shrinking;
       move();
     }
-    else if (size < 5) {
+     if (size < 3) {
       state = dead;
     }
     if (state == shrinking) {
@@ -56,7 +56,7 @@ class Flame {
 
 
   void once() {
-   // tint(255,126);
+   tint(255,126);
   //  ellipseMode(RADIUS); 
   if (state != dead) {
     fill(232, 155, 12);
@@ -66,18 +66,18 @@ class Flame {
     triangle(xcor-size/2 , ycor, xcor+size/2 ,ycor, xcor, ycor-size);
  
   }
-  else {
-    fill(0);
-   ellipse(xcor, ycor,  100,100);
-  }
+  //else {
+   // fill(0);
+   //ellipse(xcor, ycor,  100,100);
+  //}
 }
   
   
   void bounce() {
-     if (xcor < 300) {
+     if (xcor < 200) {
        xs = -1 * xs;
      }
-     if (xcor > 500) {
+     if (xcor > 450) {
         xs = -1* xs; 
      }
      if (ycor > 500) {

@@ -2,7 +2,7 @@ int molesHydroCarbon;
 int molesOxy;
 int moleswaterReleased;
 int molesCO2Released;
-boolean burned;
+boolean burned = false;
 Flame bernShit;
 int xxcor;
 int yycor;
@@ -20,15 +20,15 @@ class Combustion {
   void setup() {
     size(700,700);
     background(255);
-      
-    burned = false;
+
     molesHydroCarbon = 5;
     xxcor = width/2;
     yycor = 300;
     if (!init) {
-     bernShit = new Flame(xxcor+100,yycor+50);
+     bernShit = new Flame(xxcor+100,yycor);
      init = true;
     }    
+ 
   }
   
   void once() {
@@ -40,10 +40,20 @@ class Combustion {
     rect(xxcor-100,yycor-60,200,120);
     stroke(0);
     ellipse(xxcor+100, 300, 60, 120);
-    bernShit.process();
-    bernShit.once();
+    text("BERN", 350,500);
+    noFill();
+     rect(300,450,100,50);
+     if (burned) {
+       text("LALA",200,200);
+       bernShit.process();
+       bernShit.once();
+     }
   }
 
-
+void mouseClicked()  {
+  if (mouseX >= 300 && mouseX <= 400 && mouseY >= 450 && mouseY <= 500){
+    burned = true;
+  }
+}
 
 }
