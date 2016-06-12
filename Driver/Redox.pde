@@ -2,7 +2,7 @@ int startHeight;
 int changeFactor; //how much anode shrinks & cathode grows
 
 
-
+class Redox {
 void setup() {
   size(700,700);
   background(255);
@@ -62,4 +62,6 @@ void draw() {
 
 void getVoltage() {
  //nernst 
+}
+
 }

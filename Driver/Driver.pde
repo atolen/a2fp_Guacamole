@@ -141,7 +141,7 @@ void draw() {
 
   if (redox) {
     Redox lemonade = new Redox();
-    lemonade.react();
+    //lemonade.react();
   }
 
   if (fusion) {
