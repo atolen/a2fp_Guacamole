@@ -11,7 +11,6 @@ boolean init = false;
 
 class Combustion {
 
-
   Combustion() {
     setup();
     once();
@@ -50,14 +49,13 @@ class Combustion {
     ellipse(xxcor+100, 300, 60, 120);
     text("BERN", 350, 500);
 
-   
+
     noFill();
     rect(300, 450, 100, 50);
     if (burned) {
       bernShit.process();
       bernShit.once();
     }
-  }
 
     noFill();
     rect(300, 450, 100, 50);
@@ -66,6 +64,7 @@ class Combustion {
       bernShit.process();
       bernShit.once();
     }
+
     fill(0);
     textFont(x, 20);
     text("Back to Home", 600, 50);
@@ -79,5 +78,4 @@ class Combustion {
       burned = true;
     }
   }
-
 }
