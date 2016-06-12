@@ -59,6 +59,7 @@ class Titration {
     }
     gor-=10;
   }
+  
   void progress() {
     volB++;
     recalculate();
@@ -81,7 +82,6 @@ class Titration {
     for (int i = 0; i <drops.length; i++) {
       if (drops[i].state == DEAD) {
         progress();
-        //change();
         if (eqnA <= eqnB) {
           change();
         }
