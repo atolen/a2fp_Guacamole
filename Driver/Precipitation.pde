@@ -42,7 +42,7 @@ class Precipitation {
     if (salty == null) {
       salty = new Ion[50];
       for (int i = 0; i < salty.length; i++) {
-        salty[i] = new Ion((int) random(161, 441), (int) random(400, 540), 2);
+        salty[i] = new Ion((int) random(161, 441), (int) random(400, 540), 2,true);
       }
     }
   }

@@ -16,14 +16,15 @@ class Ion {
   float duexx;
   float dueyy;
   color cccc;
+  boolean which;
 
 
-
-  Ion(int x, int y, float m) {
+  Ion(int x, int y, float m, boolean precipitation) {
     massS = m;
     xxUs = x;
     yyUs = y;
-    setup(); 
+    which = precipitation;
+    setup();
   }
 
   void setup() {
@@ -51,15 +52,14 @@ class Ion {
     if (staterev == moving) 
       move();
     if (staterev == dead) {
-      cccc = color(0,0,0);
+      cccc = color(0, 0, 0);
     }
   }
 
 
   void onceB() {
-    if ( staterev != dead ) {
+    if ( staterev != dead ) {     
       move();
-      ellipseMode(RADIUS);
       fill(cccc);
       stroke(cccc);
       ellipse(xxUs, yyUs, radicalrev, radicalrev);
@@ -69,19 +69,20 @@ class Ion {
 
 
   void bounce() {
-    if (xxUs < 160 ) 
-      duexx = abs(duexx);
-    if ( xxUs > 440 ) 
-      duexx = -1 * abs(duexx);
-    if (yyUs < 400 ) 
-      dueyy = abs(dueyy);
-    if ( yyUs > 540 ) 
-      dueyy = -1 * abs(dueyy);
+    if (which) {
+      if (xxUs < 160 ) 
+        duexx = abs(duexx);
+      if ( xxUs > 440 ) 
+        duexx = -1 * abs(duexx);
+      if (yyUs < 400 ) 
+        dueyy = abs(dueyy);
+      if ( yyUs > 540 ) 
+        dueyy = -1 * abs(dueyy);
+    }
   }
-  
-  
-  
-   boolean isTouching( Ion other ) {
+
+
+  boolean isTouching( Ion other ) {
     return (sqrt( (xxUs-other.xxUs) * (xxUs-other.xxUs) + (yyUs-other.yyUs) * (yyUs-other.yyUs) ) < radicalrev + other.radicalrev);
   }
 }
