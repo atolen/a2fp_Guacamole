@@ -77,9 +77,8 @@ class Selection_FuseFiss {
       }
       if (aa == 0) {
         aa= el;
-      }
-      else if (bb==0){
-       bb = el; 
+      } else if (bb==0) {
+        bb = el;
       }
     }
     System.out.println(aa + " " + bb);
@@ -130,18 +129,18 @@ class Selection_FuseFiss {
     line(330, 70, 330, 690);
     //line(400,70, 400, 690);
     line(500, 70, 500, 690);
-    if (el != 0){
-      rect(100,100,100,100);
+    if (el != 0) {
+      rect(100, 100, 100, 100);
     }
   }
-/*
+  /*
   void mouseClicked() {
-    fill(0);
-    rect(30, 50, 70, 50);
-    lala = true;
-    if (mouseX >= 30 && mouseX <= 100) {
-      rect(10, 10, 10, 10);
-    }
-  }
-  */
+   fill(0);
+   rect(30, 50, 70, 50);
+   lala = true;
+   if (mouseX >= 30 && mouseX <= 100) {
+   rect(10, 10, 10, 10);
+   }
+   }
+   */
 }

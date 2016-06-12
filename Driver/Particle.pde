@@ -23,8 +23,8 @@ class Particle {
     mass = m;
     xUs = x;
     yUs = y;
-     //once();
-    setup(); 
+    //once();
+    setup();
   }
 
   void setup() {
@@ -52,7 +52,7 @@ class Particle {
     if (stater == moving) 
       move();
     if (stater == dead) {
-      ccc = color(0,0,0);
+      ccc = color(0, 0, 0);
     }
   }
 
@@ -79,10 +79,10 @@ class Particle {
     if ( yUs > height ) 
       duey = -1 * abs(duey);
   }
-  
-  
-  
-   boolean isTouching( Particle other ) {
+
+
+
+  boolean isTouching( Particle other ) {
     return (sqrt( (xUs-other.xUs) * (xUs-other.xUs) + (yUs-other.yUs) * (yUs-other.yUs) ) < radical + other.radical);
   }
 }
