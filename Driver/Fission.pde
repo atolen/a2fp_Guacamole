@@ -1,11 +1,10 @@
 import java.util.ArrayList;
-boolean reacted;
 ArrayList<Particle> toBeExploded;
 Neutron[] neutrons;
 int mASSive;
 
 class Fission {
-
+  boolean reacted;  
   Fission() {
     setup();
     once();
