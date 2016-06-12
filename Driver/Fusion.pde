@@ -26,6 +26,7 @@ class Fusion {
       fuse[1] = dos;
     }
         textFont(x, 30);
+        stroke(22,22,120);
     text("Back to Home", 600, 50);
     noFill();
     rect(500, 20, 195, 50);
@@ -64,7 +65,7 @@ class Fusion {
         fuse[1] = f;
       }
     }
-  }
+  } 
   
   void keyPressed() {
     inp += key;

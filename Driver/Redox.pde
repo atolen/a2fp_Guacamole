@@ -30,12 +30,14 @@ class Redox {
     ellipse(200, 400, 100, 50);
     ellipse(500, 400, 100, 50);
 
+
+//salt bridge
     line(220, 300, 220, 200);
     line(240, 300, 240, 220);
 
     line(240, 220, 450, 220);
     line(220, 200, 470, 200);
-
+//
     line(450, 220, 450, 300);
     line(470, 200, 470, 300);
 
@@ -68,9 +70,29 @@ class Redox {
 
     startHeight -= changeFactor;
     if (vamonos == null) {
-      vamonos = new Ion[50];
+      vamonos = new Ion[60];
       for (int i = 0; i < vamonos.length; i++) {
-        vamonos[i] = new Ion((int) random(150, 200), (int) random(300, 340), 2,false);      }
+        if ( i < 15) {
+          //spectator cations - blue
+          color x = color(135,187,242);
+          vamonos[i] = new Ion((int) random(150,250), (int) random(300,400), 2,false, true,x,false , false);
+        }
+        else if (i < 30) {
+          //spectator anions  - red
+          color x = color(255,3,11);
+          vamonos[i] = new Ion( (int) random(150,250), (int) random(300,400), 2,false, true,x, false , false); 
+        }
+        else if (i < 45) {
+          //Oxidizing species - at da anode, silver af
+           color x = color(165,165,165);
+          vamonos[i] = new Ion( (int) random(150,250),(int) random(300,400), 2,false, false,x, true, false); 
+        }
+        else {
+          //Reducing Species, at the cathode, gold
+          color x = color(211,177,90);
+          vamonos[i] = new Ion((int) random(450,550), (int) random(300,400), 2,false, false,x, false, true); 
+       }
+    }
     }
         textFont(x, 30);
     text("Back to Home", 600, 50);

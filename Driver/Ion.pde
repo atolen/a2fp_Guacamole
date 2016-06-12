@@ -1,3 +1,5 @@
+;
+
 class Ion {
 
   final static int moving = 0;
@@ -17,23 +19,27 @@ class Ion {
   float dueyy;
   color cccc;
   boolean which;
+  boolean spec;
+  boolean an;
+  boolean cath;
 
 
-  Ion(int x, int y, float m, boolean precipitation) {
+
+  Ion(int x, int y, float m, boolean precipitation, boolean spectator, color rara, boolean anI, boolean cathI) {
     massS = m;
     xxUs = x;
     yyUs = y;
     which = precipitation;
+    cccc = rara;
+    cath = cathI;
+    an = anI;
+    spec = spectator;
     setup();
   }
 
   void setup() {
     radicalrev = massS;
     staterev = moving;
-    rr = random(256);
-    gg = random(256);
-    bb = random(256);
-    cccc = color(rr, gg, bb);
 
     duexx = random(10)*.05;
     dueyy = random(10)*.05 ;
@@ -77,25 +83,46 @@ void goUp(){
 }
 
   void bounce() {
-    if (which) {
-      if (xxUs < 160 ) 
-        duexx = abs(duexx);
-      if ( xxUs > 440 ) 
-        duexx = -1 * abs(duexx);
-      if (yyUs < 400 ) 
-        dueyy = abs(dueyy);
-      if ( yyUs > 540 ) 
-        dueyy = -1 * abs(dueyy);
-    } else {
-      if (xxUs < 150 ) 
-        duexx = abs(duexx);
-      if ( xxUs > 250 ) 
-        duexx = -1 * abs(duexx);
-      if (yyUs < 300 ) 
-        dueyy = abs(dueyy);
-      if ( yyUs > 400 ) 
-        dueyy = -1 * abs(dueyy);
+    if (an) {
+      if (xxUs < 150 || xxUs > 250) {
+        duexx = -1 * duexx;
+      }
+      if (yyUs < 300 || yyUs > 400) {
+        dueyy = -1 * dueyy; 
+      }
     }
+    
+    else if (cath) {
+      if (xxUs < 450 || xxUs > 550) {
+        duexx = -1* duexx;
+      }
+      if (yyUs < 300 || yyUs > 400) {
+        dueyy = -1 *dueyy; 
+      }
+    }
+    
+    else if (spec) {
+     if (xxUs < 220 || xxUs > 250) {
+       duexx = -1 * duexx;
+     }
+     if (xxUs > 300 && (xxUs < 450 || xxUs > 470)) {
+       duexx = -1 * duexx; 
+     }
+     if (yyUs < 220 && yyUs > 200
+     if (yyUs < 200 || yyUs > 400) {
+       dueyy = -1 * dueyy; 
+     }
+    }
+    
+    else if (which) {
+      if (xxUs < 150 || xxUs > 450) {
+        duexx = -1 * duexx;
+      }
+      if (yyUs < 400 || yyUs > 550) {
+        dueyy = -1 * dueyy; 
+      }
+    }
+    
   }
 
 
