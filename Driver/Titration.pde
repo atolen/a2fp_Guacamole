@@ -8,9 +8,8 @@ int gor;
 color clor;
 class Titration {
 
-
   Titration(int mA, int mB, int vA, int vB) {
-    molarityAcid = mB;
+    molarityAcid = mA;
     molarityBase=mB;
     volA = vA;
     volB = vB;
@@ -74,7 +73,8 @@ class Titration {
   void change() {
     for (int i = 255; i < 0; i--) {
       delay(10);
-      gor--;    }
+      gor--;
+    }
   }
   void progress() {
     volB++;

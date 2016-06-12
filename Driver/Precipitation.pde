@@ -51,13 +51,14 @@ class Precipitation {
   }
 
   void draw() {
-    fill(215, 53, 227);
+/*    fill(215, 53, 227);
     textFont(x, 50);
     for (int i = 1; i < tbl.length; i++) {                                    
       for (int j = 0; j < tbl[0].length; j++) {                                
         text(tbl[i][j], j, i);
       }
     }
+    */ //to print the table
   }
   void onceA() {
     for (int i = 0; i < salty.length; i++) {
