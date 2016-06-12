@@ -1,15 +1,14 @@
-int size;
-int state;
-float xcor;
-float ycor;
-float xs;
-float ys;
-boolean i = false;
-final static int Growing = 1;
-final static int shrinking = 2;
-final static int dead = 4;
-
 class Flame {
+  int size;
+  int state;
+  float xcor;
+  float ycor;
+  float xs;
+  float ys;
+  boolean i = false;
+  final static int Growing = 1;
+  final static int shrinking = 2;
+  final static int dead = 4;
 
 
 

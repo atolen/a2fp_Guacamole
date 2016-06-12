@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 int molesHydroCarbon;
 int molesOxy;
 int moleswaterReleased;
@@ -7,7 +9,7 @@ Flame bernShit;
 int xxcor;
 int yycor;
 boolean init = false;
-
+ArrayList<Float> bombs;
 
 class Combustion {
 
@@ -28,6 +30,10 @@ class Combustion {
       bernShit = new Flame(xxcor+100, yycor);
       init = true;
     }
+    bombs = new ArrayList<Float>();
+    for ( int i = xxcor+110; i > xxcor-130; i-=15 ) {
+      bombs.add(i+random(2));
+    }
   }
 
   void once() {
@@ -42,12 +48,11 @@ class Combustion {
     text("BERN", 350, 500);
     noFill();
     rect(300, 450, 100, 50);
+    bernClicked();
     if (burned) {
-      text("LALA", 200, 200);
       bernShit.process();
       bernShit.once();
     }
-
     fill(0);
     stroke(0);
     textFont(x, 20);
@@ -63,10 +68,28 @@ class Combustion {
       }
     }
 
-    /*void mouseClicked() {
-     if (mouseX >= 300 && mouseX <= 400 && mouseY >= 450 && mouseY <= 500) {
-     burned = true;
-     }
-     }*/
+    int tempX = (int)bernShit.xcor;  
+    int tempY = (int)bernShit.ycor;
+    for ( int i = 0; i < bombs.size(); i++ ) {
+      if ( tempX < bombs.get(i) ) {
+        fill(0);
+        ellipse(bombs.get(i)+random(10), 350, 15, 15);
+        ellipse(bombs.get(i)+random(10), 340, 15, 15);
+        ellipse(bombs.get(i)+random(10), 330, 15, 15);
+        ellipse(bombs.get(i)+random(10), 320, 15, 15);
+        ellipse(bombs.get(i)+random(10), 310, 15, 15);        
+        ellipse(bombs.get(i)+random(10), 300, 15, 15);
+        ellipse(bombs.get(i)+random(10), 290, 15, 15);        
+        ellipse(bombs.get(i)+random(10), 280, 15, 15);
+        ellipse(bombs.get(i)+random(10), 270, 15, 15);
+        ellipse(bombs.get(i)+random(10), 260, 15, 15);
+      }
+    }
+  }
+
+  void bernClicked() {
+    if (mousePressed && mouseX >= 300 && mouseX <= 400 && mouseY >= 450 && mouseY <= 500) {
+      burned = true;
+    }
   }
 }
