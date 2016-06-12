@@ -135,8 +135,8 @@ void draw() {
   }
 
   if (titration) {
-    Titration bombTheWorld = new Titration(2,3,3,2);
-    bombTheWorld.react();
+    Titration bombTheWorld = new Titration();
+  //  bombTheWorld.react();
   }
 
   if (redox) {

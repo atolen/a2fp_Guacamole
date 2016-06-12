@@ -13,37 +13,37 @@ class Drop {
   Drop(float start) {
     yY = start;
     setup();
-  //  once();
+    //  once();
   }
 
   void setup() {
-//    cC = color(255);
+    //    cC = color(255);
     rAd = 5;
     xX = width/2;
     dY = 1;
     state = MOVING;
   }
-  
+
   void move() {
     yY = yY + dY;
   }
 
 
   void process() {
-    if (state == MOVING) 
+    if (state == MOVING){ 
       move();
+    }
+    if (isTouching()){
+      state = DEAD;
+    }     
   }
-
-
   void once() {
     if ( state != DEAD ) {
       fill(cC);
       ellipse(xX, yY, rAd, rAd);
     }
   }
-
-
-/*  boolean isTouching() {
-    return (sqrt( (xxx-other.xUs) * (xxx-other.xUs) + (yyy-other.yUs) * (yyy-other.yUs) ) < rad + other.radical);
-  }*/
+ boolean isTouching() {
+   return (yY >=height/2+100);
+   }
 }

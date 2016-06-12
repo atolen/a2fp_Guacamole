@@ -12,7 +12,7 @@ class Fission {
   }
 
   void setup() {
-    
+
     //setup the page 
     size(700, 700);
     background(0);    
@@ -25,16 +25,16 @@ class Fission {
         neutrons[i] = new Neutron();
       }
     }
-    
-      mASSive = 80;
-      
+
+    mASSive = 80;
+
     if (toBeExploded == null) {
-       toBeExploded = new ArrayList<Particle>();
-        Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
-        toBeExploded.add(butt);
-       }
+      toBeExploded = new ArrayList<Particle>();
+      Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
+      toBeExploded.add(butt);
     }
-  
+  }
+
 
 
   boolean finished() {
@@ -50,35 +50,32 @@ class Fission {
       neutrons[i].once(); 
       neutrons[i].process();
     }
-    
-    for (int j = 0; j < toBeExploded.size(); j++){
+
+    for (int j = 0; j < toBeExploded.size(); j++) {
       toBeExploded.get(j).once();   
       toBeExploded.get(j).process();
     }
-    
+
     for (int i = 0; i < neutrons.length; i++) {
       for (int j = 0; j < toBeExploded.size(); j++) {
-       if (neutrons[i].isTouching(toBeExploded.get(j))){
-    
-        float xxx = toBeExploded.get(j).mass;  
-        if (xxx > 10) {
-       int xcor =  (int) toBeExploded.get(j).xUs ;
-       int ycor = (int) toBeExploded.get(j).yUs;
-       
-          toBeExploded.remove(j);
-        
-        float new1 = (float) random(xxx);
-        float new2 = (float) (xxx - new1);
-        Particle haha = new Particle(xcor, ycor, new1);
-        Particle foofoo = new Particle(xcor, ycor, new2);
-        toBeExploded.add(haha);
-        toBeExploded.add(foofoo);
-     
+        if (neutrons[i].isTouching(toBeExploded.get(j))) {
+
+          float xxx = toBeExploded.get(j).mass;  
+          if (xxx > 10) {
+            int xcor =  (int) toBeExploded.get(j).xUs ;
+            int ycor = (int) toBeExploded.get(j).yUs;
+
+            toBeExploded.remove(j);
+
+            float new1 = (float) random(xxx);
+            float new2 = (float) (xxx - new1);
+            Particle haha = new Particle(xcor, ycor, new1);
+            Particle foofoo = new Particle(xcor, ycor, new2);
+            toBeExploded.add(haha);
+            toBeExploded.add(foofoo);
+          }
         }
-     }
+      }
     }
   }
-}
-
-
 }

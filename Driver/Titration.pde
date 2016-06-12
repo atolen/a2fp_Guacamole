@@ -10,6 +10,9 @@ Drop[] drops;
 
 class Titration {
 
+  Titration() {
+    this(2, 3, 3, 2);
+  }
   Titration(int mA, int mB, int vA, int vB) {
     molarityAcid = mA;
     molarityBase=mB;
@@ -19,12 +22,13 @@ class Titration {
     eqnB = volB*molarityBase;
     gor = 255;
     setup();
-    draw();
+    // draw();
+    once2();
   }
 
   void setup() {
     size(700, 700);
-    clor = color(255, gor, 255);
+  //  clor = color(255, gor, 255);
     fill(clor);
     background(0);
     arc(width/2, height/2+100, 100, 50, 0, PI);
@@ -37,38 +41,51 @@ class Titration {
     line(355, 260, 450, 260);
     line(348, 100, 348, 275);
     line(355, 100, 355, 275);
-    drops = new Drop[10];
-  }
-
-  void draw() {
-    fill(108, 121, 232);
-    react();
-  }
-  void react() {
-    for (int i = 0; i < drops.length; i++) {
-      delay(10);
-      drops[i] = new Drop(i*10);
-      drops[i].once();
-    }
-    if (eqnA <= eqnB) {
-      change();
-    } else {
-      this.progress();
+    if (drops == null) {
+      drops = new Drop[10];
+      for (int i = 0; i < drops.length; i++) {
+        delay(10);
+        drops[i] = new Drop(i*25-10);
+        drops[i].once();
+      }
     }
   }
 
   void change() {
-    for (int i = 255; i < 0; i--) {
-      delay(10);
-      gor--;
+    for (int i = 255; i > 0; i--) {
+     // delay(10);
+      gor-=1;
+      //rect(100,100,100,100);
+      fill(255,gor,255);
+      
     }
   }
   void progress() {
     volB++;
     recalculate();
     delay(5);
+    if (eqnB >= eqnA){
+      change();
+    }
   }
   void recalculate() {
     eqnB = volB*molarityBase;
+  }
+  void once2() {
+    clor = color(255, gor, 255);
+    fill(clor);
+    for (int i =0; i < drops.length; i++) {
+      drops[i].once();
+      drops[i].process();
+    }
+    if (eqnA <= eqnB) {
+      change();
+    } 
+    for (int i = 0; i <drops.length; i++){
+      if(drops[i].state == drops[i].DEAD){
+        progress();
+        //change();
+      }
+    }
   }
 }
