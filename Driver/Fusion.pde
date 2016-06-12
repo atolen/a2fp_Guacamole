@@ -49,6 +49,7 @@ void once1() {
           Particle e = new Particle(xcor, ycor, d);
           fuse[0] = e;
           fuse[1] = f;
+          delay(100);
           }
       }
      }
@@ -66,6 +67,7 @@ void once1() {
            Particle e = new Particle(xcor - 350, ycor, d);
           fuse[0] = f;
           fuse[1] = e;
+          delay(100);
           }
       }
      }
