@@ -1,7 +1,6 @@
+final static int MOVING = 0;
+final static int DEAD = 3;
 class Drop {
-
-  final static int MOVING = 0;
-  final static int DEAD = 3;
 
   float xX;
   float yY;
@@ -30,12 +29,12 @@ class Drop {
 
 
   void process() {
-    if (state == MOVING){ 
+    if (state == MOVING) { 
       move();
     }
-    if (isTouching()){
+    if (isTouching()) {
       state = DEAD;
-    }     
+    }
   }
   void once() {
     if ( state != DEAD ) {
@@ -43,7 +42,7 @@ class Drop {
       ellipse(xX, yY, rAd, rAd);
     }
   }
- boolean isTouching() {
-   return (yY >= height/2+100);
-   }
+  boolean isTouching() {
+    return (yY >= height/2+100);
+  }
 }

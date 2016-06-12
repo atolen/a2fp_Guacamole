@@ -62,7 +62,7 @@ class Titration {
   void progress() {
     volB++;
     recalculate();
-    delay(5);
+    //delay(5);
     if (eqnB >= eqnA) {
       change();
     }
@@ -79,7 +79,7 @@ class Titration {
     }
 
     for (int i = 0; i <drops.length; i++) {
-      if (drops[i].state == drops[i].DEAD) {
+      if (drops[i].state == DEAD) {
         progress();
         //change();
         if (eqnA <= eqnB) {
