@@ -19,8 +19,10 @@ class Particle {
 
 
 
-  Particle(float m) {
+  Particle(int x, int y, float m) {
     mass = m;
+    xUs = x;
+    yUs = y;
      //once();
     setup(); 
   }
@@ -32,9 +34,6 @@ class Particle {
     g = random(256);
     b = random(256);
     ccc = color(r, g, b);
-
-    xUs = random((width - r) + r/2);
-    yUs = random((height - r) + r/2);
 
     duex = random(10)*.5;
     duey = random(10)*.5 ;

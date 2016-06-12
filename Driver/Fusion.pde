@@ -22,8 +22,8 @@ void setup() {
   mass2 = 40;
   if (fuse == null) {
     fuse = new Particle[2];
-    Particle uno = new Particle(mass1);
-    Particle dos = new Particle(mass2);
+    Particle uno = new Particle((int) random(width), (int) random(height), mass1);
+    Particle dos = new Particle((int) random(width), (int)  random(height), mass2);
     fuse[0] = uno;
     fuse[1] = dos;
   }
@@ -40,10 +40,13 @@ void once1() {
      
      if (i ==0) {
       if (fuse[i].isTouching(fuse[i+1])) {
+            
           float d = fuse[i].mass + fuse[i+1].mass;
           if (d < 350) {
-          Particle f = new Particle(d);
-          Particle e = new Particle(d);
+            int xcor = (int) fuse[i].xUs;
+            int ycor = (int) fuse[i].yUs;
+          Particle f = new Particle(xcor,ycor,d);
+          Particle e = new Particle(xcor, ycor, d);
           fuse[0] = e;
           fuse[1] = f;
           }
@@ -53,9 +56,14 @@ void once1() {
      else if (i == 1 ) {
       if (fuse[i].isTouching(fuse[i-1])) {
           float d = fuse[i].mass + fuse[i-1].mass;
-          if (d < 350) {
-           Particle f = new Particle(d);
-           Particle e = new Particle(d);
+          if (d < 375) {
+            int xcor = (int) fuse[i].xUs;
+            int ycor = (int) fuse[i].yUs;
+            boolean lala;
+            if (xcor < 350) lala = true;
+            else { lala = false;}
+           Particle f = new Particle(xcor + 350, ycor, d);
+           Particle e = new Particle(xcor - 350, ycor, d);
           fuse[0] = f;
           fuse[1] = e;
           }
