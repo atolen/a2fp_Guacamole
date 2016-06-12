@@ -62,11 +62,11 @@ class Combustion {
         printy = false;
       }
     }
-  }
 
-  void mouseClicked() {
-    if (mouseX >= 300 && mouseX <= 400 && mouseY >= 450 && mouseY <= 500) {
-      burned = true;
-    }
+    /*void mouseClicked() {
+     if (mouseX >= 300 && mouseX <= 400 && mouseY >= 450 && mouseY <= 500) {
+     burned = true;
+     }
+     }*/
   }
 }

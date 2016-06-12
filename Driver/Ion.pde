@@ -70,16 +70,16 @@ class Ion {
       ellipse(xxUs, yyUs, radicalrev, radicalrev);
       bounce();
     }
-    if (!which){
+    if (!which) {
       goUp();
     }
   }
-void goUp(){
-  if (xxUs<220 && xxUs >250 && yyUs>440 && yyUs<400){
-    duexx = abs(duexx);
-    dueyy = abs(dueyy);
+  void goUp() {
+    if (xxUs<220 && xxUs >250 && yyUs>440 && yyUs<400) {
+      duexx = abs(duexx);
+      dueyy = abs(dueyy);
+    }
   }
-}
 
   void bounce() {
     if (an) {
@@ -87,41 +87,34 @@ void goUp(){
         duexx = -1 * duexx;
       }
       if (yyUs < 300 || yyUs > 400) {
-        dueyy = -1 * dueyy; 
+        dueyy = -1 * dueyy;
       }
-    }
-    
-    else if (cath) {
+    } else if (cath) {
       if (xxUs < 450 || xxUs > 550) {
         duexx = -1* duexx;
       }
       if (yyUs < 300 || yyUs > 400) {
-        dueyy = -1 *dueyy; 
+        dueyy = -1 *dueyy;
       }
-    }
-    
-    else if (spec) {
-     if (xxUs < 220 || xxUs > 250) {
-       duexx = -1 * duexx;
-     }
-     if (xxUs > 300 && (xxUs < 450 || xxUs > 470)) {
-       duexx = -1 * duexx; 
-     }
-     if (yyUs < 220 && yyUs > 200)
-     if (yyUs < 200 || yyUs > 400) {
-       dueyy = -1 * dueyy; 
-     }
-    }
-    
-    else if (which) {
+    } else if (spec) {
+      if (xxUs < 220 || xxUs > 250) {
+        duexx = -1 * duexx;
+      }
+      if (xxUs > 300 && (xxUs < 450 || xxUs > 470)) {
+        duexx = -1 * duexx;
+      }
+      if (yyUs < 220 && yyUs > 200)
+        if (yyUs < 200 || yyUs > 400) {
+          dueyy = -1 * dueyy;
+        }
+    } else if (which) {
       if (xxUs < 150 || xxUs > 450) {
         duexx = -1 * duexx;
       }
       if (yyUs < 400 || yyUs > 550) {
-        dueyy = -1 * dueyy; 
+        dueyy = -1 * dueyy;
       }
     }
-    
   }
 
 

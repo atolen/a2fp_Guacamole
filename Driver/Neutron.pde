@@ -14,7 +14,7 @@ class Neutron {
 
   Neutron() {
     setup();
-  //  once();
+    //  once();
   }
 
   void setup() {
@@ -27,7 +27,7 @@ class Neutron {
     dyy = random(10);
     state = MOVING;
   }
-  
+
   void move() {
     xxx = xxx + dxx;
     yyy = yyy + dyy;
