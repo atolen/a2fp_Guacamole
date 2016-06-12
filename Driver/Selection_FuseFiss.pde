@@ -1,15 +1,13 @@
 static boolean lala = false;
-int el;
-int ctr;
-int aa = 0;
-int bb = 0;
-
 class Selection_FuseFiss {
 
 
+  int el;
+  int ctr;
+  int aa;
+  int bb;
 
   Selection_FuseFiss(int e) {
-
     ctr = e;
     rect(100, 100, 100, 100);
     setup();
@@ -19,6 +17,8 @@ class Selection_FuseFiss {
   void setup() {
     size(700, 700);
     background(255);
+    aa=0;
+    bb=0;
   }
 
 
@@ -39,8 +39,8 @@ class Selection_FuseFiss {
       int g = 0;  
       for (int b = 1; b < 30; b++) {
         for (int j = 0; j < elements[0].length; j++) {
-          if (mouseX >= 30 + (j*40) && mouseY>= 90+(g*20)&&mouseX <= 40+ 30 + (j*40) && mouseY<= 20+90+(g*20)) {
-            el = b;
+          if (mouseX >= 30 + (j*40) && mouseY>= 50+(g*20)&&mouseX <= 40+ 30 + (j*40) && mouseY<= 90+(g*20)) {
+            el = b-1;
           }
         }
         g++;
@@ -49,8 +49,8 @@ class Selection_FuseFiss {
       g = 0;
       for (int k = 30; k < 59; k++) {
         for (int l = 0; l < elements[0].length; l++) {
-          if (mouseX >= 195 + (l*40) && mouseY>= 90+(g*20)&&mouseX <= 40+ 195+ (l*40) && mouseY<= 20+90+(g*20)) {
-            el = k;
+          if (mouseX >= 195 + (l*40) && mouseY>= 50+(g*20)&&mouseX <= 40+ 195+ (l*40) && mouseY<= 90+(g*20)) {
+            el = k-1;
           }
         }
         g++;
@@ -59,8 +59,8 @@ class Selection_FuseFiss {
       g = 0;
       for (int m = 59; m < 89; m++) {
         for (int n = 0; n < elements[0].length; n++) {
-          if (mouseX >= 345 + (n*40) && mouseY>= 90+(g*20)&&mouseX <= 40+ 345 + (n*40) && mouseY<= 20+90+(g*20)) {
-            el = m;
+          if (mouseX >= 345 + (n*40) && mouseY>= 50+(g*20)&&mouseX <= 40+ 345 + (n*40) && mouseY<= 90+(g*20)) {
+            el = m-1;
           }
         }
         g++;
@@ -69,15 +69,14 @@ class Selection_FuseFiss {
       g = 0;
       for (int o = 89; o < elements.length; o++) {
         for (int p = 0; p < elements[0].length; p++) {
-          if (mouseX >= 520 + (p*40) && mouseY>= 90+(g*20)&&mouseX <= 40+ 520 + (p*40) && mouseY<= 20+90+(g*20)) {
-            el = o;
+          if (mouseX >= 520 + (p*40) && mouseY>= 50+(g*20)&&mouseX <= 40+ 520 + (p*40) && mouseY<= 90+(g*20)) {
+            el = o-1;
           }
         }
         g++;
       }
-      if (aa == 0) {
+      if (aa == 0 && bb == 0) {
         aa= el;
-      } else if (bb==0) {
         bb = el;
       }
     }
@@ -127,20 +126,10 @@ class Selection_FuseFiss {
     stroke(17, 155, 245);
     line(175, 70, 175, 690);
     line(330, 70, 330, 690);
-    //line(400,70, 400, 690);
     line(500, 70, 500, 690);
     if (el != 0) {
       rect(100, 100, 100, 100);
     }
   }
-  /*
-  void mouseClicked() {
-   fill(0);
-   rect(30, 50, 70, 50);
-   lala = true;
-   if (mouseX >= 30 && mouseX <= 100) {
-   rect(10, 10, 10, 10);
-   }
-   }
-   */
+
 }
