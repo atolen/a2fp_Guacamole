@@ -44,6 +44,6 @@ class Drop {
     }
   }
  boolean isTouching() {
-   return (yY >=height/2+100);
+   return (yY >= height/2+100);
    }
 }

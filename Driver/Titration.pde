@@ -28,7 +28,7 @@ class Titration {
 
   void setup() {
     size(700, 700);
-  //  clor = color(255, gor, 255);
+    //  clor = color(255, gor, 255);
     fill(clor);
     background(0);
     arc(width/2, height/2+100, 100, 50, 0, PI);
@@ -44,7 +44,7 @@ class Titration {
     if (drops == null) {
       drops = new Drop[10];
       for (int i = 0; i < drops.length; i++) {
-        delay(10);
+        //delay(10);
         drops[i] = new Drop(i*25-10);
         drops[i].once();
       }
@@ -53,18 +53,17 @@ class Titration {
 
   void change() {
     for (int i = 255; i > 0; i--) {
-     // delay(10);
-      gor-=1;
-      //rect(100,100,100,100);
-      fill(255,gor,255);
-      
+      // delay(10);
+      arc(width/2, height/2+100, 100, 50, 0, PI);
+      fill(255, gor, 255);
     }
+    gor-=10;
   }
   void progress() {
     volB++;
     recalculate();
     delay(5);
-    if (eqnB >= eqnA){
+    if (eqnB >= eqnA) {
       change();
     }
   }
@@ -78,13 +77,14 @@ class Titration {
       drops[i].once();
       drops[i].process();
     }
-    if (eqnA <= eqnB) {
-      change();
-    } 
-    for (int i = 0; i <drops.length; i++){
-      if(drops[i].state == drops[i].DEAD){
+
+    for (int i = 0; i <drops.length; i++) {
+      if (drops[i].state == drops[i].DEAD) {
         progress();
         //change();
+        if (eqnA <= eqnB) {
+          change();
+        }
       }
     }
   }

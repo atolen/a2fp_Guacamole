@@ -15,6 +15,8 @@ class Redox {
     size(700, 700);
     background(255);
     reacted = false;
+    startHeight = 100;
+    changeFactor =  10;
   }
 
 
@@ -63,10 +65,10 @@ class Redox {
     line(535, 105, 535, 300);
 
     fill(200);
-    rect(470, 300, 40, 100);
+    rect(470, 300, 40, startHeight);
 
     fill(200);
-    rect(180, 300, 40, 100);
+    rect(180, 300, 40, startHeight);
 
     PFont fonty = createFont("Ayuthaya", 10, true);
     textFont(fonty, 12);
@@ -74,6 +76,8 @@ class Redox {
     textAlign(CENTER);
     text("(-)",490,385);
     text("(+)",200,385);
+    
+    startHeight -= changeFactor;
     
   }
 
