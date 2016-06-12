@@ -2,19 +2,23 @@ import java.util.ArrayList;
 ArrayList<Particle> toBeExploded;
 Neutron[] neutrons;
 int mASSive;
-
+Selection_FuseFiss fartz;
+boolean first;
 class Fission {
+
   boolean reacted;  
+  boolean selected = false;
+  String inp = "";
   Fission() {
     setup();
     once();
   }
 
   void setup() {
-
+    first = true;
     //setup the page 
     size(700, 700);
-    background(0);    
+    background(0);  
     //initializations  
     reacted = false;
     //da neutron  
@@ -43,51 +47,57 @@ class Fission {
 
   void once() {
     background(0);
-    for (int i=0; i < neutrons.length; i++ ) {
-      neutrons[i].once(); 
-      neutrons[i].process();
+    if (first) {
+      fartz = new Selection_FuseFiss(1);
+      first = false;
     }
+    if (lala == true) {
+      for (int i=0; i < neutrons.length; i++ ) {
+        neutrons[i].once(); 
+        neutrons[i].process();
+      }
 
-    for (int j = 0; j < toBeExploded.size(); j++) {
-      toBeExploded.get(j).once();   
-      toBeExploded.get(j).process();
-    }
-
-    for (int i = 0; i < neutrons.length; i++) {
       for (int j = 0; j < toBeExploded.size(); j++) {
-        if (neutrons[i].isTouching(toBeExploded.get(j))) {
+        toBeExploded.get(j).once();   
+        toBeExploded.get(j).process();
+      }
 
-          float xxx = toBeExploded.get(j).mass;  
-          if (xxx > 10) {
-            int xcor =  (int) toBeExploded.get(j).xUs ;
-            int ycor = (int) toBeExploded.get(j).yUs;
+      for (int i = 0; i < neutrons.length; i++) {
+        for (int j = 0; j < toBeExploded.size(); j++) {
+          if (neutrons[i].isTouching(toBeExploded.get(j))) {
 
-            toBeExploded.remove(j);
+            float xxx = toBeExploded.get(j).mass;  
+            if (xxx > 10) {
+              int xcor =  (int) toBeExploded.get(j).xUs ;
+              int ycor = (int) toBeExploded.get(j).yUs;
 
-            float new1 = (float) random(xxx);
-            float new2 = (float) (xxx - new1);
-            Particle haha = new Particle(xcor, ycor, new1);
-            Particle foofoo = new Particle(xcor, ycor, new2);
-            toBeExploded.add(haha);
-            toBeExploded.add(foofoo);
+              toBeExploded.remove(j);
+
+              float new1 = (float) random(xxx);
+              float new2 = (float) (xxx - new1);
+              Particle haha = new Particle(xcor, ycor, new1);
+              Particle foofoo = new Particle(xcor, ycor, new2);
+              toBeExploded.add(haha);
+              toBeExploded.add(foofoo);
+            }
           }
         }
       }
-    }
-    fill(255);
-    stroke(255);
-    textFont(x, 20);
-    text("Back to Home", 600, 50);
-    noFill();
-    rect(500, 20, 195, 50);
-    if (mousePressed) {
-      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
-        neutrons = null;
-        toBeExploded = null;
-        fission = false;
-        home = true;
-        browse = false;
-        printy = false;
+      fill(255);
+      stroke(255);
+      textFont(x, 20);
+      text("Back to Home", 600, 50);
+      noFill();
+      rect(500, 20, 195, 50);
+      if (mousePressed) {
+        if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
+          neutrons = null;
+          toBeExploded = null;
+          fission = false;
+          home = true;
+          browse = false;
+          printy = false;
+        }
       }
     }
   }
