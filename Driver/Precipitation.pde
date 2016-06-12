@@ -68,6 +68,13 @@ class Precipitation {
       salty[i].onceB();
       salty[i].process();
     }
+    
+    //
+   //based on Ksp table, square the Ksp to find the max concentration of each ion type in solution
+   //if the concentration is less than, the particles disappear
+   //if the concentrations are too high, particles get bigger and fall to the bottom
+    
+  
   }
 
 
