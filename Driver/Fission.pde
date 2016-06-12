@@ -1,11 +1,11 @@
 import java.util.ArrayList;
-ArrayList<Particle> toBeExploded;
-Neutron[] neutrons;
-int mASSive;
-Selection_FuseFiss fartz;
-boolean first;
-class Fission {
 
+class Fission {
+  ArrayList<Particle> toBeExploded;
+  Neutron[] neutrons;
+  int mASSive;
+  Selection_FuseFiss fartz;
+  boolean first;
   boolean reacted;  
   boolean selected = false;
   String inp = "";
@@ -28,7 +28,7 @@ class Fission {
         neutrons[i] = new Neutron();
       }
     }
-
+    fartz = new Selection_FuseFiss(1);
     mASSive = 80;
 
     if (toBeExploded == null) {
@@ -46,9 +46,9 @@ class Fission {
 
 
   void once() {
-    background(0);
+    //background(0);
     if (first) {
-      fartz = new Selection_FuseFiss(1);
+      int elementNum = fartz.aa;
       first = false;
     }
     if (lala == true) {

@@ -3,6 +3,7 @@ float mass1;
 float mass2;
 String inp = "";
 boolean hit;
+Selection_FuseFiss fartz;
 
 class Fusion {
 
@@ -28,6 +29,10 @@ class Fusion {
   }
 
   void once1() {
+    fartz = new Selection_FuseFiss(2);
+    int elementNum1 = fartz.aa;
+    int elementNum2 = fartz.bb;
+    Calculation calc = new Calculation(fartz.aa, fartz.bb, false);
     background(0);
 
     for (int i = 0; i < fuse.length; i++) {
