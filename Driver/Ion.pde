@@ -30,10 +30,7 @@ class Ion {
   void setup() {
     radicalrev = massS;
     staterev = moving;
-    rr = random(256);
-    gg = random(256);
-    bb = random(256);
-    cccc = color(rr, gg, bb);
+    cccc = color(52,158,162);
 
     duexx = random(10)*.05;
     dueyy = random(10)*.05 ;
@@ -52,7 +49,7 @@ class Ion {
     if (staterev == moving) 
       move();
     if (staterev == dead) {
-      cccc = color(0, 0, 0);
+      cccc = color(0);
     }
   }
 
@@ -64,6 +61,8 @@ class Ion {
       stroke(cccc);
       ellipse(xxUs, yyUs, radicalrev, radicalrev);
       bounce();
+      
+      stroke(0);
     }
     if (!which){
       goUp();
@@ -87,7 +86,7 @@ void goUp(){
       if ( yyUs > 540 ) 
         dueyy = -1 * abs(dueyy);
     } else {
-      if (xxUs < 150 ) 
+      if (xxUs < 150) 
         duexx = abs(duexx);
       if ( xxUs > 250 ) 
         duexx = -1 * abs(duexx);
