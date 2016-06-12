@@ -70,9 +70,10 @@ class Redox {
     if (vamonos == null) {
       vamonos = new Ion[50];
       for (int i = 0; i < vamonos.length; i++) {
-        vamonos[i] = new Ion((int) random(150, 200), (int) random(300, 340), 2,false);      }
+        vamonos[i] = new Ion((int) random(150, 200), (int) random(300, 340), 2, false);
+      }
     }
-        textFont(x, 30);
+    textFont(x, 30);
     text("Back to Home", 600, 50);
     noFill();
     rect(500, 20, 195, 50);
@@ -88,10 +89,16 @@ class Redox {
 
   void getVoltage() {
   }
-  void onceB(){
-     for (int i = 0; i < vamonos.length; i++) {
+  void onceB() {
+    for (int i = 0; i < vamonos.length; i++) {
       vamonos[i].onceB();
       vamonos[i].process();
     }
+    fill(0);
+    textFont(x, 20);
+    text("Back to Home", 600, 50);
+    noFill();
+    stroke(0);
+    rect(500, 20, 195, 50);
   }
 }

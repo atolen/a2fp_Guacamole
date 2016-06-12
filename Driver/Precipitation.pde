@@ -22,10 +22,7 @@ class Precipitation {
         tbl[i][j] = ksp.getString(i, j);
       }
     }
-    textFont(x, 30);
-    text("Back to Home", 600, 50);
-    noFill();
-    rect(500, 20, 195, 50);
+
     if (mousePressed) {
       if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
         precipitation = false;
@@ -65,6 +62,12 @@ class Precipitation {
       salty[i].onceB();
       salty[i].process();
     }
+    fill(0);
+    textFont(x, 20);
+    text("Back to Home", 600, 50);
+    noFill();
+    stroke(0);
+    rect(500, 20, 195, 50);
   }
 
 

@@ -1,4 +1,4 @@
-  int molarityAcid;
+int molarityAcid;
 int molarityBase;
 int volA;
 int volB;
@@ -47,10 +47,7 @@ class Titration {
         drops[i] = new Drop(i*25-10);
       }
     }
-        textFont(x, 30);
-    text("Back to Home", 600, 50);
-    noFill();
-    rect(500, 20, 195, 50);
+
     if (mousePressed) {
       if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
         titration = false;
@@ -63,8 +60,8 @@ class Titration {
 
   void change() {
     //for (int i = 255; i > 0; i--) {
-      arc(width/2, height/2+100, 100, 50, 0, PI);
-      fill(255, gor, 255);
+    arc(width/2, height/2+100, 100, 50, 0, PI);
+    fill(255, gor, 255);
     //}
     gor-=15;
   }
@@ -94,5 +91,11 @@ class Titration {
         }
       }
     }
+    fill(255);
+    textFont(x, 20);
+    text("Back to Home", 600, 50);
+    noFill();
+    stroke(255);
+    rect(500, 20, 195, 50);
   }
 }
