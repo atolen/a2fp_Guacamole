@@ -45,9 +45,11 @@ class Ion {
   }
 
   void move() {
+
     xxUs = xxUs + duexx;
     yyUs = yyUs + dueyy;
     bounce();
+    
   }
 
 
@@ -101,16 +103,91 @@ void goUp(){
     }
     
     else if (spec) {
-     if (xxUs < 220 || xxUs > 250) {
-       duexx = -1 * duexx;
-     }
-     if (xxUs > 300 && (xxUs < 450 || xxUs > 470)) {
-       duexx = -1 * duexx; 
-     }
-     if (yyUs < 220 && yyUs > 200)
-     if (yyUs < 200 || yyUs > 400) {
-       dueyy = -1 * dueyy; 
-     }
+     /*
+      if (xxUs < 150 || xxUs > 550) {
+        duexx *= -1; 
+      }
+      
+      else if (xxUs < 220 && yyUs < 300) {
+       dueyy *=-1; 
+      }
+      else if (xxUs < 250 && yyUs > 400) {
+       dueyy*=-1; 
+      }
+      else if (xxUs > 250 && yyUs > 300 && yyUs < 400) {
+       duexx*=-1; 
+      }
+      else if (xxUs > 220 && xxUs < 240 && yyUs < 200) {
+       dueyy*=-1; 
+      }
+      else if (yyUs < 300 && yyUs > 200 && xxUs < 220) {
+        duexx*=-1;
+      }
+     else  if (yyUs < 300 && yyUs > 200 && xxUs > 240) {
+        duexx*=-1;
+      }
+      else if (yyUs > 200 && yyUs < 220 && xxUs < 220) {
+       duexx *=-1; 
+      }
+     else  if (yyUs > 200 && yyUs < 220 && xxUs > 470) {
+       duexx *=-1; 
+      }
+     else  if (xxUs > 240 && xxUs < 450 && yyUs < 200) {
+        dueyy*=-1;
+      }
+     else if (xxUs > 240 && xxUs < 450 && yyUs > 220) {
+        dueyy*=-1;
+      }
+     else if ( yyUs > 200 && yyUs < 300 && xxUs > 470) {
+        duexx*=-1;
+      }
+     else if ( yyUs > 220 && yyUs < 300 && xxUs < 450) {
+        duexx*=-1;
+      }
+      */
+     
+ 
+      if (xxUs < 220 || xxUs > 470) {
+          if (xxUs < 150 || xxUs > 550) {
+           duexx *=-1; 
+          }
+          if (yyUs < 300 || yyUs > 400) {
+           dueyy*=-1; 
+          }
+      }
+      
+      //going up
+      if (xxUs < 250 && yyUs > 220) {
+        if (xxUs > 240 || xxUs < 220) {
+           duexx *= -1; 
+        }
+        if (yyUs > 400 || yyUs < 200) {
+          dueyy *= -1;
+        }
+      }
+      //left/right
+     if (xxUs > 220 && xxUs < 450) {
+        if (yyUs > 220 || yyUs < 200) {
+           dueyy*=-1; 
+        }
+        if (xxUs < 220 || xxUs > 470) {
+          duexx *= -1; 
+        }
+      }
+      //other side
+      if (xxUs < 470 && xxUs > 450) {
+        if (yyUs < 200) {
+           dueyy *= -1; 
+        }
+        
+        if (xxUs < 450 || xxUs > 470) {
+           duexx *= -1; 
+        }
+      }
+      if (yyUs > 320) {
+       dueyy*=-1; 
+      }
+      
     }
     
     else if (which) {
@@ -121,8 +198,9 @@ void goUp(){
         dueyy = -1 * dueyy; 
       }
     }
-    
+ 
   }
+
 
 
   boolean isTouching( Ion other ) {
