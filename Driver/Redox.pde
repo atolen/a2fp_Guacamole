@@ -17,6 +17,7 @@ class Redox {
     reacted = false;
     startHeight = 100;
     changeFactor =  10;
+    ellipseMode(DIAMETER);
     noFill();
     ellipse(200, 300, 100, 50);
     ellipse(500, 300, 100, 50);
@@ -31,13 +32,13 @@ class Redox {
     ellipse(500, 400, 100, 50);
 
 
-//salt bridge
+    //salt bridge
     line(220, 300, 220, 200);
     line(240, 300, 240, 220);
 
     line(240, 220, 450, 220);
     line(220, 200, 470, 200);
-//
+    //
     line(450, 220, 450, 300);
     line(470, 200, 470, 300);
 
@@ -74,27 +75,26 @@ class Redox {
       for (int i = 0; i < vamonos.length; i++) {
         if ( i < 15) {
           //spectator cations - blue
-          color x = color(135,187,242);
-          vamonos[i] = new Ion((int) random(150,250), (int) random(300,400), 2,false, true,x,false , false);
-        }
-        else if (i < 30) {
+          color x = color(135, 187, 242);
+          vamonos[i] = new Ion((int) random(150, 250), (int) random(300, 400), 2, false, true, x, false, false);
+        } else if (i < 30) {
           //spectator anions  - red
-          color x = color(255,3,11);
-          vamonos[i] = new Ion( (int) random(150,250), (int) random(300,400), 2,false, true,x, false , false); 
-        }
-        else if (i < 45) {
+          color x = color(255, 3, 11);
+          vamonos[i] = new Ion( (int) random(150, 250), (int) random(300, 400), 2, false, true, x, false, false);
+        } else if (i < 45) {
           //Oxidizing species - at da anode, silver af
-           color x = color(165,165,165);
-          vamonos[i] = new Ion( (int) random(150,250),(int) random(300,400), 2,false, false,x, true, false); 
-        }
-        else {
+          color x = color(165, 165, 165);
+          vamonos[i] = new Ion( (int) random(150, 250), (int) random(300, 400), 2, false, false, x, true, false);
+        } else {
           //Reducing Species, at the cathode, gold
-          color x = color(211,177,90);
-          vamonos[i] = new Ion((int) random(450,550), (int) random(300,400), 2,false, false,x, false, true); 
-       }
+          color x = color(211, 177, 90);
+          vamonos[i] = new Ion((int) random(450, 550), (int) random(300, 400), 2, false, false, x, false, true);
+        }
+      }
     }
-    }
-        textFont(x, 30);
+    fill(0);
+    stroke(0);
+    textFont(x, 20);
     text("Back to Home", 600, 50);
     noFill();
     rect(500, 20, 195, 50);
@@ -110,8 +110,8 @@ class Redox {
 
   void getVoltage() {
   }
-  void onceB(){
-     for (int i = 0; i < vamonos.length; i++) {
+  void onceB() {
+    for (int i = 0; i < vamonos.length; i++) {
       vamonos[i].onceB();
       vamonos[i].process();
     }

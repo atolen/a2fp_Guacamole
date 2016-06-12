@@ -19,8 +19,8 @@ class Fission {
     reacted = false;
     //da neutron  
     if (neutrons == null) {
-      neutrons = new Neutron[10];
-      for (int i = 0; i < 10; i++) {
+      neutrons = new Neutron[5];
+      for (int i = 0; i < 5; i++) {
         neutrons[i] = new Neutron();
       }
     }
@@ -31,18 +31,6 @@ class Fission {
       toBeExploded = new ArrayList<Particle>();
       Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
       toBeExploded.add(butt);
-    }
-        textFont(x, 30);
-    text("Back to Home", 600, 50);
-    noFill();
-    rect(500, 20, 195, 50);
-    if (mousePressed) {
-      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
-        fission = false;
-        home = true;
-        browse = false;
-        printy = false;
-      }
     }
   }
 
@@ -55,8 +43,6 @@ class Fission {
 
   void once() {
     background(0);
-    //  ellipseMode(RADIUS);
-    // fill(100, 255, 100);
     for (int i=0; i < neutrons.length; i++ ) {
       neutrons[i].once(); 
       neutrons[i].process();
@@ -86,6 +72,22 @@ class Fission {
             toBeExploded.add(foofoo);
           }
         }
+      }
+    }
+    fill(255);
+    stroke(255);
+    textFont(x, 20);
+    text("Back to Home", 600, 50);
+    noFill();
+    rect(500, 20, 195, 50);
+    if (mousePressed) {
+      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
+        neutrons = null;
+        toBeExploded = null;
+        fission = false;
+        home = true;
+        browse = false;
+        printy = false;
       }
     }
   }

@@ -22,7 +22,9 @@ class Precipitation {
         tbl[i][j] = ksp.getString(i, j);
       }
     }
-    textFont(x, 30);
+    fill(0);
+    stroke(0);
+    textFont(x, 20);
     text("Back to Home", 600, 50);
     noFill();
     rect(500, 20, 195, 50);

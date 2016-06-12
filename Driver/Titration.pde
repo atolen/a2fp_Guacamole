@@ -47,7 +47,9 @@ class Titration {
         drops[i] = new Drop(i*25-10);
       }
     }
-        textFont(x, 30);
+    fill(255);
+    stroke(255);
+    textFont(x, 20);
     text("Back to Home", 600, 50);
     noFill();
     rect(500, 20, 195, 50);
