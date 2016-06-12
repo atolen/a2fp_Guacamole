@@ -26,7 +26,7 @@ class Fission {
       }
     }
     
-      mASSive = 20;
+      mASSive = 80;
       
     if (toBeExploded == null) {
        toBeExploded = new ArrayList<Particle>();
@@ -61,13 +61,17 @@ class Fission {
        if (neutrons[i].isTouching(toBeExploded.get(j))){
     
         float xxx = toBeExploded.get(j).mass;
+        
+        if (xxx > 5) {
+         toBeExploded.remove(j);
         float new1 = (float) random(xxx);
         float new2 = (float) (xxx - new1);
         Particle haha = new Particle(new1);
         Particle foofoo = new Particle(new2);
         toBeExploded.add(haha);
         toBeExploded.add(foofoo);
-        toBeExploded.remove(j);
+     
+        }
      }
     }
   }

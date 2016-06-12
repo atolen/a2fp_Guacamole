@@ -36,8 +36,8 @@ class Particle {
     xUs = random((width - r) + r/2);
     yUs = random((height - r) + r/2);
 
-    duex = random(10);
-    duey = random(10) ;
+    duex = random(10)*.5;
+    duey = random(10)*.5 ;
   }
 
   void move() {
@@ -79,5 +79,11 @@ class Particle {
       duey = abs(duey);
     if ( yUs > height ) 
       duey = -1 * abs(duey);
+  }
+  
+  
+  
+   boolean isTouching( Particle other ) {
+    return (sqrt( (xUs-other.xUs) * (xUs-other.xUs) + (yUs-other.yUs) * (yUs-other.yUs) ) < radical + other.radical);
   }
 }

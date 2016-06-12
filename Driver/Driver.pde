@@ -146,7 +146,6 @@ void draw() {
 
   if (fusion) {
     Fusion girlOnFire = new Fusion();
-    girlOnFire.react();
   } 
 
   if (fission) {
