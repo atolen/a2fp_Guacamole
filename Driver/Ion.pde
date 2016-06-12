@@ -1,4 +1,3 @@
-;
 
 class Ion {
 
@@ -108,7 +107,7 @@ void goUp(){
      if (xxUs > 300 && (xxUs < 450 || xxUs > 470)) {
        duexx = -1 * duexx; 
      }
-     if (yyUs < 220 && yyUs > 200
+     if (yyUs < 220 && yyUs > 200)
      if (yyUs < 200 || yyUs > 400) {
        dueyy = -1 * dueyy; 
      }
