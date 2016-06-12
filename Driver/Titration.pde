@@ -39,31 +39,27 @@ class Titration {
     line(455, 200, 455, 475);
     line(355, 250, 450, 250);
     line(355, 260, 450, 260);
-    line(348, 100, 348, 275);
+    line(345, 100, 345, 275);
     line(355, 100, 355, 275);
     if (drops == null) {
       drops = new Drop[10];
       for (int i = 0; i < drops.length; i++) {
-        //delay(10);
         drops[i] = new Drop(i*25-10);
-        drops[i].once();
       }
     }
   }
 
   void change() {
     for (int i = 255; i > 0; i--) {
-      // delay(10);
       arc(width/2, height/2+100, 100, 50, 0, PI);
       fill(255, gor, 255);
     }
     gor-=10;
   }
-  
+
   void progress() {
     volB++;
     recalculate();
-    //delay(5);
     if (eqnB >= eqnA) {
       change();
     }
@@ -78,7 +74,6 @@ class Titration {
       drops[i].once();
       drops[i].process();
     }
-
     for (int i = 0; i <drops.length; i++) {
       if (drops[i].state == DEAD) {
         progress();

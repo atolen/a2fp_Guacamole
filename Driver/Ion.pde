@@ -23,7 +23,6 @@ class Ion {
     massS = m;
     xxUs = x;
     yyUs = y;
-     //once();
     setup(); 
   }
 
@@ -74,9 +73,9 @@ class Ion {
       duexx = abs(duexx);
     if ( xxUs > 440 ) 
       duexx = -1 * abs(duexx);
-    if (yyUs < 420 ) 
+    if (yyUs < 400 ) 
       dueyy = abs(dueyy);
-    if ( yyUs > 560 ) 
+    if ( yyUs > 540 ) 
       dueyy = -1 * abs(dueyy);
   }
   

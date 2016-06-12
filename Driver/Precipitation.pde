@@ -10,7 +10,6 @@ class Precipitation {
 
   Precipitation() {
     setup();
-    draw();
     onceA();
   }
   void setup() {
@@ -30,8 +29,6 @@ class Precipitation {
     fill(153, 213, 252);
     ellipse(300, 500, 150, 90);
     noStroke();
-    //rect(225,380,150,30);
-    //rect(225,400,150,30);
     rect(150, 400, 300, 90);
     noFill();
     stroke(0);
@@ -45,21 +42,11 @@ class Precipitation {
     if (salty == null) {
       salty = new Ion[50];
       for (int i = 0; i < salty.length; i++) {
-        salty[i] = new Ion((int) random(225, 375), (int) random(380, 505), 2);
+        salty[i] = new Ion((int) random(161, 441), (int) random(400, 540), 2);
       }
     }
   }
 
-  void draw() {
-/*    fill(215, 53, 227);
-    textFont(x, 50);
-    for (int i = 1; i < tbl.length; i++) {                                    
-      for (int j = 0; j < tbl[0].length; j++) {                                
-        text(tbl[i][j], j, i);
-      }
-    }
-    */ //to print the table
-  }
   void onceA() {
     for (int i = 0; i < salty.length; i++) {
       salty[i].onceB();
