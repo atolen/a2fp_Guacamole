@@ -19,8 +19,6 @@ class Neutron {
 
   void setup() {
     float r = random(256);
-    float g = random(256);
-    float b = random(256);
     cc = color(255);
     rad = 10;
     xxx = random((width - r) + r/2);
