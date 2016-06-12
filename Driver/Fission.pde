@@ -62,7 +62,7 @@ class Fission {
     
         float xxx = toBeExploded.get(j).mass;
         
-        if (xxx > 5) {
+        if (xxx > 10) {
          toBeExploded.remove(j);
         float new1 = (float) random(xxx);
         float new2 = (float) (xxx - new1);

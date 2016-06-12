@@ -160,7 +160,6 @@ void draw() {
 
   if (precipitation) {
     Precipitation loveInvincible = new Precipitation();
-    loveInvincible.react();
   }
 }
 
