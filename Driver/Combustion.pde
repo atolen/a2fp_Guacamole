@@ -49,6 +49,7 @@ class Combustion {
       } 
       else if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
         burned = false;
+        combustion = false;
         home = true;
         browse = false;
         printy = false;
