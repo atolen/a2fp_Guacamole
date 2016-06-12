@@ -64,10 +64,8 @@ class Titration {
   }
 
   void change() {
-    //for (int i = 255; i > 0; i--) {
     arc(width/2, height/2+100, 100, 50, 0, PI);
     fill(255, gor, 255);
-    //}
     gor-=15;
   }
 

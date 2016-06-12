@@ -77,8 +77,6 @@ class Selection_FuseFiss {
       }
       if (aa == 0 && bb == 0) {
         aa= el;
-      } 
-      if (bb==0 && aa!=el) {
         bb = el;
       }
     }
@@ -133,4 +131,5 @@ class Selection_FuseFiss {
       rect(100, 100, 100, 100);
     }
   }
+
 }
