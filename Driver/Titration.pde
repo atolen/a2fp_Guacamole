@@ -1,4 +1,4 @@
-int molarityAcid;
+  int molarityAcid;
 int molarityBase;
 int volA;
 int volB;
@@ -50,11 +50,11 @@ class Titration {
   }
 
   void change() {
-    for (int i = 255; i > 0; i--) {
+    //for (int i = 255; i > 0; i--) {
       arc(width/2, height/2+100, 100, 50, 0, PI);
       fill(255, gor, 255);
-    }
-    gor-=10;
+    //}
+    gor-=15;
   }
 
   void progress() {
