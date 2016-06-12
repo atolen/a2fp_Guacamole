@@ -45,7 +45,36 @@ class Ion {
   }
 
   void move() {
-
+    if (spec) {
+       if (yyUs > 200) {
+         duexx = 0;
+         dueyy = -1;
+       }
+       if (yyUs < 200) {
+        duexx = 1;
+        dueyy=0;
+       }
+       else if (yyUs > 200  && yyUs < 220) {
+         duexx= 1;
+         dueyy = 0;
+       }
+       if (xxUs > 470) {
+        duexx= 0;
+        dueyy = 1;
+       }
+       else if (xxUs > 450 && xxUs < 470) {
+         duexx = 0;
+         dueyy= 1;
+       }
+       else if (xxUs > 450 && xxUs < 470 && yyUs > 300) {
+         dueyy = -1;
+         duexx = 0;
+       }
+       if (yyUs > 350) {
+        duexx = 0;
+        dueyy = -1;
+       }
+    }
     xxUs = xxUs + duexx;
     yyUs = yyUs + dueyy;
     bounce();
@@ -103,50 +132,8 @@ void goUp(){
     }
     
     else if (spec) {
-     /*
-      if (xxUs < 150 || xxUs > 550) {
-        duexx *= -1; 
-      }
-      
-      else if (xxUs < 220 && yyUs < 300) {
-       dueyy *=-1; 
-      }
-      else if (xxUs < 250 && yyUs > 400) {
-       dueyy*=-1; 
-      }
-      else if (xxUs > 250 && yyUs > 300 && yyUs < 400) {
-       duexx*=-1; 
-      }
-      else if (xxUs > 220 && xxUs < 240 && yyUs < 200) {
-       dueyy*=-1; 
-      }
-      else if (yyUs < 300 && yyUs > 200 && xxUs < 220) {
-        duexx*=-1;
-      }
-     else  if (yyUs < 300 && yyUs > 200 && xxUs > 240) {
-        duexx*=-1;
-      }
-      else if (yyUs > 200 && yyUs < 220 && xxUs < 220) {
-       duexx *=-1; 
-      }
-     else  if (yyUs > 200 && yyUs < 220 && xxUs > 470) {
-       duexx *=-1; 
-      }
-     else  if (xxUs > 240 && xxUs < 450 && yyUs < 200) {
-        dueyy*=-1;
-      }
-     else if (xxUs > 240 && xxUs < 450 && yyUs > 220) {
-        dueyy*=-1;
-      }
-     else if ( yyUs > 200 && yyUs < 300 && xxUs > 470) {
-        duexx*=-1;
-      }
-     else if ( yyUs > 220 && yyUs < 300 && xxUs < 450) {
-        duexx*=-1;
-      }
-      */
-     
- 
+    
+ /*
       if (xxUs < 220 || xxUs > 470) {
           if (xxUs < 150 || xxUs > 550) {
            duexx *=-1; 
@@ -187,7 +174,7 @@ void goUp(){
       if (yyUs > 320) {
        dueyy*=-1; 
       }
-      
+    */  
     }
     
     else if (which) {
