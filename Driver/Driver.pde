@@ -131,7 +131,7 @@ void draw() {
    
   if (combustion) {
     Combustion helloBonjour = new Combustion();
-    helloBonjour.react();
+  //  helloBonjour.react();
   }
 
   if (titration) {
