@@ -76,19 +76,19 @@ class Redox {
         if ( i < 15) {
           //spectator cations - blue
           color x = color(135, 187, 242);
-          vamonos[i] = new Ion((int) random(220, 240), (int) random(300, 400), 2, false, true, x, false, false);
+          vamonos[i] = new Ion((int) random(220, 240), (int) random(300, 400), 2, false, true, x, false, false,1,0);
         } else if (i < 30) {
           //spectator anions  - red
           color x = color(255, 3, 11);
-          vamonos[i] = new Ion( (int) random(220, 240), (int) random(300, 400), 2, false, true, x, false, false);
+          vamonos[i] = new Ion( (int) random(220, 240), (int) random(300, 400), 2, false, true, x, false, false, 1,0);
         } else if (i < 45) {
           //Oxidizing species - at da anode, silver af
           color x = color(165, 165, 165);
-          vamonos[i] = new Ion( (int) random(150, 250), (int) random(300, 310), 2, false, false, x, true, false);
+          vamonos[i] = new Ion( (int) random(150, 250), (int) random(300, 310), 2, false, false, x, true, false, random(2), random(2));
         } else {
           //Reducing Species, at the cathode, gold
           color x = color(211, 177, 90);
-          vamonos[i] = new Ion((int) random(450, 550), (int) random(300, 400), 2, false, false, x, false, true);
+          vamonos[i] = new Ion((int) random(450, 550), (int) random(300, 400), 2, false, false, x, false, true, random(2), random(2));
         }
       }
     }

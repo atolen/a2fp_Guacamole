@@ -58,7 +58,7 @@ class Precipitation {
       salty = new Ion[50];
       for (int i = 0; i < salty.length; i++) {
         color x = color(255, 23, 111);
-        salty[i] = new Ion((int) random(161, 441), (int) random(400, 540), 2, true, false, x, false, false );
+        salty[i] = new Ion((int) random(161, 441), (int) random(400, 540), 2, true, false, x, false, false,1,1 );
       }
     }
   }

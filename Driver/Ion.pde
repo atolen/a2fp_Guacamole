@@ -21,10 +21,11 @@ class Ion {
   boolean spec;
   boolean an;
   boolean cath;
+  boolean left = true;
 
 
 
-  Ion(int x, int y, float m, boolean precipitation, boolean spectator, color rara, boolean anI, boolean cathI) {
+  Ion(int x, int y, float m, boolean precipitation, boolean spectator, color rara, boolean anI, boolean cathI, float ysp, float xsp) {
     massS = m;
     xxUs = x;
     yyUs = y;
@@ -33,6 +34,8 @@ class Ion {
     cath = cathI;
     an = anI;
     spec = spectator;
+    duexx = xsp;
+    dueyy = ysp;
     setup();
   }
 
@@ -45,36 +48,40 @@ class Ion {
   }
 
   void move() {
-    if (spec) {
-       if (yyUs > 200) {
-         duexx = 0;
-         dueyy = -1;
-       }
-       if (yyUs < 200) {
+    if (spec) {    
+      if (left) {
+       if (yyUs < 210) {
         duexx = 1;
         dueyy=0;
        }
-       else if (yyUs > 200  && yyUs < 220) {
-         duexx= 1;
-         dueyy = 0;
-       }
-       if (xxUs > 470) {
+       if (xxUs > 460) {
         duexx= 0;
         dueyy = 1;
        }
-       else if (xxUs > 450 && xxUs < 470) {
-         duexx = 0;
-         dueyy= 1;
-       }
-       else if (xxUs > 450 && xxUs < 470 && yyUs > 300) {
-         dueyy = -1;
-         duexx = 0;
-       }
-       if (yyUs > 350) {
+       if (yyUs > 305) {
         duexx = 0;
         dueyy = -1;
+        left = false;
        }
-    }
+      }
+      else if(!left) {
+        if(yyUs < 210) {
+         duexx = -1;
+         dueyy = 0;
+        }
+        if (xxUs < 230) {
+         duexx = 0;
+         dueyy = 1;
+        }
+        if (yyUs > 305) {
+         duexx = 0;
+         dueyy = -1;
+         left = true;
+        }
+      }
+     }
+       
+    
     xxUs = xxUs + duexx;
     yyUs = yyUs + dueyy;
     bounce();
