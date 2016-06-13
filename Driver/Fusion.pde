@@ -4,10 +4,9 @@ float mass2;
 String inp = "";
 boolean hit = false;
 String y = "";
-Selection_FuseFiss fartz;
+
 
 class Fusion {
-
 
   Fusion() { 
     setup(); 
@@ -18,6 +17,7 @@ class Fusion {
     size(700, 700);
     results = false;
     background(0);
+     //fartza = new Selection_FuseFiss(1);
     if (hit) {
      fill(255) ;
      text("new element", 100,100);
@@ -35,14 +35,13 @@ class Fusion {
       fuse[1] = dos;
     }
     
-    fartz = new Selection_FuseFiss(2);
+   
 
   }
 
   void once1() {
-    int elementNum1 = fartz.aa;
-    int elementNum2 = fartz.bb;
-    Calculation calc = new Calculation(fartz.aa, fartz.bb, false);
+  
+  //  Calculation calc = new Calculation(fartza.aa, fartza.bb, false);
     background(0);
 
     for (int i = 0; i < fuse.length; i++) {
