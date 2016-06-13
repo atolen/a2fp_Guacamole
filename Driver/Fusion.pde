@@ -1,17 +1,14 @@
+
+
+
+class Fusion {
 Particle[] fuse ;
 float mass1;
 float mass2;
 String inp = "";
 boolean hit = false;
 String y = "";
-
-<<<<<<< HEAD
-class Fusion {
-  Selection_FuseFiss fartz;
-=======
->>>>>>> 9fec6271a3412c4f85dc01d6b54d21942923d5f9
-
-class Fusion {
+Selection_FuseFiss fartz;
 
   Fusion() { 
     setup(); 
@@ -41,7 +38,7 @@ class Fusion {
       fuse[0] = uno;
       fuse[1] = dos;
     }
-<<<<<<< HEAD
+
     rect(100, 100, 100, 100);
   }
 
@@ -50,16 +47,6 @@ class Fusion {
     int elementNum1 = fartz.aa;
     int elementNum2 = fartz.bb;
     Calculation calc = new Calculation(fartz.aa, fartz.bb, false);
-=======
-    
-   
-
-  }
-
-  void once1() {
-  
-  //  Calculation calc = new Calculation(fartza.aa, fartza.bb, false);
->>>>>>> 9fec6271a3412c4f85dc01d6b54d21942923d5f9
     background(0);
     if (fartz == null) {
       for (int i = 0; i < fuse.length; i++) {

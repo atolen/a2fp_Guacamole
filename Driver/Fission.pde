@@ -3,15 +3,14 @@ ArrayList<Particle> toBeExploded;
   Neutron[] neutrons;
   int mASSive;
   boolean first;
-<<<<<<< HEAD
-  boolean reacted;
-=======
+  boolean hit = false;
+
   //boolean reacted;  
   //boolean selected = false;
  // String inp = "";
 class Fission {
-  
->>>>>>> 9fec6271a3412c4f85dc01d6b54d21942923d5f9
+Selection_FuseFiss fartz;  
+
   Fission() {
     setup();
     once();
@@ -24,7 +23,14 @@ class Fission {
     background(0);  
     //initializations  
     reacted = false;
- 
+    fartz = new Selection_FuseFiss(2);
+    results = false;
+    background(0);
+     //fartza = new Selection_FuseFiss(1);
+    if (hit) {
+      fill(255) ;
+      text("new element", 100, 100);
+    }
 
       if (neutrons == null) {
         neutrons = new Neutron[5];
