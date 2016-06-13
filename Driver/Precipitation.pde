@@ -1,4 +1,8 @@
 //make a matrix with ionic compounds and their KspS
+boolean but = false;
+Ion[] salty;  
+
+
 
 static String[][] floatsExpt(String[][] a) { //modify ksp values in table to actual nums
   String s;
@@ -25,8 +29,9 @@ class Precipitation {
   int consB;
   int volume;
   int ksp;
-  boolean but;
-  Ion[] salty;  
+ // boolean but;
+
+
   Precipitation() {
     setup();
     onceA();
@@ -38,7 +43,6 @@ class Precipitation {
     fill(0);
     stroke(0);
     textFont(x, 20);
-    but = false;
     text("Back to Home", 600, 50);
     noFill();
     rect(500, 20, 195, 50);
@@ -51,7 +55,31 @@ class Precipitation {
       }
     }
 
+    stroke(0);
+    fill(255);
+ 
+      text("put it in", 470, 580);
+      noFill();
+      rect(400, 550, 200, 50);
 
+     
+      if (salty == null) {
+        salty = new Ion[50];
+        for (int i = 0; i < salty.length; i++) {
+          color x = color(255, 23, 111);
+          salty[i] = new Ion((int)random(161, 441), (int)random(370, 530), 2, true, false, x, false, false, 1, 1, false );
+        }
+      }
+
+      //=========
+      consA = 15;
+      consB = 10;
+      ksp = 100;
+      volume = 1;
+    }
+  
+
+  void onceA() {
     fill(153, 213, 252);
     noStroke();
     rect(150, 400, 300, 90);
@@ -60,58 +88,45 @@ class Precipitation {
     stroke(0);
     arc(300, 500, 150, 60, 0, PI);
 
-
     ellipseMode(RADIUS);
     stroke(100, 95, 95);
     noFill();//(255);
     ellipse(300, 300, 150, 60);
-
 
     noFill();
     stroke(0);
     line(150, 300, 150, 500);
     line(450, 300, 450, 500);
 
-    noStroke();
-    fill(255);
-
-
-    if (salty == null) {
-      salty = new Ion[50];
-      for (int i = 0; i < salty.length; i++) {
-        color x = color(255, 23, 111);
-        salty[i] = new Ion((int)random(161, 441), (int)random(370, 530), 2, true, false, x, false, false, 1, 1, false );
+    stroke(0);
+    fill(0);
+ 
+    text("put it in", 470, 580);
+    noFill();
+    rect(400, 550, 200, 50);
+      
+      
+    precClicked();
+    if (but) {   
+      if ( fall() ) {
+        for (int i = 0; i < salty.length; i++) {
+          salty[i].staterev = Ion.falling;
+          salty[i].yyUs = random(535,545);
+        }
+      } 
+      else {
+        for (int i = 0; i < salty.length; i++) {
+          salty[i].kill(); //-----------------here it is
+        }
       }
     }
-
-    //=========
-    consA = 15;
-    consB = 10;
-    ksp = 100;
-    volume = 1;
-  }
-
-  void onceA() {
-    if (!but) {
+    
+    
       for (int i = 0; i < salty.length; i++) {
-        text("put it in", 470, 580);
-        noFill();
-        rect(400, 550, 200, 50);
-        if (mousePressed && mouseX >= 400 && mouseX <= 600 && mouseY >= 550 && mouseY <= 600) {
-          if ( fall() ) {
-            salty[i].yyUs -= 5;
-          } else {
-            //  text("fuck me", 200, 200);
-            salty[i].kill(); //-----------------here it is
-          }
-        }
         salty[i].onceB();
         salty[i].process();
       }
-    }
-  }
-
-
+   }
 
   boolean fall() {
     //rect(100, 100, 100, 100); --- works
@@ -138,4 +153,13 @@ class Precipitation {
     tbl = floatsExpt(tbl);
     return tbl;
   }
+  
+  void precClicked() {
+    if (mousePressed && mouseX >= 400 && mouseX <= 600 && mouseY >= 550 && mouseY <= 600) {
+      but = true; 
+    }
+  }
 }
+  
+  
+  

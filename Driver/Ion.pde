@@ -3,6 +3,7 @@ class Ion {
   final static int moving = 0;
   final static int bump = 1;
   final static int dead = 3;
+  final static int falling = 5;
 
   //cors
   float radicalrev;
@@ -123,6 +124,14 @@ class Ion {
       staterev = dead;
     if (staterev == moving) 
       move();
+    if (staterev == dead) {
+      move(); 
+    }
+    if (staterev == falling) {
+      duexx *= .01;
+      dueyy *= .01;
+      move(); 
+    }
   }
 
 
@@ -138,19 +147,15 @@ class Ion {
       stroke(cccc);
       ellipse(xxUs, yyUs, radicalrev, radicalrev);
       bounce();
-
-
-      if (!which) {
-        goUp();
-      }
+    } else {
+      move();
+      fill(cccc);
+      stroke(cccc);
+      ellipse(xxUs, yyUs, radicalrev, radicalrev);
+      bounce();
     }
   }
-  void goUp() {
-    if (xxUs<220 && xxUs >250 && yyUs>440 && yyUs<400) {
-      duexx = abs(duexx);
-      dueyy = abs(dueyy);
-    }
-  }
+
 
   void bounce() {
     if (an) {
@@ -179,11 +184,30 @@ class Ion {
           dueyy = -1 * dueyy;
         }
     } else if (which) {
-      if (xxUs < 150 || xxUs > 450) {
-        duexx = -1 * duexx;
+      if (staterev == dead) {
+        if (xxUs < 150 || xxUs > 450) {
+          duexx = 0;
+        }
+        if (yyUs < 535 || yyUs > 550) {
+          dueyy = 0;
+        }
       }
-      if (yyUs < 400 || yyUs > 550) {
-        dueyy = -1 * dueyy;
+      
+      else if (staterev == falling) {
+        if (xxUs < 150 || xxUs > 450) {
+          duexx = -1 * duexx;
+        }
+        if (yyUs < 535 || yyUs > 545) {
+          dueyy = -1 * dueyy;
+        }
+      }
+      else {
+        if (xxUs < 150 || xxUs > 450) {
+          duexx = -1 * duexx;
+        }
+        if (yyUs < 400 || yyUs > 500) {
+          dueyy = -1 * dueyy;
+        }
       }
     }
   }
