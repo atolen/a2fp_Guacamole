@@ -2,11 +2,11 @@ Particle[] fuse ;
 float mass1;
 float mass2;
 String inp = "";
-boolean hit;
-Selection_FuseFiss fartz;
+boolean hit = false;
+String y = "";
+
 
 class Fusion {
-
 
   Fusion() { 
     setup(); 
@@ -17,6 +17,13 @@ class Fusion {
     size(700, 700);
     results = false;
     background(0);
+     //fartza = new Selection_FuseFiss(1);
+    if (hit) {
+     fill(255) ;
+     text("new element", 100,100);
+    }
+    
+
     hit = false;
     mass1 = 30;
     mass2 = 40;
@@ -27,14 +34,14 @@ class Fusion {
       fuse[0] = uno;
       fuse[1] = dos;
     }
-    fartz = new Selection_FuseFiss(2);
+    
+   
 
   }
 
   void once1() {
-    int elementNum1 = fartz.aa;
-    int elementNum2 = fartz.bb;
-    Calculation calc = new Calculation(fartz.aa, fartz.bb, false);
+  
+  //  Calculation calc = new Calculation(fartza.aa, fartza.bb, false);
     background(0);
 
     for (int i = 0; i < fuse.length; i++) {
@@ -47,7 +54,8 @@ class Fusion {
       hit = true;
     }
 
-    if (hit) {
+    
+     if (hit) {
       float d = fuse[0].radical + fuse[1].radical;
       if (d < 100) {
         int xcor = (int) fuse[0].xUs;
@@ -56,6 +64,13 @@ class Fusion {
         Particle f = e;
         fuse[0] = e;
         fuse[1] = f;
+
+          for (int i = 1; i < elements.length; i++) {
+            if (Integer.parseInt(elements[i][2]) == (int) d) {
+              y+= elements[i][2];
+            }
+          }
+         
       }
     }
     fill(255);
@@ -74,5 +89,11 @@ class Fusion {
         printy = false;
       }
     }
+   
+    
+    
+    
+    
+    
       }
 }
