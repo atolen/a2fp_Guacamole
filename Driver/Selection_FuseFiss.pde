@@ -42,7 +42,6 @@ class Selection_FuseFiss {
     fill(215, 53, 227);
     while (ctr > 0) {
       if (mousePressed) {
-        ctr --;
         int g = 0;  
         for (int b = 1; b < 30; b++) {
           for (int j = 0; j < elements[0].length; j++) {
@@ -89,6 +88,7 @@ class Selection_FuseFiss {
           bb = el;
         }
       }
+      ctr--;
       System.out.println(aa + " " + bb);
     }
 
