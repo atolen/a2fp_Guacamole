@@ -25,7 +25,7 @@ class Precipitation {
   int consB;
   int volume;
   int ksp;
-
+  boolean but;
   Ion[] salty;  
   Precipitation() {
     setup();
@@ -35,11 +35,10 @@ class Precipitation {
   void setup() {
     size(700, 700);
     background(255);
-
-
     fill(0);
     stroke(0);
     textFont(x, 20);
+    but = false;
     text("Back to Home", 600, 50);
     noFill();
     rect(500, 20, 195, 50);
@@ -86,28 +85,40 @@ class Precipitation {
     }
 
     //=========
-    consA = 10;
+    consA = 15;
     consB = 10;
     ksp = 100;
     volume = 1;
   }
 
   void onceA() {
-    for (int i = 0; i < salty.length; i++) {
-      salty[i].onceB();
-      salty[i].process();
-      if ( fall() ) {
-        salty[i].yyUs -= 5;
-      }
-      else {
-        salty[i].kill();
+    if (!but) {
+      for (int i = 0; i < salty.length; i++) {
+        text("put it in", 470, 580);
+        noFill();
+        rect(400, 550, 200, 50);
+        if (mousePressed && mouseX >= 400 && mouseX <= 600 && mouseY >= 550 && mouseY <= 600) {
+          if ( fall() ) {
+            salty[i].yyUs -= 5;
+          } else {
+            //  text("fuck me", 200, 200);
+            salty[i].kill(); //-----------------here it is
+          }
+        }
+        salty[i].onceB();
+        salty[i].process();
       }
     }
   }
 
 
+
   boolean fall() {
-    return ((consA * consB) / volume) > ksp;
+    //rect(100, 100, 100, 100); --- works
+    // text(consA*consB/volume, 100, 100);//100
+    //text("\n", 100, 100);    
+    //text(ksp, 150, 150);//100
+    return (((consA * consB) / volume) > ksp);
   }
 
   //
@@ -123,7 +134,7 @@ class Precipitation {
         tbl[i][j] = ksp.getString(i, j);
       }
     }
-    
+
     tbl = floatsExpt(tbl);
     return tbl;
   }

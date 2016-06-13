@@ -44,79 +44,77 @@ class Ion {
   void setup() {
     radicalrev = massS;
     staterev = moving;
-/*
+    /*
     duexx = random(10)*.05;
-    dueyy = random(10)*.05 ;
-    */
+     dueyy = random(10)*.05 ;
+     */
   }
 
   void move() {
-    
+
     if (isElectron) {
       if (xxUs < 162) {
-       duexx = 0;
-       dueyy = -1;
+        duexx = 0;
+        dueyy = -1;
       }  
       if (yyUs < 102) {
-       duexx = 1;
-       dueyy = 0;
+        duexx = 1;
+        dueyy = 0;
       }
       if (xxUs > 537) {
-       duexx = 0;
-       dueyy = 1;
+        duexx = 0;
+        dueyy = 1;
       }
       if (yyUs > 350) {
         duexx = -.1;
         dueyy = 0;
       }
       if (xxUs > 470 && xxUs < 500 && yyUs < 400 && yyUs > 300) {
-       duexx= 0;
-       dueyy = 0;
-       color d = color(211, 177, 90);
-       cccc = d;
-       reachedCathode = true;
-      } 
+        duexx= 0;
+        dueyy = 0;
+        color d = color(211, 177, 90);
+        cccc = d;
+        reachedCathode = true;
+      }
     }
-    
-    
+
+
     if (spec) {    
       if (left) {
-       if (yyUs < 210) {
-        duexx = 1;
-        dueyy=0;
-       }
-       if (xxUs > 460) {
-        duexx= 0;
-        dueyy = 1;
-       }
-       if (yyUs > 305) {
-        duexx = 0;
-        dueyy = -1;
-        left = false;
-       }
-      }
-      else if(!left) {
-        if(yyUs < 210) {
-         duexx = -1;
-         dueyy = 0;
+        if (yyUs < 210) {
+          duexx = 1;
+          dueyy=0;
         }
-        if (xxUs < 230) {
-         duexx = 0;
-         dueyy = 1;
+        if (xxUs > 460) {
+          duexx= 0;
+          dueyy = 1;
         }
         if (yyUs > 305) {
-         duexx = 0;
-         dueyy = -1;
-         left = true;
+          duexx = 0;
+          dueyy = -1;
+          left = false;
+        }
+      } else if (!left) {
+        if (yyUs < 210) {
+          duexx = -1;
+          dueyy = 0;
+        }
+        if (xxUs < 230) {
+          duexx = 0;
+          dueyy = 1;
+        }
+        if (yyUs > 305) {
+          duexx = 0;
+          dueyy = -1;
+          left = true;
         }
       }
-     }
-       
-    
+    }
+
+
     xxUs = xxUs + duexx;
     yyUs = yyUs + dueyy;
     bounce();
-    
   }
 
 
@@ -125,17 +123,14 @@ class Ion {
       staterev = dead;
     if (staterev == moving) 
       move();
-    if (staterev == dead) {
-      cccc = color(0, 0, 0);
-    }
   }
 
 
   void kill() {
     staterev = dead;
   }
-  
-  
+
+
   void onceB() {
     if ( staterev != dead ) {     
       move();
@@ -143,10 +138,11 @@ class Ion {
       stroke(cccc);
       ellipse(xxUs, yyUs, radicalrev, radicalrev);
       bounce();
-    }
-    
-    if (!which) {
-      goUp();
+
+
+      if (!which) {
+        goUp();
+      }
     }
   }
   void goUp() {
@@ -171,7 +167,6 @@ class Ion {
       if (yyUs < 300 || yyUs > 400) {
         dueyy = -1 *dueyy;
       }
-
     } else if (spec) {
       if (xxUs < 220 || xxUs > 250) {
         duexx = -1 * duexx;
@@ -191,7 +186,6 @@ class Ion {
         dueyy = -1 * dueyy;
       }
     }
-
   }
 
 
