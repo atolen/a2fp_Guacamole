@@ -15,6 +15,7 @@ class Combustion {
 
 
   Combustion() {
+    ellipseMode(DIAMETER);
     setup();
     once();
   }

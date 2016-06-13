@@ -56,9 +56,9 @@ class Precipitation {
     }
 
     stroke(0);
-    fill(255);
- 
-      text("put it in", 470, 580);
+    fill(0);
+       
+      text("Precipitate", 470, 580);
       noFill();
       rect(400, 550, 200, 50);
 
@@ -113,6 +113,8 @@ class Precipitation {
           salty[i].staterev = Ion.falling;
           salty[i].xxUs = random(200,400);
           salty[i].yyUs = random(535,545);
+          salty[i].duexx =0;
+          salty[i].dueyy = 0;
         }
       } 
       else {
