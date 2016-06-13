@@ -179,94 +179,95 @@ class Redox {
   }
 
 
-void getVoltage() {
-}
-void onceB() {
-  for (int i = 0; i < vamonos.length; i++) {
-    vamonos[i].onceB();
-    vamonos[i].process();
-    if (vamonos[i].isElectron) {
-      if (vamonos[i].reachedCathode) {
-        vamonos[i-15].xxUs = 480;
-        vamonos[i-15].yyUs = 340;
-        vamonos[i-15].duexx = 0;
-        vamonos[i-15].dueyy = 0;
-        vamonos[i-15].reachedCathode = true;
+  void getVoltage() {
+  }
+  void onceB() {
+    for (int i = 0; i < vamonos.length; i++) {
+      vamonos[i].onceB();
+      vamonos[i].process();
+      if (vamonos[i].isElectron) {
+        if (vamonos[i].reachedCathode) {
+          vamonos[i-15].xxUs = 480;
+          vamonos[i-15].yyUs = 340;
+          vamonos[i-15].duexx = 0;
+          vamonos[i-15].dueyy = 0;
+          vamonos[i-15].reachedCathode = true;
+        }
       }
     }
   }
-}
 
-void metalTable() {
-  metals = new String[91][4];
-  Table table = loadTable("el_csv.csv");
-  for (int i = 0; i < elements.length; i++) {
-    for (int j =0; j < elements[0].length; j++) {
-      elements[i][j] = table.getString(i, j);
+  void metalTable() {
+    metals = new String[91][4];
+    Table tale = loadTable("el_csv.csv");
+    for (int i = 0; i < metals.length; i++) {
+      for (int j =0; j < metals[0].length; j++) {
+        metals[i][j] = tale.getString(i, j);
+      }
     }
-  }
-  textFont(x, 30);
-  fill(107, 22, 245);
-  textAlign(CENTER);
-  text("These be the Elements", width/2, 30);
+    textFont(x, 30);
+    fill(107, 22, 245);
+    textAlign(CENTER);
+    text("These be the Elements", width/2, 30);
 
-  myAss = createFont("Ayuthaya", 10, true);
-  textFont(myAss, 10);
-  //rect(width/2-175, height/2-75, 250, 450);
-  fill(215, 53, 227);
-  int g = 0;  
-  for (int b = 1; b < 30; b++) {
-    for (int j = 0; j < elements[0].length; j++) {
-      text(elements[b][j], 30 + (j*40), 90+(g*20));
+    myAss = createFont("Ayuthaya", 10, true);
+    textFont(myAss, 10);
+    //rect(width/2-175, height/2-75, 250, 450);
+    fill(215, 53, 227);
+    int g = 0;  
+    for (int b = 1; b < 30; b++) {
+      for (int j = 0; j < elements[0].length; j++) {
+        text(elements[b][j], 30 + (j*40), 90+(g*20));
+      }
+      g++;
     }
-    g++;
-  }
 
-  g = 0;
-  for (int k = 30; k < 59; k++) {
-    for (int l = 0; l < elements[0].length; l++) {
-      text(elements[k][l], 195 + (l*40), 90+(g*20));
+    g = 0;
+    for (int k = 30; k < 59; k++) {
+      for (int l = 0; l < elements[0].length; l++) {
+        text(elements[k][l], 195 + (l*40), 90+(g*20));
+      }
+      g++;
     }
-    g++;
-  }
 
-  g = 0;
-  for (int m = 59; m < 89; m++) {
-    for (int n = 0; n < elements[0].length; n++) {
-      text(elements[m][n], 345 + (n*40), 90+(g*20));
+    g = 0;
+    for (int m = 59; m < 91; m++) {
+      for (int n = 0; n < elements[0].length; n++) {
+        text(elements[m][n], 345 + (n*40), 90+(g*20));
+      }
+      g++;
     }
-    g++;
-  }
 
-  g = 0;
-  for (int o = 89; o < elements.length; o++) {
-    for (int p = 0; p < elements[0].length; p++) {
-      text(elements[o][p], 520 + (p*50), 90+ (g*20));
-    }
-    g++;
-  }
 
-  //lines to make this shit pretty
-  stroke(17, 155, 245);
-  line(10, 70, 690, 70);
-  line(10, 70, 10, 690);
-  line(690, 690, 10, 690);
-  line(690, 690, 690, 70);
-
-  for (int og = 70; og < 700; og += 20) {
+    //lines to make this shit pretty
     stroke(17, 155, 245);
-    line(10, og, 690, og);
-  }
+    line(10, 70, 690, 70);
+    line(10, 70, 10, 690);
+    line(690, 690, 10, 690);
+    line(690, 690, 690, 70);
 
-  stroke(17, 155, 245);
-  line(175, 70, 175, 690);
-  line(330, 70, 330, 690);
-  //line(400,70, 400, 690);
-  line(500, 70, 500, 690);
+    for (int og = 70; og < 700; og += 20) {
+      stroke(17, 155, 245);
+      line(10, og, 690, og);
+    }
+
+    stroke(17, 155, 245);
+    line(175, 70, 175, 690);
+    line(330, 70, 330, 690);
+    //line(400,70, 400, 690);
+    line(500, 70, 500, 690);
 
 
-  text("Back to Home", 600, 50);
-  noFill();
-  rect(550, 40, 130, 13);
-} //prnt csv -- pd table
+    text("Back to Home", 600, 50);
+    noFill();
+    rect(550, 40, 130, 13);
+    if (mousePressed) {
+      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
+        redox = false;
+        home = true;
+        browse = false;
+        printy = false;
+      }
+    }
+  } //prnt csv -- pd table
 }
