@@ -23,6 +23,7 @@ class Ion {
   boolean cath;
   boolean left = true;
   boolean isElectron;
+  boolean reachedCathode = false;
 
 
 
@@ -74,6 +75,7 @@ class Ion {
        dueyy = 0;
        color d = color(211, 177, 90);
        cccc = d;
+       reachedCathode = true;
       } 
     }
     
