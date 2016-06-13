@@ -75,12 +75,24 @@ class Selection_FuseFiss {
         }
         g++;
       }
-      if (aa == 0 && bb == 0) {
+      if (aa == 0 && bb ==0) {
         aa= el;
-        bb = el;
+      } else  if (aa==el&&bb==0) {
+        rect(100, 100, 100, 100);
+        bb=el;
       }
+      System.out.println(aa + " " + bb);
     }
-    System.out.println(aa + " " + bb);
+    //bb=1;
+    if (bb==-1 && aa!=0) {
+      fission = true;
+      Calculation calc = new Calculation(aa, bb, true);
+    } else if (bb!=0) {
+      fission = false;
+      fusion = true;
+      Calculation calc = new Calculation(aa, bb, false);
+    }
+
     int g = 0;  
     for (int b = 1; b < 30; b++) {
       for (int j = 0; j < elements[0].length; j++) {
@@ -127,9 +139,5 @@ class Selection_FuseFiss {
     line(175, 70, 175, 690);
     line(330, 70, 330, 690);
     line(500, 70, 500, 690);
-    if (el != 0) {
-      rect(100, 100, 100, 100);
-    }
   }
-
 }

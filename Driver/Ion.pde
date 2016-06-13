@@ -22,10 +22,11 @@ class Ion {
   boolean an;
   boolean cath;
   boolean left = true;
+  boolean isElectron;
 
 
 
-  Ion(int x, int y, float m, boolean precipitation, boolean spectator, color rara, boolean anI, boolean cathI, float ysp, float xsp) {
+  Ion(int x, int y, float m, boolean precipitation, boolean spectator, color rara, boolean anI, boolean cathI, float ysp, float xsp, boolean eminus) {
     massS = m;
     xxUs = x;
     yyUs = y;
@@ -36,18 +37,47 @@ class Ion {
     spec = spectator;
     duexx = xsp;
     dueyy = ysp;
+    isElectron = eminus;
     setup();
   }
 
   void setup() {
     radicalrev = massS;
     staterev = moving;
-
+/*
     duexx = random(10)*.05;
     dueyy = random(10)*.05 ;
+    */
   }
 
   void move() {
+    
+    if (isElectron) {
+      if (xxUs < 162) {
+       duexx = 0;
+       dueyy = -1;
+      }  
+      if (yyUs < 102) {
+       duexx = 1;
+       dueyy = 0;
+      }
+      if (xxUs > 537) {
+       duexx = 0;
+       dueyy = 1;
+      }
+      if (yyUs > 350) {
+        duexx = -.1;
+        dueyy = 0;
+      }
+      if (xxUs > 470 && xxUs < 500 && yyUs < 400 && yyUs > 300) {
+       duexx= 0;
+       dueyy = 0;
+       color d = color(211, 177, 90);
+       cccc = d;
+      } 
+    }
+    
+    
     if (spec) {    
       if (left) {
        if (yyUs < 210) {

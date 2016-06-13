@@ -1,6 +1,26 @@
 //make a matrix with ionic compounds and their KspS
 
 
+
+static String[][] floatsExpt(String[][] a) { //modify ksp values in table to actual nums
+  String s;
+  Float f;
+  Float ex;
+  for ( int i = 0; i < a.length; i++ ) {
+    s = a[i][3];
+    for ( int p = 0; p < s.length()-1; p++ ) {
+      if ( s.substring(p, p+1).equals('E')) {
+        f = Float.parseFloat(s.substring(0, p));
+        ex = Float.parseFloat(s.substring(p+1, s.length()-1));
+        a[i][3] = ((Float)(f * pow(10, ex))).toString();
+        break;
+      }
+    } //close p loop
+  } //close i loop
+  return a;
+}
+
+
 int ksp = 100;
 int cons = 11;
 int cons1 = 11;
@@ -50,12 +70,12 @@ class Precipitation {
     noStroke();
     fill(255);
 
-
     if (salty == null) {
       salty = new Ion[50];
       for (int i = 0; i < salty.length; i++) {
         color x = color(255, 23, 111);
-        salty[i] = new Ion((int) random(161, 441), (int) random(400, 540), 2, true, false, x, false, false, 1, 1 );
+
+        salty[i] = new Ion((int)random(161, 441), (int)random(400, 540), 2, true, false, x, false, false, 1, 1, true );
       }
     }
   }
@@ -69,15 +89,15 @@ class Precipitation {
 
   boolean react() {
     String[][] kspVals = getKSP();
-    
+    return true;
   }
   //
   //based on Ksp table, square the Ksp to find the max concentration of each ion type in solution
   //if the concentration is less than, the particles disappear
   //if the concentrations are too high, particles get bigger and fall to the bottom
 
-  static String[][] getKSP() {
-    tbl = new String[70][2]; //init KSP array
+  String[][] getKSP() {
+    String[][] tbl = new String[70][2]; //init KSP array
     Table ksp = loadTable("KspTable.csv");
     for (int i = 0; i < tbl.length; i++) { 
       for (int j =0; j < tbl[0].length; j++) {
@@ -86,22 +106,5 @@ class Precipitation {
     }
     tbl = floatsExpt(tbl);
     return tbl;
-  }
-
-  static void floatsExpt(String[][] a) { //modify ksp values in table to actual nums
-    String s;
-    float f;
-    float ex;
-    for ( int i = 0; i < a.length; i++ ) {
-      s = a[i][3];
-      for ( int p = 0; p < s.length()-1; p++ ) {
-        if ( s.substring(p, p+1).equals('E')) {
-          f = Float.parseFloat(s.substring(0, p));
-          ex = Float.parseFloat(s.substring(p+1,s.length()-1));
-          break;
-        }
-      } //close p loop
-      a[i][3] = f * pow(10,ex);
-    } //close i loop
   }
 }
