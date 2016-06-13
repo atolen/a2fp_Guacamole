@@ -168,14 +168,14 @@ class Fusion {
           fuse[0] = e;
           fuse[1] = f;
         }
-      }
-      /*
-      for (int i = 1; i < elements.length; i++) {
-        if (Integer.parseInt(elements[i][2]) == (int) d) {
-          y+= elements[i][2];
+
+        for (int i = 1; i < elements.length; i++) {
+          if (Integer.parseInt(elements[i][2]) == (int) d) {
+            y+= elements[i][2];
+          }
         }
       }
-*/
+
       for (int i =0; i < fuse.length; i++) {
         fuse[i].process();
         fuse[i].once();
