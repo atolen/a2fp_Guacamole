@@ -46,7 +46,7 @@ class Titration {
       for (int i = 0; i < drops.length; i++) {
         drops[i] = new Drop(i*25-10);
       }
-    }
+    } 
     fill(255);
     stroke(255);
     textFont(x, 20);

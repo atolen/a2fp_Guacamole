@@ -1,16 +1,15 @@
 import java.util.ArrayList;
 ArrayList<Particle> toBeExploded;
+
 Neutron[] neutrons;
 int mASSive;
 boolean first; 
 boolean selected = false;
 HScrollbar hs1;
 
-
-
-
 class Fission {
-  
+Selection_FuseFiss fartz;  
+
   Fission() {
     setup();
     once();
@@ -54,6 +53,7 @@ class Fission {
     else {
     //initializations  
     reacted = false;
+
     if (neutrons == null) {
       neutrons = new Neutron[5];
        for (int i = 0; i < 5; i++) {
@@ -65,10 +65,9 @@ class Fission {
        toBeExploded = new ArrayList<Particle>();
        Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
        toBeExploded.add(butt);
-      }
-    } 
+    }
   }//end of setup
-
+  }
 
   boolean finished() {
     return reacted;
