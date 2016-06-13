@@ -21,10 +21,10 @@ class Selection_FuseFiss {
     aa=0;
     bb=0;
     if (ctr == 2){
-      total = Integer.parseInt(elements[aa][3])+Integer.parseInt(elements[bb][3]);
+      total = Integer.parseInt(elements[aa+1][3])+Integer.parseInt(elements[bb+1][3]);
     }
     else if (ctr == 1){
-      total = Integer.parseInt(elements[aa][3]);
+      total = Integer.parseInt(elements[aa+1][3]);
     }
   }
 
