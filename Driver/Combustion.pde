@@ -73,16 +73,16 @@ class Combustion {
     for ( int i = 0; i < bombs.size(); i++ ) {
       if ( tempX < bombs.get(i) ) {
         fill(0);
-        ellipse(bombs.get(i)+random(10), 350, 15, 15);
-        ellipse(bombs.get(i)+random(10), 340, 15, 15);
-        ellipse(bombs.get(i)+random(10), 330, 15, 15);
-        ellipse(bombs.get(i)+random(10), 320, 15, 15);
-        ellipse(bombs.get(i)+random(10), 310, 15, 15);        
-        ellipse(bombs.get(i)+random(10), 300, 15, 15);
-        ellipse(bombs.get(i)+random(10), 290, 15, 15);        
-        ellipse(bombs.get(i)+random(10), 280, 15, 15);
-        ellipse(bombs.get(i)+random(10), 270, 15, 15);
-        ellipse(bombs.get(i)+random(10), 260, 15, 15);
+        ellipse(bombs.get(i)+random(10), 350, 25, 28);
+        ellipse(bombs.get(i)+random(10), 340, 25, 28);
+        ellipse(bombs.get(i)+random(10), 330, 25, 28);
+        ellipse(bombs.get(i)+random(10), 320, 25, 28);
+        ellipse(bombs.get(i)+random(10), 310, 25, 28);        
+        ellipse(bombs.get(i)+random(10), 300, 25, 28);
+        ellipse(bombs.get(i)+random(10), 290, 25, 28);        
+        ellipse(bombs.get(i)+random(10), 280, 25, 28);
+        ellipse(bombs.get(i)+random(10), 270, 25, 28);
+        ellipse(bombs.get(i)+random(10), 260, 25, 28);
       }
     }
   }
