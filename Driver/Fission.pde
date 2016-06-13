@@ -6,9 +6,7 @@ class Fission {
   int mASSive;
   Selection_FuseFiss fartz;
   boolean first;
-  boolean reacted;  
-  boolean selected = false;
-  String inp = "";
+  boolean reacted;
   Fission() {
     setup();
     once();

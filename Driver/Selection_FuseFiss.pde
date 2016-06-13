@@ -35,7 +35,7 @@ class Selection_FuseFiss {
     textFont(x, 30);
     fill(107, 22, 245);
     textAlign(CENTER);
-    text("These be the Elements", width/2, 30);
+    text("Choose two elements! ", width/2, 30);
 
     myAss = createFont("Ayuthaya", 10, true);
     textFont(myAss, 10);
