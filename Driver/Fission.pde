@@ -2,7 +2,7 @@ import java.util.ArrayList;
 ArrayList<Particle> toBeExploded;
 
 Neutron[] neutrons;
-boolean reacted;
+//boolean reacted;
 int mASSive = 0;
 boolean first; 
 boolean selected = false;

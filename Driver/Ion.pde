@@ -56,18 +56,18 @@ class Ion {
     if (isElectron) {
       if (xxUs < 162) {
         duexx = 0;
-        dueyy = -1;
+        dueyy = -.5;
       }  
       if (yyUs < 102) {
-        duexx = 1;
+        duexx = .5;
         dueyy = 0;
       }
       if (xxUs > 537) {
         duexx = 0;
-        dueyy = 1;
+        dueyy = .5;
       }
       if (yyUs > 350) {
-        duexx = -.1;
+        duexx = -.5;
         dueyy = 0;
       }
       if (xxUs > 470 && xxUs < 500 && yyUs < 400 && yyUs > 300) {
@@ -128,9 +128,15 @@ class Ion {
       move();
     }
     if (staterev == falling) {
+<<<<<<< HEAD
+      duexx *= .01;
+      dueyy *= .01;
+      move(); 
+=======
       duexx *= .00001;
       dueyy *= .00001;
       move();
+>>>>>>> 6cdb1f733d7b682c7a0e809ae85db9c8667c323f
     }
   }
 

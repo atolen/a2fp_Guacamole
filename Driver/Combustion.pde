@@ -45,7 +45,7 @@ class Combustion {
     rect(xxcor-100, yycor-60, 200, 120);
     stroke(0);
     ellipse(xxcor+100, 300, 60, 120);
-    text("BERN", 350, 500);
+    text("BERN", 350, 490);
     noFill();
     rect(300, 450, 100, 50);
     bernClicked();
