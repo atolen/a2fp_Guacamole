@@ -1,4 +1,3 @@
-
 class Ion {
 
   final static int moving = 0;
@@ -12,8 +11,8 @@ class Ion {
   float rr;
   float bb;
   float gg;
-  float xxUs;
-  float yyUs;
+  float xxUs; //xcor
+  float yyUs; //ycor
   float duexx;
   float dueyy;
   color cccc;
@@ -132,6 +131,11 @@ class Ion {
   }
 
 
+  void kill() {
+    staterev = dead;
+  }
+  
+  
   void onceB() {
     if ( staterev != dead ) {     
       move();
@@ -140,6 +144,7 @@ class Ion {
       ellipse(xxUs, yyUs, radicalrev, radicalrev);
       bounce();
     }
+    
     if (!which) {
       goUp();
     }

@@ -1,12 +1,17 @@
 import java.util.ArrayList;
-
-class Fission {
-  ArrayList<Particle> toBeExploded;
+ArrayList<Particle> toBeExploded;
   Neutron[] neutrons;
   int mASSive;
-  Selection_FuseFiss fartz;
   boolean first;
+<<<<<<< HEAD
   boolean reacted;
+=======
+  //boolean reacted;  
+  //boolean selected = false;
+ // String inp = "";
+class Fission {
+  
+>>>>>>> 9fec6271a3412c4f85dc01d6b54d21942923d5f9
   Fission() {
     setup();
     once();
@@ -19,24 +24,24 @@ class Fission {
     background(0);  
     //initializations  
     reacted = false;
-    //da neutron  
-    if (neutrons == null) {
-      neutrons = new Neutron[5];
-      for (int i = 0; i < 5; i++) {
-        neutrons[i] = new Neutron();
+ 
+
+      if (neutrons == null) {
+        neutrons = new Neutron[5];
+        for (int i = 0; i < 5; i++) {
+          neutrons[i] = new Neutron();
+        }
+      }
+      
+      mASSive = 80;
+
+      if (toBeExploded == null) {
+        toBeExploded = new ArrayList<Particle>();
+        Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
+        toBeExploded.add(butt);
       }
     }
-    fartz = new Selection_FuseFiss(1);
-    mASSive = 80;
-
-    if (toBeExploded == null) {
-      toBeExploded = new ArrayList<Particle>();
-      Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
-      toBeExploded.add(butt);
-    }
-  }
-
-
+  //}
 
   boolean finished() {
     return reacted;
@@ -44,12 +49,12 @@ class Fission {
 
 
   void once() {
-    //background(0);
+
+    background(0);
     if (first) {
-      int elementNum = fartz.aa;
       first = false;
     }
-    if (lala == true) {
+    if (true) {
       for (int i=0; i < neutrons.length; i++ ) {
         neutrons[i].once(); 
         neutrons[i].process();
@@ -80,7 +85,7 @@ class Fission {
             }
           }
         }
-      }
+      //}
       fill(255);
       stroke(255);
       textFont(x, 20);
@@ -98,5 +103,8 @@ class Fission {
         }
       }
     }
+    }
   }
+
+
 }
