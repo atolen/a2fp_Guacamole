@@ -8,7 +8,6 @@ boolean first;
 boolean selected = false;
 
 class Fission {
-  Selection_FuseFiss fartz;  
 
   Fission() {
     setup();
@@ -20,7 +19,7 @@ class Fission {
     //setup the page 
     size(700, 700);
     background(0);  
-    if (!selected) {
+    if (!selected) {///*
       text("Please Select An Element", width/2, 50);
       makeData();
       if (mousePressed) {
@@ -34,8 +33,7 @@ class Fission {
               System.out.println(mASSive);
             }
           }
-        }
-        else if (mouseX > 195 && mouseX <= 345) {
+        } else if (mouseX > 195 && mouseX <= 345) {
 
           selected = true;
           int j = 30;
@@ -46,10 +44,7 @@ class Fission {
               System.out.println(mASSive);
             }
           }
-        }
-
-
-        else if (mouseX > 345 && mouseX <= 520) {
+        } else if (mouseX > 345 && mouseX <= 520) {
           selected = true;
           int j = 60;
           for (int i = 90; i < 700; i+=20) {
@@ -59,9 +54,7 @@ class Fission {
               System.out.println(mASSive);
             }
           }
-        }
-
-        else if (mouseX > 520 && mouseX <= 690) {
+        } else if (mouseX > 520 && mouseX <= 690) {
           selected = true;
           int j = 90;
           for (int i = 90; i < 700; i+=20) {
@@ -85,30 +78,24 @@ class Fission {
           toBeExploded.add(butt);
         }
       }
-    }
-      else {
-        //initializations  
-        reacted = false;
+    } else {
+      //initializations  
+      reacted = false;
 
-        if (neutrons == null) {
-          neutrons = new Neutron[5];
-          for (int i = 0; i < 5; i++) {
-            neutrons[i] = new Neutron();
-          }
-        } 
-        mASSive = 80;
-        if (toBeExploded == null) {
-          toBeExploded = new ArrayList<Particle>();
-          Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
-          toBeExploded.add(butt);
+      if (neutrons == null) {
+        neutrons = new Neutron[5];
+        for (int i = 0; i < 5; i++) {
+          neutrons[i] = new Neutron();
         }
-      }//end of setup
-    }
-  }
-
-  boolean finished() {
-    return reacted;
-  }
+      } 
+      mASSive = 80;
+      if (toBeExploded == null) {
+        toBeExploded = new ArrayList<Particle>();
+        Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
+        toBeExploded.add(butt);
+      }
+    }//end of setup
+  }//*/
 
 
   void once() {
@@ -126,8 +113,7 @@ class Fission {
               System.out.println(mASSive);
             }
           }
-        }
-        else if (mouseX > 195 && mouseX <= 345) {
+        } else if (mouseX > 195 && mouseX <= 345) {
 
           selected = true;
           int j = 0;
@@ -138,10 +124,7 @@ class Fission {
               System.out.println(mASSive);
             }
           }
-        }
-
-
-        else if (mouseX > 345 && mouseX <= 520) {
+        } else if (mouseX > 345 && mouseX <= 520) {
           selected = true;
           int j = 0;
           for (int i = 90; i < 700; i+=20) {
@@ -151,9 +134,7 @@ class Fission {
               System.out.println(mASSive);
             }
           }
-        }
-
-        else if (mouseX > 520 && mouseX <= 690) {
+        } else if (mouseX > 520 && mouseX <= 690) {
           selected = true;
           int j = 0;
           for (int i = 90; i < 700; i+=20) {
@@ -231,3 +212,4 @@ class Fission {
       }
     }
   }
+}
