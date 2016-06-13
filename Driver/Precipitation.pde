@@ -1,7 +1,5 @@
 //make a matrix with ionic compounds and their KspS
 
-
-
 static String[][] floatsExpt(String[][] a) { //modify ksp values in table to actual nums
   String s;
   Float f;
@@ -20,14 +18,14 @@ static String[][] floatsExpt(String[][] a) { //modify ksp values in table to act
   return a;
 }
 
-
-int ksp = 100;
-int cons = 11;
-int cons1 = 11;
 //String[][] solubilities = new String [25][2];
 
-
 class Precipitation {
+  int consA;
+  int consB;
+  int volume;
+  int ksp;
+  
   Ion[] salty;  
   Precipitation() {
     setup();
@@ -78,6 +76,12 @@ class Precipitation {
         salty[i] = new Ion((int)random(161, 441), (int)random(400, 540), 2, true, false, x, false, false, 1, 1, true );
       }
     }
+    
+    //=========
+    consA = 10;
+    consB = 10;
+    ksp = 100;
+    volume = 1;
   }
 
   void onceA() {
@@ -87,10 +91,11 @@ class Precipitation {
     }
   }
 
-  boolean react() {
+  boolean fall() {
     String[][] kspVals = getKSP();
-    return true;
+    return ((consA * consB) / volume) > ksp;
   }
+  
   //
   //based on Ksp table, square the Ksp to find the max concentration of each ion type in solution
   //if the concentration is less than, the particles disappear
