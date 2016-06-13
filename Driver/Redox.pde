@@ -74,7 +74,7 @@ class Redox {
 //  Ion(int x, int y, float m, boolean precipitation, boolean spectator, color rara, boolean anI, boolean cathI, float ysp, float xsp) {
     startHeight -= changeFactor;
     if (vamonos == null) {
-      vamonos = new Ion[90];
+      vamonos = new Ion[75];
       for (int i = 0; i < vamonos.length; i++) {
         if ( i < 15) {
           //spectator cations - blue
@@ -122,6 +122,16 @@ class Redox {
     for (int i = 0; i < vamonos.length; i++) {
       vamonos[i].onceB();
       vamonos[i].process();
+      if (vamonos[i].isElectron) {
+       if (vamonos[i].reachedCathode) {
+         vamonos[i-15].xxUs = 480;
+         vamonos[i-15].yyUs = 340;
+         vamonos[i-15].duexx = 0;
+         vamonos[i-15].dueyy = 0;
+         vamonos[i-15].reachedCathode = true;    
+       }
+      }
     }
   }
+  
 }
