@@ -1,14 +1,11 @@
-
-
-
 class Fusion {
-Particle[] fuse ;
-float mass1;
-float mass2;
-String inp = "";
-boolean hit = false;
-String y = "";
-Selection_FuseFiss fartz;
+  Particle[] fuse ;
+  float mass1;
+  float mass2;
+  String inp = "";
+  boolean hit = false;
+  String y = "";
+  Selection_FuseFiss fartz;
 
   Fusion() { 
     setup(); 
@@ -21,7 +18,6 @@ Selection_FuseFiss fartz;
     fartz = new Selection_FuseFiss(2);
     results = false;
     background(0);
-     //fartza = new Selection_FuseFiss(1);
     if (hit) {
       fill(255) ;
       text("new element", 100, 100);
@@ -55,8 +51,9 @@ Selection_FuseFiss fartz;
           fuse[i].process();
         }
       }
+    } else { 
+      fartz.makeData();
     }
-   else{ fartz.makeData();}
     if (fuse[0].isTouching(fuse[1])) {
       hit = true;
     }

@@ -20,7 +20,7 @@ class Neutron {
   void setup() {
     float r = random(256);
     cc = color(255);
-    rad = 10;
+    rad = 3 ;
     xxx = random((width - r) + r/2);
     yyy = random((height - r) + r/2);
     dxx = random(10);
