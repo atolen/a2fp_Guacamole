@@ -149,8 +149,8 @@ void draw() {
     Fusion girlOnFire = new Fusion();
   } 
   /*if (results) {
-    Results r = new Results("fusion");
-  }*/
+   Results r = new Results("fusion");
+   }*/
 
   if (fission) {
     background(139, 89, 16);

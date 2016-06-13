@@ -2,10 +2,10 @@ import java.util.ArrayList;
 ArrayList<Particle> toBeExploded;
 
 Neutron[] neutrons;
+boolean reacted;
 int mASSive = 0;
 boolean first; 
 boolean selected = false;
-HScrollbar hs1;
 
 class Fission {
   Selection_FuseFiss fartz;  
