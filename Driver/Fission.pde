@@ -31,7 +31,7 @@ class Fission {
             j++;
             if (mouseY >= i && mouseY <= i+20) {
               mASSive = j;
-              System.out.println(j);
+              System.out.println(mASSive);
             }
           }
         }
@@ -43,7 +43,7 @@ class Fission {
             j++;
             if (mouseY >= i && mouseY <= i+20) {
               mASSive = j; 
-              System.out.println(j);
+              System.out.println(mASSive);
             }
           }
         }
@@ -56,7 +56,7 @@ class Fission {
             j++;
             if (mouseY >= i && mouseY <= i+20) {
               mASSive = j; 
-              System.out.println(j);
+              System.out.println(mASSive);
             }
           }
         }
@@ -68,18 +68,25 @@ class Fission {
             j++;
             if (mouseY >= i && mouseY <= i+20) {
               mASSive = j; 
-              System.out.println(j);
+              System.out.println(mASSive);
             }
           }
         }
-
+        if (neutrons == null) {
+          neutrons = new Neutron[5];
+          for (int i = 0; i < 5; i++) {
+            neutrons[i] = new Neutron();
+          }
+        } 
         //mASSive = 80;
         if (toBeExploded == null) {
           toBeExploded = new ArrayList<Particle>();
           Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
           toBeExploded.add(butt);
         }
-      } else {
+      }
+    }
+      else {
         //initializations  
         reacted = false;
 
@@ -116,10 +123,11 @@ class Fission {
             j++;
             if (mouseY >= i && mouseY <= i+20) {
               mASSive = j;
+              System.out.println(mASSive);
             }
           }
         }
-        if (mouseX > 195 && mouseX <= 345) {
+        else if (mouseX > 195 && mouseX <= 345) {
 
           selected = true;
           int j = 0;
@@ -127,32 +135,32 @@ class Fission {
             j++;
             if (mouseY >= i && mouseY <= i+20) {
               mASSive = j; 
-              System.out.println(j);
+              System.out.println(mASSive);
             }
           }
         }
 
 
-        if (mouseX > 345 && mouseX <= 520) {
+        else if (mouseX > 345 && mouseX <= 520) {
           selected = true;
           int j = 0;
           for (int i = 90; i < 700; i+=20) {
             j++;
             if (mouseY >= i && mouseY <= i+20) {
               mASSive = j; 
-              System.out.println(j);
+              System.out.println(mASSive);
             }
           }
         }
 
-        if (mouseX > 520 && mouseX <= 690) {
+        else if (mouseX > 520 && mouseX <= 690) {
           selected = true;
           int j = 0;
           for (int i = 90; i < 700; i+=20) {
             j++;
             if (mouseY >= i && mouseY <= i+20) {
               mASSive = j; 
-              System.out.println(j);
+              System.out.println(mASSive);
             }
           }
         }
@@ -165,6 +173,7 @@ class Fission {
           }
         } 
         //mASSive = 80;
+        //System.out.println(mASSive + 90);
         if (toBeExploded == null) {
           toBeExploded = new ArrayList<Particle>();
           Particle butt = new Particle((int) random(width), (int) random(height), mASSive); 
@@ -222,4 +231,3 @@ class Fission {
       }
     }
   }
-}
