@@ -129,16 +129,11 @@ class Ion {
     }
     if (staterev == falling) {
 
-<<<<<<< HEAD
+
       duexx *= .01;
       dueyy *= .01;
       move(); 
-=======
-      duexx *= .00001;
-      dueyy *= .00001;
-      move();
 
->>>>>>> 6c759009e9a88531923b2122bf24478aab18c7d4
     }
   }
 

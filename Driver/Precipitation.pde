@@ -101,7 +101,7 @@ class Precipitation {
     stroke(0);
     fill(0);
  
-    text("put it in", 470, 580);
+    text("Precipitate", 470, 580);
     noFill();
     rect(400, 550, 200, 50);
       
