@@ -40,3 +40,76 @@ Successfully linked to elements.
 - Figured out format of the project
 - linked to elements, successfully printed all the elements on the elements page, made a working "go home" button
 - Next task: writing react methods !!
+
+~ABO
+
+===========================================================================================
+
+2016-06-06
+22:30
+
+figuring out fission anf fusion and getting the balls t work
+
+-B&O
+
+===========================================================================================
+
+2016-06-07
+22:30
+
+made littel particles and ions to help with simulation of fission and fusion
+
+-B&O
+
+===========================================================================================
+
+2016-06-08
+22:30
+
+figuring out fission anf fusion and getting the balls t work
+
+-B&O
+
+===========================================================================================
+
+2016-06-10
+22:30
+
+finally made little balls move correctly
+
+-B
+
+========================================================================================
+
+2016-06-11
+22:30
+
+finish fission and fusion, move on to precipitation. make ksp table
+-BAO
+
+
+===========================================================================================
+
+2016-06-12
+22:30
+
+titration and redox setup, but no animation yet. Combustion makes fire, but it's not pretty
+
+-ABO
+
+
+===========================================================================================
+
+2016-06-13
+00:00
+
+titration and redox good, with animation
+animate precipitation, hard to make it react
+make table to select from for fission and fusion
+  fusion giving real problems because you should have to select two
+get back to home buttons for each 
+combustion leaves ashes in its wake
+
+
+-ABO
+
