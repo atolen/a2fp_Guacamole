@@ -1,6 +1,3 @@
-
-
-
 class Fusion {
 Particle[] fuse ;
 float mass1;
