@@ -5,7 +5,7 @@ static String[][] floatsExpt(String[][] a) { //modify ksp values in table to act
   Float f;
   Float ex;
   for ( int i = 0; i < a.length; i++ ) {
-    s = a[i][3];
+    s = a[i][2];
     for ( int p = 0; p < s.length()-1; p++ ) {
       if ( s.substring(p, p+1).equals('E')) {
         f = Float.parseFloat(s.substring(0, p));
@@ -25,7 +25,7 @@ class Precipitation {
   int consB;
   int volume;
   int ksp;
-  
+
   Ion[] salty;  
   Precipitation() {
     setup();
@@ -51,15 +51,23 @@ class Precipitation {
         printy = false;
       }
     }
-    ellipseMode(RADIUS);
-    stroke(100, 95, 95);
-    fill(255);
-    ellipse(300, 300, 150, 90);
+
 
     fill(153, 213, 252);
-    ellipse(300, 500, 150, 90);
     noStroke();
     rect(150, 400, 300, 90);
+    ellipse(300, 500, 150, 60);
+    arc(300, 400, 150, 60, PI, 2*PI);
+    stroke(0);
+    arc(300, 500, 150, 60, 0, PI);
+
+
+    ellipseMode(RADIUS);
+    stroke(100, 95, 95);
+    noFill();//(255);
+    ellipse(300, 300, 150, 60);
+
+
     noFill();
     stroke(0);
     line(150, 300, 150, 500);
@@ -68,15 +76,15 @@ class Precipitation {
     noStroke();
     fill(255);
 
+
     if (salty == null) {
       salty = new Ion[50];
       for (int i = 0; i < salty.length; i++) {
         color x = color(255, 23, 111);
-
-        salty[i] = new Ion((int)random(161, 441), (int)random(400, 540), 2, true, false, x, false, false, 1, 1, true );
+        salty[i] = new Ion((int)random(161, 441), (int)random(370, 530), 2, true, false, x, false, false, 1, 1, false );
       }
     }
-    
+
     //=========
     consA = 10;
     consB = 10;
@@ -88,27 +96,34 @@ class Precipitation {
     for (int i = 0; i < salty.length; i++) {
       salty[i].onceB();
       salty[i].process();
+      if ( fall() ) {
+        salty[i].yyUs -= 5;
+      }
+      else {
+        salty[i].kill();
+      }
     }
   }
 
+
   boolean fall() {
-    String[][] kspVals = getKSP();
     return ((consA * consB) / volume) > ksp;
   }
-  
+
   //
   //based on Ksp table, square the Ksp to find the max concentration of each ion type in solution
   //if the concentration is less than, the particles disappear
   //if the concentrations are too high, particles get bigger and fall to the bottom
 
   String[][] getKSP() {
-    String[][] tbl = new String[70][2]; //init KSP array
+    String[][] tbl = new String[70][3]; //init KSP array
     Table ksp = loadTable("KspTable.csv");
     for (int i = 0; i < tbl.length; i++) { 
-      for (int j =0; j < tbl[0].length; j++) {
+      for (int j = 0; j < tbl[0].length; j++) {
         tbl[i][j] = ksp.getString(i, j);
       }
     }
+    
     tbl = floatsExpt(tbl);
     return tbl;
   }
