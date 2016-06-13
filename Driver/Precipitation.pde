@@ -111,6 +111,7 @@ class Precipitation {
       if ( fall() ) {
         for (int i = 0; i < salty.length; i++) {
           salty[i].staterev = Ion.falling;
+          salty[i].xxUs = random(200,400);
           salty[i].yyUs = random(535,545);
         }
       } 

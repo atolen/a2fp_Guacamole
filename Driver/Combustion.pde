@@ -32,7 +32,7 @@ class Combustion {
     }
     bombs = new ArrayList<Float>();
     for ( int i = xxcor+110; i > xxcor-130; i-=15 ) {
-      bombs.add(i+random(2));
+      bombs.add((float)i);
     }
   }
 
@@ -73,17 +73,21 @@ class Combustion {
     for ( int i = 0; i < bombs.size(); i++ ) {
       if ( tempX < bombs.get(i) ) {
         fill(0);
-        ellipse(bombs.get(i)+random(10), 350, 25, 28);
-        ellipse(bombs.get(i)+random(10), 340, 25, 28);
-        ellipse(bombs.get(i)+random(10), 330, 25, 28);
-        ellipse(bombs.get(i)+random(10), 320, 25, 28);
-        ellipse(bombs.get(i)+random(10), 310, 25, 28);        
-        ellipse(bombs.get(i)+random(10), 300, 25, 28);
-        ellipse(bombs.get(i)+random(10), 290, 25, 28);        
-        ellipse(bombs.get(i)+random(10), 280, 25, 28);
-        ellipse(bombs.get(i)+random(10), 270, 25, 28);
-        ellipse(bombs.get(i)+random(10), 260, 25, 28);
+        stroke(0);
+        ellipse(bombs.get(i), 350, 29, 39);
+        ellipse(bombs.get(i), 340, 29, 39);
+        ellipse(bombs.get(i), 330, 29, 39);
+        ellipse(bombs.get(i), 320, 29, 39);
+        ellipse(bombs.get(i), 310, 29, 39);        
+        ellipse(bombs.get(i), 300, 29, 39);
+        ellipse(bombs.get(i), 290, 29, 39);        
+        ellipse(bombs.get(i), 280, 29, 39);
+        ellipse(bombs.get(i), 270, 29, 39);
+        ellipse(bombs.get(i), 260, 29, 39);
+        stroke(139,139,139);
+      curve(bombs.get(i) - random(5), 260+ random(5), bombs.get(i) + random(20), 220+ random(5), bombs.get(i) - random(30) , 150+ random(5), bombs.get(i)+ random(5), 100+ random(5));
       }
+      
     }
   }
 

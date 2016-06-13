@@ -28,6 +28,7 @@ class Titration {
 
   void setup() {
     size(700, 700);
+    ellipseMode(DIAMETER);
     //  clor = color(255, gor, 255);
     fill(clor);
     background(0);
