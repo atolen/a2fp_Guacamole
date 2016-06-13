@@ -83,11 +83,11 @@ class Selection_FuseFiss {
       }
       System.out.println(aa + " " + bb);
     }
-    //bb=1;
-    if (bb==-1 && aa!=0) {
-      fission = true;
-      Calculation calc = new Calculation(aa, bb, true);
-    } else if (bb!=0) {
+   // if (bb==-1 && aa!=0) {
+    //  fission = true;
+    //  Calculation calc = new Calculation(aa, bb, true);
+    //} 
+    else if (bb!=0) {
       fission = false;
       fusion = true;
       Calculation calc = new Calculation(aa, bb, false);

@@ -18,6 +18,7 @@ PFont x;
 PFont myAss;
 //periodic table
 String[][] elements;
+boolean results;
 
 //reaction type booleans
 
@@ -27,6 +28,7 @@ void settings() {
 
 void setup() {
   home = true;
+  results = false;
   browse = false;
   react = false;
   combustion = false;
@@ -72,8 +74,7 @@ void draw() {
     noFill();
     rect(150, 450, 400, 100);//React
     rect(100, 300, 500, 100);//Browse
-  }
-  else if (react) {
+  } else if (react) {
     background(0);
 
     textFont(x, 40);
@@ -87,7 +88,7 @@ void draw() {
     textAlign(CENTER);
     text("Bombs Away (Fission)", width/2, 225);
 
-    
+
     noFill();
     stroke(255, 52, 52);
     rect(20, 260, 660, 55);
@@ -123,20 +124,20 @@ void draw() {
     textAlign(CENTER);
     text("Salty af (Precipitation)", width/2, 600);
   }
-  
+
   if (browse) {
     background(255);
     makeData();
   } 
-   
+
   if (combustion) {
     Combustion helloBonjour = new Combustion();
-  //  helloBonjour.react();
+    //  helloBonjour.react();
   }
 
   if (titration) {
     Titration bombTheWorld = new Titration();
-  //  bombTheWorld.react();
+    //  bombTheWorld.react();
   }
 
   if (redox) {
@@ -147,9 +148,12 @@ void draw() {
   if (fusion) {
     Fusion girlOnFire = new Fusion();
   } 
+  if (results) {
+    Results r = new Results("fusion");
+  }
 
   if (fission) {
-    background(139,89,16);
+    background(139, 89, 16);
     Fission plutonium = new Fission();
   }
 
@@ -162,8 +166,8 @@ void draw() {
 
 void printElement() {
   textFont(x, 30);
-  for(int i = 0; i < elements[0].length; i++) {
-    text(elements[printEl][i], 200 + (i*50) , 100); 
+  for (int i = 0; i < elements[0].length; i++) {
+    text(elements[printEl][i], 200 + (i*50), 100);
   }
 }
 
@@ -173,8 +177,7 @@ void mouseClicked() {
     if (mouseX >= 150 && mouseX <= 550 && mouseY >= 450 && mouseY <= 550 ) {
       react = true;
       home = false;
-    } 
-    else if ( mouseX >= 100 && mouseX <= 600 && mouseY >= 300 && mouseY <= 400) {
+    } else if ( mouseX >= 100 && mouseX <= 600 && mouseY >= 300 && mouseY <= 400) {
       browse = true;
       home = false;
     }
@@ -184,56 +187,45 @@ void mouseClicked() {
     if (mouseX >= 20 && mouseX <= 680 && mouseY >= 190 && mouseY <= 245 ) {
       react = false;
       fission = true;
-      home = false;      
-    } 
-    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 260 && mouseY <= 315) {
+      home = false;
+    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 260 && mouseY <= 315) {
       fusion = true;
       react = false;
-    } 
-    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 340 && mouseY <= 395) {
+    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 340 && mouseY <= 395) {
       combustion = true;
       react = false;
-    } 
-    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 410 && mouseY <= 465) {
+    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 410 && mouseY <= 465) {
       titration = true;
       react = false;
-    } 
-    
-    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 490 && mouseY <= 545) {
+    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 490 && mouseY <= 545) {
       redox = true;
       react = false;
-    } 
-    else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 570 && mouseY <= 625) {
+    } else if ( mouseX >= 20 && mouseX <= 680 && mouseY >= 570 && mouseY <= 625) {
       precipitation = true;
       react = false;
     }
-  }
-  
-  else if (browse) {
+  } else if (browse) {
     if (mouseX >= 550 && mouseX <= 680 && mouseY >= 40 && mouseY <=53) {
       home = true;
       browse = false;
       printy = false;
     }
-    
+
     if (mouseX >= 10 && mouseX <=175) {
       int ycor = mouseY - 70;
       printEl = 1 + ycor/20;
       printy = true;
-    } 
-    else if (mouseX >= 175 && mouseX <=330) {
+    } else if (mouseX >= 175 && mouseX <=330) {
       int ycor = mouseY - 70;
       printEl = 28 + ycor/20;
       printy = true;
       //browse = false;
-    } 
-    else if (mouseX >= 330 && mouseX <= 495) {
+    } else if (mouseX >= 330 && mouseX <= 495) {
       int ycor = mouseY - 70;
       printEl = 58 + ycor/20;
       printy = true;
       //browse = false;
-    } 
-    else if (mouseX >= 495 && mouseX <= 660) {
+    } else if (mouseX >= 495 && mouseX <= 660) {
       int ycor = mouseY - 70;
       printEl = 88 + ycor/20;
       printy = true;
@@ -302,9 +294,8 @@ void makeData() {
   //line(400,70, 400, 690);
   line(500, 70, 500, 690);
 
- 
+
   text("Back to Home", 600, 50);
   noFill();
-  rect(550,40,130,13);
-
+  rect(550, 40, 130, 13);
 } //prnt csv -- pd table

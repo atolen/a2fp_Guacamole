@@ -15,6 +15,7 @@ class Fusion {
 
   void setup() {
     size(700, 700);
+    results = false;
     background(0);
     hit = false;
     mass1 = 30;
@@ -26,10 +27,11 @@ class Fusion {
       fuse[0] = uno;
       fuse[1] = dos;
     }
+    fartz = new Selection_FuseFiss(2);
+
   }
 
   void once1() {
-    fartz = new Selection_FuseFiss(2);
     int elementNum1 = fartz.aa;
     int elementNum2 = fartz.bb;
     Calculation calc = new Calculation(fartz.aa, fartz.bb, false);
@@ -72,5 +74,5 @@ class Fusion {
         printy = false;
       }
     }
-  }
+      }
 }
