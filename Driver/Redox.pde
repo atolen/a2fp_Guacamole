@@ -38,10 +38,13 @@ class Redox {
 
     line(240, 220, 450, 220);
     line(220, 200, 470, 200);
-    //
+ 
     line(450, 220, 450, 300);
     line(470, 200, 470, 300);
 
+
+
+    //on da wire
     line(160, 300, 160, 100);
     line(165, 300, 165, 105);
 
@@ -68,27 +71,32 @@ class Redox {
     textAlign(CENTER);
     text("(-)", 490, 385);
     text("(+)", 200, 385);
-
+//  Ion(int x, int y, float m, boolean precipitation, boolean spectator, color rara, boolean anI, boolean cathI, float ysp, float xsp) {
     startHeight -= changeFactor;
     if (vamonos == null) {
-      vamonos = new Ion[60];
+      vamonos = new Ion[90];
       for (int i = 0; i < vamonos.length; i++) {
         if ( i < 15) {
           //spectator cations - blue
           color x = color(135, 187, 242);
-          vamonos[i] = new Ion((int) random(220, 240), (int) random(300, 400), 2, false, true, x, false, false,1,0);
+          vamonos[i] = new Ion((int) random(220, 240), (int) random(300, 400), 2, false, true, x, false, false,1,0, false);
         } else if (i < 30) {
           //spectator anions  - red
           color x = color(255, 3, 11);
-          vamonos[i] = new Ion( (int) random(220, 240), (int) random(300, 400), 2, false, true, x, false, false, 1,0);
+          vamonos[i] = new Ion( (int) random(220, 240), (int) random(300, 400), 2, false, true, x, false, false, 1,0, false);
         } else if (i < 45) {
           //Oxidizing species - at da anode, silver af
           color x = color(165, 165, 165);
-          vamonos[i] = new Ion( (int) random(150, 250), (int) random(300, 310), 2, false, false, x, true, false, random(2), random(2));
-        } else {
+          vamonos[i] = new Ion( (int) random(150, 250), (int) random(300, 310), 2, false, false, x, true, false, random(2), random(2), false );
+        } else if ( i < 60){
           //Reducing Species, at the cathode, gold
           color x = color(211, 177, 90);
-          vamonos[i] = new Ion((int) random(450, 550), (int) random(300, 400), 2, false, false, x, false, true, random(2), random(2));
+          vamonos[i] = new Ion((int) random(450, 550), (int) random(300, 400), 2, false, false, x, false, true, random(2), random(2), false);
+        }
+        //ELECTRONSSSS
+        else {
+          color x = color(0);
+          vamonos[i] = new Ion((int) random(180,220), (int) random(300,349), 1, false, false, x , false, false, 0, -.1, true); 
         }
       }
     }
