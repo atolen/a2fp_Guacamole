@@ -84,10 +84,9 @@ class Combustion {
         ellipse(bombs.get(i), 280, 29, 39);
         ellipse(bombs.get(i), 270, 29, 39);
         ellipse(bombs.get(i), 260, 29, 39);
-        stroke(139,139,139);
-      curve(bombs.get(i) - random(5), 260+ random(5), bombs.get(i) + random(20), 220+ random(5), bombs.get(i) - random(30) , 150+ random(5), bombs.get(i)+ random(5), 100+ random(5));
+        stroke(139, 139, 139);
+        curve(bombs.get(i) - random(5), 260+ random(5), bombs.get(i) + random(20), 220+ random(5), bombs.get(i) - random(30), 150+ random(5), bombs.get(i)+ random(5), 100+ random(5));
       }
-      
     }
   }
 

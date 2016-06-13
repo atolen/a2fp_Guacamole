@@ -125,12 +125,12 @@ class Ion {
     if (staterev == moving) 
       move();
     if (staterev == dead) {
-      move(); 
+      move();
     }
     if (staterev == falling) {
       duexx *= .00001;
       dueyy *= .00001;
-      move(); 
+      move();
     }
   }
 
@@ -191,17 +191,14 @@ class Ion {
         if (yyUs < 535 || yyUs > 550) {
           dueyy = 0;
         }
-      }
-      
-      else if (staterev == falling) {
+      } else if (staterev == falling) {
         if (xxUs < 150 || xxUs > 450) {
           duexx = -1 * duexx;
         }
         if (yyUs < 535 || yyUs > 545) {
           dueyy = -1 * dueyy;
         }
-      }
-      else {
+      } else {
         if (xxUs < 150 || xxUs > 450) {
           duexx = -1 * duexx;
         }
