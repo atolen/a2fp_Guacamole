@@ -6,6 +6,7 @@ class Selection_FuseFiss {
   int ctr;
   int aa;
   int bb;
+  int total;
 
   Selection_FuseFiss(int e) {
     ctr = e;
@@ -19,6 +20,12 @@ class Selection_FuseFiss {
     background(255);
     aa=0;
     bb=0;
+    if (ctr == 2){
+      total = Integer.parseInt(elements[aa][3])+Integer.parseInt(elements[bb][3]);
+    }
+    else if (ctr == 1){
+      total = Integer.parseInt(elements[aa][3]);
+    }
   }
 
 
