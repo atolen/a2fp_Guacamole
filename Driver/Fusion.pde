@@ -19,10 +19,11 @@ class Fusion {
   void setup() {
     size(700, 700);
     background(0);
-    text("select two elements", 100, 100);
+
     //rtz = new Selection_FuseFiss(2);
 
-    if (selectedFuse < 2) {
+    if (selectedFuse <= 2) {
+      text("select two elements", 100, 100);
       makeData();   
       if (mousePressed) {
         if (mouseX >= 30 && mouseX <= 195) {
@@ -79,83 +80,73 @@ class Fusion {
             }
           }
         }   
-        /*
-    results = false;
-         background(0);
-         if (hit) {
-         fill(255) ;
-         text("new element", 100, 100);
-         }
-         */
-
-        //hit = false;
-        //mass1 = 30;
-        //mass2 = 40;
-        if (fuse == null) {
-          fuse = new Particle[2];
-          Particle uno = new Particle((int) random(width), (int) random(height), mass1);
-          Particle dos = new Particle((int) random(width), (int)  random(height), mass2);
-          fuse[0] = uno;
-          fuse[1] = dos;
+        if (selectedFuse >= 2) {
+          if (fuse == null) {
+            fuse = new Particle[2];
+            Particle uno = new Particle((int) random(width), (int) random(height), mass1);
+            Particle dos = new Particle((int) random(width), (int)  random(height), mass2);
+            fuse[0] = uno;
+            fuse[1] = dos;
+          }
         }
-
         // rect(100, 100, 100, 100);
       }
+    } else {
+      background(0);
     }
   }
+
+
+
   void once1() {
-    if (fartz != null) {
-      //rtz = new Selection_FuseFiss(2);
-      // int elementNum1 = fartz.aa;
-      //int elementNum2 = fartz.bb;
-      //Calculation calc = new Calculation(fartz.aa, fartz.bb, false);
+    if (selectedFuse <= 2) {
+      setup();
+    } else {
       background(0);
       for (int i = 0; i < fuse.length; i++) {
         if (!hit) {
           fuse[i].once();
           fuse[i].process();
-        } else { 
-          fartz.makeData();
-        }
-        if (fuse[0].isTouching(fuse[1])) {
+         
+          if (fuse[0].isTouching(fuse[1])) {
           hit = true;
-        }
+           }
+      }
+      }
 
-
-        if (hit) {
-          float d = fuse[0].radical + fuse[1].radical;
-          if (d < 100) {
-            int xcor = (int) fuse[0].xUs;
-            int ycor = (int) fuse[0].yUs;
-            Particle e = new Particle(xcor, ycor, d);
-            Particle f = e;
-            fuse[0] = e;
-            fuse[1] = f;
-
-            for (int j = 1; j < elements.length; j++) {
-              if (Integer.parseInt(elements[j][2]) == (int) d) {
-                y+= elements[j][2];
-              }
-            }
-          }
+      if (hit) {
+        float d = fuse[0].radical + fuse[1].radical;
+        if (d < 600) {
+          int xcor = (int) fuse[0].xUs;
+          int ycor = (int) fuse[0].yUs;
+          Particle e = new Particle(xcor, ycor, d);
+           fuse = new Particle[1];
+          fuse[0] = e;
+  
         }
       }
-      fill(255);
-      stroke(0);
-      textFont(x, 20);
-      //stroke(22, 22, 120);
-      text("Back to Home", 600, 50);
-      noFill();
-      rect(500, 20, 195, 50);
-      if (mousePressed) {
-        if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
-          fuse = null;
-          fusion = false;
-          home = true;
-          browse = false;
-          printy = false;
-        }
+        
+        
+      
+    
+    fill(255);
+    stroke(0);
+    textFont(x, 20);
+    //stroke(22, 22, 120);
+    text("Back to Home", 600, 50);
+    noFill();
+    rect(500, 20, 195, 50);
+    if (mousePressed) {
+      if (mouseX >= 500 && mouseX <= 680 && mouseY >= 20 && mouseY <=80) {
+        fuse = null;
+        fusion = false;
+        home = true;
+        browse = false;
+        printy = false;
       }
     }
   }
+}
+
+
 }
