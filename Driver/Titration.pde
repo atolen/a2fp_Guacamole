@@ -43,9 +43,9 @@ class Titration {
     line(345, 100, 345, 275);
     line(355, 100, 355, 275);
     if (drops == null) {
-      drops = new Drop[10];
+      drops = new Drop[25];
       for (int i = 0; i < drops.length; i++) {
-        drops[i] = new Drop(i*25-10);
+        drops[i] = new Drop(i*15-10);
       }
     } 
     fill(255);
@@ -67,7 +67,7 @@ class Titration {
   void change() {
     arc(width/2, height/2+100, 100, 50, 0, PI);
     fill(255, gor, 255);
-    gor-=15;
+    gor-=5;
   }
 
   void progress() {

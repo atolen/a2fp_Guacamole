@@ -19,7 +19,7 @@ class Drop {
     //    cC = color(255);
     rAd = 5;
     xX = width/2;
-    dY = 1;
+    dY = .5;
     state = MOVING;
   }
 
